@@ -1,0 +1,228 @@
+[Header]
+MagicCookie={0b13fe8c-dfe0-40eb-8900-6712719559a7}
+Version=1.0
+[File000]
+Location=U:\_Robotics\Coursework\aggressive.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Libraries clean\accelerometer.c|Libraries clean\ad_conv.c|Libraries clean\init_port.c|Libraries clean\led.c|Libraries clean\motors.c|Libraries clean\prox.c|love2.c|main.c|Other Libraries\utility.c|maze.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File001]
+Location=U:\_Robotics\Coursework\curious.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Libraries clean\accelerometer.c|Libraries clean\ad_conv.c|Libraries clean\init_port.c|Libraries clean\led.c|Libraries clean\motors.c|Libraries clean\prox.c|love2.c|main.c|Other Libraries\utility.c|maze.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File002]
+Location=U:\_Robotics\Coursework\fear.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Libraries clean\accelerometer.c|Libraries clean\ad_conv.c|Libraries clean\init_port.c|Libraries clean\led.c|Libraries clean\motors.c|Libraries clean\prox.c|love2.c|main.c|Other Libraries\utility.c|maze.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File003]
+Location=U:\_Robotics\Coursework\accelerometer.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Libraries clean\accelerometer.c|Libraries clean\ad_conv.c|Libraries clean\init_port.c|Libraries clean\led.c|Libraries clean\motors.c|Libraries clean\prox.c|love2.c|main.c|Other Libraries\utility.c|maze.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File004]
+Location=U:\_Robotics\Coursework\ad_conv.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Libraries clean\accelerometer.c|Libraries clean\ad_conv.c|Libraries clean\init_port.c|Libraries clean\led.c|Libraries clean\motors.c|Libraries clean\prox.c|love2.c|main.c|Other Libraries\utility.c|maze.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File005]
+Location=U:\_Robotics\Coursework\init_port.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Libraries clean\accelerometer.c|Libraries clean\ad_conv.c|Libraries clean\init_port.c|Libraries clean\led.c|Libraries clean\motors.c|Libraries clean\prox.c|love2.c|main.c|Other Libraries\utility.c|maze.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File006]
+Location=U:\_Robotics\Coursework\led.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Libraries clean\accelerometer.c|Libraries clean\ad_conv.c|Libraries clean\init_port.c|Libraries clean\led.c|Libraries clean\motors.c|Libraries clean\prox.c|love2.c|main.c|Other Libraries\utility.c|maze.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File007]
+Location=U:\_Robotics\Coursework\motors.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Libraries clean\accelerometer.c|Libraries clean\ad_conv.c|Libraries clean\init_port.c|Libraries clean\led.c|Libraries clean\motors.c|Libraries clean\prox.c|love2.c|main.c|Other Libraries\utility.c|maze.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File008]
+Location=U:\_Robotics\Coursework\prox.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Libraries clean\accelerometer.c|Libraries clean\ad_conv.c|Libraries clean\init_port.c|Libraries clean\led.c|Libraries clean\motors.c|Libraries clean\prox.c|love2.c|main.c|Other Libraries\utility.c|maze.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File009]
+Location=U:\_Robotics\Coursework\love2.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Libraries clean\accelerometer.c|Libraries clean\ad_conv.c|Libraries clean\init_port.c|Libraries clean\led.c|Libraries clean\motors.c|Libraries clean\prox.c|love2.c|main.c|Other Libraries\utility.c|maze.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File010]
+Location=U:\_Robotics\Coursework\main.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Libraries clean\accelerometer.c|Libraries clean\ad_conv.c|Libraries clean\init_port.c|Libraries clean\led.c|Libraries clean\motors.c|Libraries clean\prox.c|main.c|Other Libraries\utility.c|love.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File011]
+Location=U:\_Robotics\Coursework\utility.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Libraries clean\accelerometer.c|Libraries clean\ad_conv.c|Libraries clean\init_port.c|Libraries clean\led.c|Libraries clean\motors.c|Libraries clean\prox.c|love2.c|main.c|Other Libraries\utility.c|maze.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File012]
+Location=U:\_Robotics\Coursework\love.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Libraries clean\accelerometer.c|Libraries clean\ad_conv.c|Libraries clean\init_port.c|Libraries clean\led.c|Libraries clean\motors.c|Libraries clean\prox.c|main.c|Other Libraries\utility.c|love.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File013]
+Location=U:\_Robotics\Coursework\Waagh.cof
+Folder=Output
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={433C3D55-811D-409D-A6BF-159CF9355B42}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-ld.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Libraries clean\accelerometer.c|Libraries clean\ad_conv.c|Libraries clean\init_port.c|Libraries clean\led.c|Libraries clean\motors.c|Libraries clean\prox.c|main.c|Other Libraries\utility.c|love.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-o"$(BINDIR_)$(TARGETBASE).$(TARGETSUFFIX)" -Map="$(BINDIR_)$(TARGETBASE).map" --report-mem
+TraceCmdString=
+DebugOptions=--defsym=__MPLAB_DEBUG=1
+[File014]
+Location=U:\_Robotics\Coursework\Waagh.hex
+Folder=Output
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={433C3D55-811D-409D-A6BF-159CF9355B42}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-ld.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Libraries clean\accelerometer.c|Libraries clean\ad_conv.c|Libraries clean\init_port.c|Libraries clean\led.c|Libraries clean\motors.c|Libraries clean\prox.c|main.c|Other Libraries\utility.c|love.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-o"$(BINDIR_)$(TARGETBASE).$(TARGETSUFFIX)" -Map="$(BINDIR_)$(TARGETBASE).map" --report-mem
+TraceCmdString=
+DebugOptions=--defsym=__MPLAB_DEBUG=1
+[File015]
+Location=U:\_Robotics\Coursework\ssslc.cof
+Folder=Output
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={433C3D55-811D-409D-A6BF-159CF9355B42}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-ld.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Libraries clean\accelerometer.c|Libraries clean\ad_conv.c|Libraries clean\init_port.c|Libraries clean\led.c|Libraries clean\motors.c|Libraries clean\prox.c|main.c|Other Libraries\utility.c|love.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-o"$(BINDIR_)$(TARGETBASE).$(TARGETSUFFIX)" -Map="$(BINDIR_)$(TARGETBASE).map" --report-mem
+TraceCmdString=
+DebugOptions=--defsym=__MPLAB_DEBUG=1
+[File016]
+Location=U:\_Robotics\Coursework\ssslc.hex
+Folder=Output
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={433C3D55-811D-409D-A6BF-159CF9355B42}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-ld.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|Libraries clean\accelerometer.c|Libraries clean\ad_conv.c|Libraries clean\init_port.c|Libraries clean\led.c|Libraries clean\motors.c|Libraries clean\prox.c|main.c|Other Libraries\utility.c|love.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-o"$(BINDIR_)$(TARGETBASE).$(TARGETSUFFIX)" -Map="$(BINDIR_)$(TARGETBASE).map" --report-mem
+TraceCmdString=
+DebugOptions=--defsym=__MPLAB_DEBUG=1
+[TOOL_LOC_STAMPS]
+tool_loc{DE18EB1A-B46B-486B-B96F-A811A635DFAC}=C:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-as.exe
+tool_loc{069BD372-6CA0-40D4-BF2F-5DC806D05083}=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+tool_loc{433C3D55-811D-409D-A6BF-159CF9355B42}=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-ld.exe
