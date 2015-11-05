@@ -9,6 +9,7 @@
 #include "curious.h"
 #include "love.h"
 
+
 void robot_off(void)
 {
 	InitPort();

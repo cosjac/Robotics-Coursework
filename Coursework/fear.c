@@ -3,6 +3,7 @@
 #include "Libraries Clean/prox.h"
 #include "Libraries Clean/led.h"
 #include "library/motor_led/e_led.h"
+#include "roam.h"
 
 void LedFearFlash(void)
 {
@@ -15,13 +16,5 @@ void LedFearFlash(void)
 
 void fear(void)
 {
-	//set up robot
-	InitMotors();
-	InitProx();
-	LedClear();
-
-	while (1) {
-
-	}
-
+	roam();
 }
