@@ -116,11 +116,16 @@ int main(void) {
 #ifndef __PO3030K_H__
 #define __PO3030K_H__
 
-#include "e_poxxxx.h"
-
 /*! If you set this at 0, you save about 168 bytes of memory
  * But you loose all advanced camera functions */
 #define PO3030K_FULL 1
+
+#define	ARRAY_WIDTH			640		
+#define	ARRAY_HEIGHT		480
+
+#define GREY_SCALE_MODE		0
+#define RGB_565_MODE		1
+#define YUV_MODE			2
 
 #define MODE_VGA 			0x44
 #define MODE_QVGA 			0x11
@@ -145,6 +150,12 @@ int  e_po3030k_get_bytes_per_pixel(int color_mode);
 void e_po3030k_init_cam(void);
 
 void e_po3030k_write_cam_registers(void);
+
+void e_po3030k_launch_capture(char * buf);
+
+int  e_po3030k_apply_timer_config(int pixel_row, int pixel_col, int bpp, int pbp, int bbl);
+
+int  e_po3030k_is_img_ready(void);
 
 int  e_po3030k_set_color_mode(int mode);
 

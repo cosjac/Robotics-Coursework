@@ -13,6 +13,7 @@ SOLK=<src>|e_calc.c|e_registers.c|e_timers.c||<obj>||<lib>||<lkr>|C:\Program Fil
 SuiteArgsString=build-library
 ToolArgsString=-g -Wall
 TraceCmdString=
+DebugOptions=
 [File001]
 Location=C:\Users\Michael\Desktop\trunk\library\camera\slow_3_timer\e_registers.o
 Folder=Intermediary
@@ -25,6 +26,7 @@ SOLK=<src>|e_calc.c|e_registers.c|e_timers.c||<obj>||<lib>||<lkr>|C:\Program Fil
 SuiteArgsString=build-library
 ToolArgsString=-g -Wall
 TraceCmdString=
+DebugOptions=
 [File002]
 Location=C:\Users\Michael\Desktop\trunk\library\camera\slow_3_timer\e_timers.o
 Folder=Intermediary
@@ -37,6 +39,7 @@ SOLK=<src>|e_calc.c|e_registers.c|e_timers.c||<obj>||<lib>||<lkr>|C:\Program Fil
 SuiteArgsString=build-library
 ToolArgsString=-g -Wall
 TraceCmdString=
+DebugOptions=
 [File003]
 Location=C:\Users\Michael\Desktop\trunk\library\camera\slow_3_timer\cam_slow.a
 Folder=Output
@@ -49,6 +52,7 @@ SOLK=<src>|e_calc.c|e_registers.c|e_timers.c||<obj>||<lib>||<lkr>|C:\Program Fil
 SuiteArgsString=build-library
 ToolArgsString=
 TraceCmdString=
+DebugOptions=
 [TOOL_LOC_STAMPS]
 tool_loc{069BD372-6CA0-40D4-BF2F-5DC806D05083}=C:\Program Files\Microchip\MPLAB C30\bin\pic30-gcc.exe
 tool_loc{159ECAA5-9E6A-480A-B384-7EFD8D3BE1B4}=C:\Program Files\Microchip\MPLAB C30\bin\pic30-ar.exe

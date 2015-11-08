@@ -1,6 +1,7 @@
 [HEADER]
 magic_cookie={66E99B07-E706-4689-9E80-9B2582898A13}
 file_version=1.0
+device=dsPIC30F6014A
 [PATH_INFO]
 BuildDirPolicy=BuildDirIsProjectDir
 dir_src=
@@ -16,6 +17,24 @@ filter_inc=*.h;*.inc
 filter_obj=*.o
 filter_lib=*.a
 filter_lkr=*.gld
+[CAT_SUBFOLDERS]
+subfolder_src=
+subfolder_inc=
+subfolder_obj=
+subfolder_lib=
+subfolder_lkr=
+[FILE_SUBFOLDERS]
+file_000=.
+file_001=.
+file_002=.
+file_003=.
+file_004=.
+[GENERATED_FILES]
+file_000=no
+file_001=no
+file_002=no
+file_003=no
+file_004=no
 [OTHER_FILES]
 file_000=no
 file_001=no
@@ -27,7 +46,7 @@ file_000=e_calc.c
 file_001=e_registers.c
 file_002=e_timers.c
 file_003=e_po3030k.h
-file_004=C:\Program Files\Microchip\MPLAB C30\support\gld\p30f6014A.gld
+file_004=C:\Users\codgb\Desktop\warg\other libs\p30f6014A.gld
 [SUITE_INFO]
 suite_guid={479DDE59-4D56-455E-855E-FFF59A3DB57E}
 suite_state=build-library
@@ -40,3 +59,8 @@ TS{509E5861-1E2A-483B-8B6B-CA8DB7F2DD78}=
 enable=0
 transport=0
 format=0
+[CUSTOM_BUILD]
+Pre-Build=
+Pre-BuildEnabled=1
+Post-Build=
+Post-BuildEnabled=1

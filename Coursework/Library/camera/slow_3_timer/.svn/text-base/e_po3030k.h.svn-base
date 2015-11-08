@@ -1,10 +1,14 @@
 /*! \file
- * \ingroup camera1
- * \brief PO3030k library header (two timers)
+ * \ingroup camera2
+ * \brief PO3030k library header (three timers)
  * \author Philippe Rétornaz
  */
 
-/*! \defgroup camera1 Camera fast two timers
+/*! \defgroup camera2 Camera slow three timers
+ *
+ * \warning This driver version is completly interrupt driven to syncronize with
+ * the camera. This slow down the acquisition a lot. You should use the other
+ * driver's version which syncronize with the camera only at each row.
  * 
  * \section intro_sec Introduction
  *
@@ -14,7 +18,7 @@
  *
  * The architecture is quite simple. The driver keep a array where
  * every known camera register is keept in memory. The configuration function
- * only alter this array. When you call, for example e_po3030k_config_cam(), nothing
+ * only alter this array. When you call, for exemple e_po3030k_config_cam(), nothing
  * is written on the camera, but only in the internal register representation.
  *
  * To effectively write the register, you must call e_po3030k_write_cam_registers().
@@ -32,32 +36,19 @@
  * \section perfsec Performances
  * The maximum framerate ( without doing anything else than acquiring the picture ) vary 
  * with the subsampling and the color mode.
- * Here are some framerates:
- * - Size: 640x480, Subsampling: 16x16, RGB565: 4.3 fps
- * - Size: 16x480, Subsampling: 16x16, RGB565: 4.3 fps
- * - Size: 480x16, Subsampling: 16x16: RGB565: 4.3fps
- * - Size: 64x64, Subsampling: 4x4, RGB565: 4.3 fps
- * - Size: 32x32, Subsampling: 2x2, RGB565: 2.6 fps
- * - Size: 16x16, No Subsampling, RGB565: 1.3 fps
- * - Size: 640x480, Subsampling: 16x16, GREYSCALE: 8.6 fps
- * - Size: 16x480, Subsampling: 16x16, GREYSCALE: 8.6 fps
- * - Size: 480x16, Subsampling: 16x16, GREYSCALE: 8.6 fps
- * - Size: 64x64, Subsampling: 4x4, GREYSCALE: 8.6 fps
- * - Size: 32x32, Subsampling: 2x2, GREYSCALE: 4.3 fps
- * - Size: 16x16, No subsampling, GREYSCALE: 2.2 fps
+ * Here are some framerates. Please use the other driver to have better performances :
+ * - Size: 640x480, Subsampling: 16x16, RGB565: 0.6 fps
+ * - Size: 64x64, Subsampling: 4x4, RGB565: 0.6 fps
+ * - Size: 32x32, Subsampling: 2x2, RGB565: 0.3 fps
+ * - Size: 16x16, No Subsampling, RGB565: 0.2 fps
+ * - Size: 640x480, Subsampling: 16x16, GREYSCALE: 1.1 fps
+ * - Size: 64x64, Subsampling: 4x4, GREYSCALE: 1.1 fps
+ * - Size: 32x32, Subsampling: 2x2, GREYSCALE: 0.6 fps
+ * - Size: 16x16, No subsampling, GREYSCALE: 0.3 fps
  *
- * \section IntegrDet Important note
- * This driver is extremly sensible to interrupt latency, thus it use interrupt priority to 
- * be sure that the latencies are kepts low. The Timer4 and Timer5 interrupt priority are set at 
- * level 6 and interrupt nesting is enabled. 
- * The Timer4 interrupt use the "push.s" and "pop.s" instructions. You should not have any 
- * code using thoses two instructions when you use the camera. This include the _ISRFAST C 
- * macro. If you use them, some random and really hard to debug behavior will happen.
- * You have been warned ! 
- * 
- * \section example_sect Examples
+ * \section exemple_sect Exemples
  *
- * \subsection ex1_sect Basic example
+ * \subsection ex1_sect Basic exemple
  *
  * \code
 #include "e_po3030k.h"
@@ -80,11 +71,11 @@ int main(void) {
 }
 \endcode
 
- * This example tell de driver to aquire 160x160 pixel picture from the camera
+ * This exemple tell de driver to aquire 160x160 pixel picture from the camera
  * 4x subsampling, thus resulting with a 40x40 pixel. The buffer as a size of
  * 40*40*2 because RGB565 is a two bytes per pixel data format.
  *
- * \subsection ex2_sect More advanced example
+ * \subsection ex2_sect More advanced exemple
 \code
 #include "e_po3030k.h"
 
@@ -94,7 +85,7 @@ int main(void) {
         e_po3030k_config_cam((ARRAY_WIDTH - 320)/2,(ARRAY_HEIGHT - 32)/2,
                         320,8,2,4,GREY_SCALE_MODE);
         e_po3030k_set_mirror(1,1);
-        e_po3030ke_set_ref_exposure(100);
+        e_po3030k_set_ref_exposure(100);
 
         e_po3030k_write_cam_registers();
 
@@ -106,9 +97,9 @@ int main(void) {
         return 0;
 }
 \endcode
- * This example configure the camera to aquire a 320x8 pixel picture, but subsampled
+ * This exemple configure the camera to aquire a 320x8 pixel picture, but subsampled
  * 2x in width and 4x in heigth, thus resulting in a 160*2 linear
- * greyscale picture. It "emulate" a linear camera. This example tell the camera to
+ * greyscale picture. It "emulate" a linear camera. This exemple tell the camera to
  * to enable the vertical and horizontal mirror, and to set the average exposure to
  * 100.
  */
@@ -116,11 +107,16 @@ int main(void) {
 #ifndef __PO3030K_H__
 #define __PO3030K_H__
 
-#include "e_poxxxx.h"
-
 /*! If you set this at 0, you save about 168 bytes of memory
  * But you loose all advanced camera functions */
 #define PO3030K_FULL 1
+
+#define	ARRAY_WIDTH			640		
+#define	ARRAY_HEIGHT		480
+
+#define GREY_SCALE_MODE		0
+#define RGB_565_MODE		1
+#define YUV_MODE			2
 
 #define MODE_VGA 			0x44
 #define MODE_QVGA 			0x11
@@ -135,6 +131,8 @@ int main(void) {
 #define SPEED_64			0x60
 #define SPEED_128			0x70
 
+
+
 int e_po3030k_config_cam(unsigned int sensor_x1,unsigned int sensor_y1,
 			 unsigned int sensor_width,unsigned int sensor_height,
 			 unsigned int zoom_fact_width,unsigned int zoom_fact_height,  
@@ -145,6 +143,12 @@ int  e_po3030k_get_bytes_per_pixel(int color_mode);
 void e_po3030k_init_cam(void);
 
 void e_po3030k_write_cam_registers(void);
+
+void e_po3030k_launch_capture(char * buf);
+
+void  e_po3030k_apply_timer_config(int pixel_row, int pixel_col, int bpp, int pbp, int bbl);
+
+int  e_po3030k_is_img_ready(void);
 
 int  e_po3030k_set_color_mode(int mode);
 
@@ -158,8 +162,6 @@ int  e_po3030k_set_wy(unsigned int start, unsigned int stop);
 
 int  e_po3030k_set_vsync(unsigned int start,unsigned int stop,unsigned int col);
 
-void e_po3030k_set_mirror(int vertical, int horizontal);
-
 #if PO3030K_FULL
 
 void e_po3030k_read_cam_registers(void);
@@ -171,6 +173,8 @@ int  e_po3030k_get_register(unsigned char adr,unsigned char * value);
 void e_po3030k_set_bias(unsigned char pixbias, unsigned char opbias);
 
 void e_po3030k_set_integr_time(unsigned long time);
+
+void e_po3030k_set_mirror(int vertical, int horizontal);
 
 void e_po3030k_set_adc_offset(unsigned char offset);
 
