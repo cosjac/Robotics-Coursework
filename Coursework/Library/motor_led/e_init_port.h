@@ -23,8 +23,8 @@ EPFL Ecole polytechnique federale de Lausanne http://www.epfl.ch
  * \author Code: Michael Bonani, Francesco Mondada, Davis Dadie \n Doc: Jonathan Besuchet
  */
 
-#ifndef _INIT_PORT
-#define _INIT_PORT
+#ifndef _E_INIT_PORT
+#define _E_INIT_PORT
 
 /* functions */
 void e_init_port(void);

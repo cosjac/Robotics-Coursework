@@ -13,6 +13,7 @@ SOLK=<src>|e_const_sound.s|e_init_codec_slave.s|e_init_dci_master.s|e_isr_dci.s|
 SuiteArgsString=build-library
 ToolArgsString=-g
 TraceCmdString=
+DebugOptions=
 [File001]
 Location=C:\Users\Michael\Desktop\trunk\library\codec\e_init_codec_slave.o
 Folder=Intermediary
@@ -25,6 +26,7 @@ SOLK=<src>|e_const_sound.s|e_init_codec_slave.s|e_init_dci_master.s|e_isr_dci.s|
 SuiteArgsString=build-library
 ToolArgsString=-g
 TraceCmdString=
+DebugOptions=
 [File002]
 Location=C:\Users\Michael\Desktop\trunk\library\codec\e_init_dci_master.o
 Folder=Intermediary
@@ -37,6 +39,7 @@ SOLK=<src>|e_const_sound.s|e_init_codec_slave.s|e_init_dci_master.s|e_isr_dci.s|
 SuiteArgsString=build-library
 ToolArgsString=-g
 TraceCmdString=
+DebugOptions=
 [File003]
 Location=C:\Users\Michael\Desktop\trunk\library\codec\e_isr_dci.o
 Folder=Intermediary
@@ -49,6 +52,7 @@ SOLK=<src>|e_const_sound.s|e_init_codec_slave.s|e_init_dci_master.s|e_isr_dci.s|
 SuiteArgsString=build-library
 ToolArgsString=-g
 TraceCmdString=
+DebugOptions=
 [File004]
 Location=C:\Users\Michael\Desktop\trunk\library\codec\e_sound.o
 Folder=Intermediary
@@ -61,6 +65,7 @@ SOLK=<src>|e_const_sound.s|e_init_codec_slave.s|e_init_dci_master.s|e_isr_dci.s|
 SuiteArgsString=build-library
 ToolArgsString=-g -Wall
 TraceCmdString=
+DebugOptions=
 [File005]
 Location=C:\Users\Michael\Desktop\trunk\library\codec\e_sub_dci_kickoff.o
 Folder=Intermediary
@@ -73,6 +78,7 @@ SOLK=<src>|e_const_sound.s|e_init_codec_slave.s|e_init_dci_master.s|e_isr_dci.s|
 SuiteArgsString=build-library
 ToolArgsString=-g
 TraceCmdString=
+DebugOptions=
 [File006]
 Location=C:\Users\Michael\Desktop\trunk\library\codec\sound.a
 Folder=Output
@@ -85,6 +91,7 @@ SOLK=<src>|e_const_sound.s|e_init_codec_slave.s|e_init_dci_master.s|e_isr_dci.s|
 SuiteArgsString=build-library
 ToolArgsString=
 TraceCmdString=
+DebugOptions=
 [TOOL_LOC_STAMPS]
 tool_loc{DE18EB1A-B46B-486B-B96F-A811A635DFAC}=C:\Program Files\Microchip\MPLAB C30\bin\pic30-as.exe
 tool_loc{069BD372-6CA0-40D4-BF2F-5DC806D05083}=C:\Program Files\Microchip\MPLAB C30\bin\pic30-gcc.exe

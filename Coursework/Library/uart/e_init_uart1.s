@@ -15,7 +15,6 @@ History:
 
 .include "e_epuck_ports.inc"
 
-
 .equiv	BAUDRATE, 115000 
 
 .extern _U1RXRcvCnt

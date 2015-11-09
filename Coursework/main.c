@@ -1,7 +1,10 @@
-#include "Libraries Clean\init_port.h"
-#include "Libraries Clean\motors.h"
-#include "Libraries Clean\prox.h"
-#include "Libraries Clean\led.h"
+#include "library/motor_led/e_init_port.h"
+#include "library/motor_led/advance_one_timer/e_motors.h"
+#include "library/motor_led/advance_one_timer/e_led.h"
+#include "library/motor_led/advance_one_timer/e_agenda.h"
+#include "library/uart/e_uart_char.h"
+#include "library/a_d/advance_ad_scan/e_ad_conv.h"
+#include "library/a_d/advance_ad_scan/e_prox.h"
 #include "Other Libraries\utility.h"
 
 #include "aggressive.h"
@@ -12,49 +15,15 @@
 
 void robot_off(void)
 {
-	InitPort();
-	InitMotors();
-	InitProx();
-	while (1) {
-		LedClear();
-		wait(10000);
-	}
-}
+	e_init_port();
+	e_init_motors();
+	e_init_ad_scan(ALL_ADC);
+	
+	e_calibrate_ir();
 
-void test(void)
-{
-	InitPort();
-	InitMotors();
-	InitProx();
-	long ambient = 0;
-	long i;
-	int left = 50;
-	int right = 50;
+	e_start_agendas_processing();
 	while (1) {
-		LedClear();
-		for (i=0;i<7;i++) {
-			ambient = GetAmbientLight(i);
-			if (ambient>3950) {
-				switch (i) {
-                       //left side sensors
-                    case 0: left += 100;right += 50;break;
-                    case 1: left += 100;right -= 100;break;
-                    case 2: left += 100;right -= 100;break;
-                       //back sensors
-                   	case 3: left += 200; right -= 200;break;
-                       //case 4:left-=300;right+=40;break;
-                   	case 4:left += 200;right -= 200;break;
-                       //right side sensors
-                    case 5:left -= 100;right += 100;break;
-                    case 6:left -= 50;right += 50;break;
-                    case 7:left += 100;right += 50;break;
-                   }	
-				SetLed(i,1);
-			}	
-			else SetLed(i,0);
-		}
-		SetSpeedRight(right);
-		SetSpeedLeft(left);
+		e_led_clear();
 		wait(10000);
 	}
 }
@@ -68,7 +37,7 @@ int main(void)
 		case 2:fear();break;
 		case 3:curious();break;
 		case 4:love();break;
-		case 5:test();break;
+		case 5:robot_off();break;
 		default:/*own high level behaviour*/break;
 	}
 }
