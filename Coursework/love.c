@@ -22,6 +22,8 @@ void love(void)
 	
 	e_calibrate_ir();
 
+	e_set_speed_left(500);
+	e_set_speed_right(500);
 	e_start_agendas_processing();
 	while(1);
 
