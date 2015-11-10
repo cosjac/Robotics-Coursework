@@ -24,8 +24,9 @@ void love(void)
 
 	e_set_speed_left(500);
 	e_set_speed_right(500);
+	//e_set_led(8, 0);
 	e_start_agendas_processing();
-	while(1);
+
 
 	//Search for pink objects. When found turn on LED
 
@@ -34,21 +35,34 @@ void love(void)
 
 	int proxy0;
 	int proxy1;
+	while(1)
 	{
 		long i;
 		proxy0 = e_get_prox(0);
 		proxy1 = e_get_prox(1);
 	
-		if(proxy0 < 1000)
-		{
-			e_set_led(0,1);
-		}
-
-		if(proxy1 < 1000)
-		{
-			e_set_led(1,1);
-		}
+		if(proxy0 < 30)
+ 			LED0 = 0;
+ 		else
+			LED0 = 1;
 
 		for(i=0; i<100000; i++) { asm("nop"); }
 	}
+/*
+	while(1)
+	{
+		long i;
+		proxy0 = e_get_prox(0);
+		//proxy1 = e_get_prox(1);
+	
+		while(proxy0 < 100)
+		{
+ 			e_set_led(8, 1);
+		}
+
+ 		
+
+		for(i=0; i<100000; i++) { asm("nop"); }
+	}*/
+	
 }
