@@ -27,12 +27,11 @@ void love(void)
 	//e_set_led(8, 0);
 	e_start_agendas_processing();
 
+	//(1) Get robot to follow (Pink)
+	//run_breitenberg_follower();
 
-	//Search for pink objects. When found turn on LED
-
-	//A little exemple which turn the LED0 when an obstacle is detected
+	//(2) Turn on the LED0 when an obstacle is detected
  	//by the proximity sensor number 0. 
-
 	int proxy0;
 	int proxy1;
 	while(1)
@@ -41,13 +40,33 @@ void love(void)
 		proxy0 = e_get_prox(0);
 		proxy1 = e_get_prox(1);
 	
-		if(proxy0 < 30)
+		if(proxy0 < 50)
  			LED0 = 0;
  		else
+			e_blink_led();
 			LED0 = 1;
 
 		for(i=0; i<100000; i++) { asm("nop"); }
 	}
+
+	//(3) Given the object is in close proximity flash all LED's
+	while(1)
+	{
+		long i;
+		proxy0 = e_get_prox(0);
+		while(proxy0 < 300)
+		{
+			e_start_led_blinking(200);
+		}
+		e_stop_led_blinking();
+
+		for(i=0; i<100000; i++) { asm("nop"); }
+	}
+
+	//4) When the object is in close proximity affectionately bump
+	//into the object making a kissing noise whilst doing so
+
+
 /*
 	while(1)
 	{
