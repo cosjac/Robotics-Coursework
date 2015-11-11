@@ -1,7 +1,6 @@
-zomble
+cosjac
 ======
 
-e-puck basic robot behaviours + a more advanced zombie-like behaviour.
 The e-puck is a mobile robot, more info at [www.epuck.org](http://www.epuck.org/)
 
 A Robotics group project for Part C Computer Science at Loughborough University.
@@ -18,16 +17,15 @@ libraries:
 switches:
 ---------
 
-0 - Aggressive
+0 - Robot Off
 
-1 - Fear
+1 - Aggressive
 
-2 - Curious
+2 - Fear
 
-3 - Love
+3 - Curious
 
-4 - Maze
+4 - Love
 
-5 - Test
+5 - Robot Off
 
-Anything else - Zomble
