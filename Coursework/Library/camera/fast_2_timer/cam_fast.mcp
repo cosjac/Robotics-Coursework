@@ -58,7 +58,7 @@ file_003=e_timers.c
 file_004=..\..\motor_led\e_init_port.c
 file_005=e_po3030k.h
 file_006=..\..\motor_led\e_init_port.h
-file_007=C:\Users\codgb\Desktop\warg\other libs\p30f6014A.gld
+file_007=C:\Program Files\Microchip\MPLAB C30\support\gld\p30f6014A.gld
 [SUITE_INFO]
 suite_guid={479DDE59-4D56-455E-855E-FFF59A3DB57E}
 suite_state=build-library

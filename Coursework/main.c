@@ -15,13 +15,6 @@
 
 void robot_off(void)
 {
-	e_init_port();
-	e_init_motors();
-	e_init_ad_scan(ALL_ADC);
-	
-	e_calibrate_ir();
-
-	e_start_agendas_processing();
 	while (1) {
 		e_led_clear();
 		wait(10000);
@@ -30,6 +23,11 @@ void robot_off(void)
 
 int main(void)
 {
+	e_init_port();
+	e_init_motors();
+	e_init_ad_scan(ALL_ADC);
+	e_calibrate_ir();
+	
 	int selector=getselector();
 	switch (selector) {
 		case 0:robot_off();break;

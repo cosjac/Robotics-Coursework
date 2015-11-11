@@ -30,16 +30,14 @@ void fear(void)
 	long i;
 	int left, right;
 
-	e_init_port();
-	e_init_motors();
-	e_init_ad_scan(ALL_ADC);
 //	e_init_sound();
 	
-	e_calibrate_ir();
+
+	e_start_agendas_processing();
 
 	e_set_speed_left(500);
 	e_set_speed_right(500);
-	e_start_agendas_processing();
+
 
 	while(1) {
 		e_set_led(1,1);	

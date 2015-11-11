@@ -85,16 +85,16 @@ section                    address   length (PC units)   length (bytes) (dec)
 .reset                           0                 0x4             0x6  (6)
 .ivt                           0x4                0x7c            0xba  (186)
 .aivt                         0x84                0x7c            0xba  (186)
-.text                        0x100              0x252a          0x37bf  (14271)
-.sound_samples              0x262a              0x94c8          0xdf2c  (57132)
-.dinit                      0xbaf2                0x78            0xb4  (180)
-.isr                        0xbb6a                 0x2             0x3  (3)
+.text                        0x100              0x3dd6          0x5cc1  (23745)
+.sound_samples              0x3ed6              0x94c8          0xdf2c  (57132)
+.dinit                      0xd39e               0x126           0x1b9  (441)
+.isr                        0xd4c4                 0x2             0x3  (3)
 __FOSC                    0xf80000                 0x2             0x3  (3)
 __FWDT                    0xf80002                 0x2             0x3  (3)
 __FBORPOR                 0xf80004                 0x2             0x3  (3)
 __FGS                     0xf8000a                 0x2             0x3  (3)
 
-                     Total program memory used (bytes):        0x11928  (71976) 48%
+                     Total program memory used (bytes):        0x13f2f  (81711) 55%
 
 
 Data Memory Usage
@@ -102,33 +102,38 @@ Data Memory Usage
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
 .nbss                        0x800                   0           0x752  (1874)
-.nbss                        0xf52                   0            0x44  (68)
-.nbss                        0xf96                   0            0x18  (24)
-.nbss                        0xfae                   0            0x10  (16)
-.nbss                        0xfbe                   0            0x10  (16)
-.ndata                       0xfce                   0             0x8  (8)
-.nbss                        0xfd6                   0             0x6  (6)
-.ndata                       0xfdc                   0             0x6  (6)
-.ndata                       0xfe2                   0             0x6  (6)
-.ndata                       0xfe8                   0             0x4  (4)
-.ndata                       0xfec                   0             0x2  (2)
-.nbss                        0xfee                   0             0x2  (2)
-.ndata                       0xff0                   0             0x2  (2)
-.nbss                        0xff2                   0             0x2  (2)
-.nbss                        0xff4                   0             0x2  (2)
-.nbss                        0xff6                   0             0x2  (2)
+.nbss                        0xf52                   0           0x154  (340)
+.nbss                       0x10a6                   0           0x144  (324)
+.ndata                      0x11ea                   0            0xd8  (216)
+.nbss                       0x12c2                   0            0x44  (68)
+.nbss                       0x1306                   0            0x18  (24)
+.nbss                       0x131e                   0            0x10  (16)
+.nbss                       0x132e                   0            0x10  (16)
+.ndata                      0x133e                   0             0x8  (8)
+.nbss                       0x1346                   0             0x8  (8)
+.nbss                       0x134e                   0             0x6  (6)
+.ndata                      0x1354                   0             0x6  (6)
+.ndata                      0x135a                   0             0x6  (6)
+.ndata                      0x1360                   0             0x4  (4)
+.ndata                      0x1364                   0             0x2  (2)
+.nbss                       0x1366                   0             0x2  (2)
+.ndata                      0x1368                   0             0x2  (2)
+.nbss                       0x136a                   0             0x2  (2)
+.nbss                       0x136c                   0             0x2  (2)
+.nbss                       0x136e                   0             0x2  (2)
+.nbss                       0x1370                   0             0x2  (2)
 
-                        Total data memory used (bytes):          0x7f8  (2040) 25%
+                        Total data memory used (bytes):          0xb72  (2930) 36%
 
 
 Dynamic Memory Usage
 
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
-heap                         0xff8                               0x200  (512)
-stack                       0x11f8                              0x15a8  (5544)
+heap                        0x1372                               0x200  (512)
+stack                       0x1572                              0x122e  (4654)
 
-                        Maximum dynamic memory (bytes):         0x17a8  (6056)
+                        Maximum dynamic memory (bytes):         0x142e  (5166)
 
 
 External Symbols in Data Memory (by address):
@@ -137,269 +142,461 @@ External Symbols in Data Memory (by address):
                     0x0e06                  _e_acc_scan
                     0x0f32                  _e_ambient_ir
                     0x0f42                  _e_ambient_and_reflected_ir
-                    0x0fce                  _e_stop_flag
-                    0x0fd0                  _e_dci_unavailable
-                    0x0fd2                  e_samples_count
-                    0x0fd4                  e_actual_page
-                    0x0fdc                  __Size_block
-                    0x0fde                  __Aldata
-                    0x0fe2                  __Atcount
-                    0x0fe4                  __Atfuns
-                    0x0fe8                  _e_last_mic_scan_id
-                    0x0fea                  _e_last_acc_scan_id
-                    0x0ff2                  e_tone_ptr
-                    0x0ff6                  ___curbrk
+                    0x0f54                  __poxxxx_buffer
+                    0x0f56                  __poxxxx_img_ready
+                    0x0f58                  __poxxxx_current_row
+                    0x0f5a                  __poxxxx_row
+                    0x0f5c                  __poxxxx_line_conf
+                    0x10a6                  _gbuffer
+                    0x1146                  _gnumbuffer
+                    0x11e6                  _isGreenVisable
+                    0x133e                  _e_stop_flag
+                    0x1340                  _e_dci_unavailable
+                    0x1342                  e_samples_count
+                    0x1344                  e_actual_page
+                    0x1346                  _e_i2c_mode
+                    0x1348                  _e_interrupts
+                    0x1354                  __Size_block
+                    0x1356                  __Aldata
+                    0x135a                  __Atcount
+                    0x135c                  __Atfuns
+                    0x1360                  _e_last_mic_scan_id
+                    0x1362                  _e_last_acc_scan_id
+                    0x136a                  e_tone_ptr
+                    0x1370                  ___curbrk
 
 External Symbols in Data Memory (by name):
 
-                    0x0fde                  __Aldata
-                    0x0fe2                  __Atcount
-                    0x0fe4                  __Atfuns
-                    0x0fdc                  __Size_block
-                    0x0ff6                  ___curbrk
+                    0x1356                  __Aldata
+                    0x135a                  __Atcount
+                    0x135c                  __Atfuns
+                    0x1354                  __Size_block
+                    0x1370                  ___curbrk
+                    0x0f54                  __poxxxx_buffer
+                    0x0f58                  __poxxxx_current_row
+                    0x0f56                  __poxxxx_img_ready
+                    0x0f5c                  __poxxxx_line_conf
+                    0x0f5a                  __poxxxx_row
                     0x0e06                  _e_acc_scan
                     0x0f42                  _e_ambient_and_reflected_ir
                     0x0f32                  _e_ambient_ir
-                    0x0fd0                  _e_dci_unavailable
-                    0x0fea                  _e_last_acc_scan_id
-                    0x0fe8                  _e_last_mic_scan_id
+                    0x1340                  _e_dci_unavailable
+                    0x1346                  _e_i2c_mode
+                    0x1348                  _e_interrupts
+                    0x1362                  _e_last_acc_scan_id
+                    0x1360                  _e_last_mic_scan_id
                     0x0806                  _e_mic_scan
-                    0x0fce                  _e_stop_flag
-                    0x0fd4                  e_actual_page
-                    0x0fd2                  e_samples_count
-                    0x0ff2                  e_tone_ptr
+                    0x133e                  _e_stop_flag
+                    0x10a6                  _gbuffer
+                    0x1146                  _gnumbuffer
+                    0x11e6                  _isGreenVisable
+                    0x1344                  e_actual_page
+                    0x1342                  e_samples_count
+                    0x136a                  e_tone_ptr
 
 External Symbols in Program Memory (by address):
 
-                  0x00010c                  __resetPRI
-                  0x00018c                  _malloc
-                  0x00022e                  _exit
-                  0x000252                  _free
-                  0x0002b8                  __Getmem
-                  0x000320                  ___divsi3
-                  0x00033e                  ___floatsisf
-                  0x000394                  _sqrtf
-                  0x0003fe                  _atan2f
-                  0x000438                  ___mulsf3
-                  0x0004a0                  ___subsf3
-                  0x0004a2                  ___addsf3
-                  0x00055c                  ___eqsf2
-                  0x00055c                  ___ltsf2
-                  0x00055c                  ___lesf2
-                  0x000560                  ___fixsfsi
-                  0x0005a2                  ___gesf2
-                  0x0005a2                  ___gtsf2
-                  0x0005a6                  ___nesf2
-                  0x0005aa                  ___divsf3
-                  0x00062e                  ___udivsi3
-                  0x00064e                  __fpack
-                  0x00069a                  __funpack
-                  0x0006c4                  __fPropagateNaN
-                  0x0006d6                  __fbopExit
-                  0x0006de                  __fbopReturnNaN
-                  0x0006e4                  __funpack2
-                  0x0006f4                  _atanf
-                  0x0007be                  __fcompare
-                  0x0007f4                  _aggressive
-                  0x000804                  _curious
-                  0x000814                  _LedFearFlash
-                  0x000846                  _fear
-                  0x0009de                  _robot_off
-                  0x0009f6                  _main
-                  0x000a48                  _wait
-                  0x000a6a                  _getselector
-                  0x000aa2                  _love
-                  0x000ab2                  _roam
-                  0x000ab8                  _e_init_port
-                  0x000b42                  _e_get_acc
-                  0x000bb6                  _e_get_acc_filtered
-                  0x000c36                  _calculate_acc_raw
-                  0x000c66                  _calculate_acc_spherical
-                  0x000d52                  _e_acc_calibr
-                  0x000d70                  _e_read_acc_spheric
-                  0x000dae                  _e_read_inclination
-                  0x000dba                  _e_read_orientation
-                  0x000dc6                  _e_read_acc
-                  0x000dd2                  _e_read_acc_xyz
-                  0x000df6                  _e_read_acc_x
-                  0x000e00                  _e_read_acc_y
-                  0x000e0a                  _e_read_acc_z
-                  0x000e14                  _e_display_angle
-                  0x00111c                  _e_init_ad_scan
-                  0x0011ec                  __ADCInterrupt
-                  0x00152c                  _e_ad_is_acquisition_completed
-                  0x001536                  _e_ad_is_array_filled
-                  0x001540                  _e_ad_scan_on
-                  0x001548                  _e_ad_scan_off
-                  0x001550                  _e_calibrate_ir
-                  0x001626                  _e_get_prox
-                  0x001654                  _e_get_calibrated_prox
-                  0x00169a                  _e_get_ambient_light
-                  0x0016bc                  _e_start_agendas_processing
-                  0x0016de                  _e_end_agendas_processing
-                  0x0016e6                  _e_activate_agenda
-                  0x001746                  _e_destroy_agenda
-                  0x001796                  _e_set_agenda_cycle
-                  0x0017cc                  _e_reset_agenda
-                  0x001800                  _e_pause_agenda
-                  0x001834                  _e_restart_agenda
-                  0x001868                  __T2Interrupt
-                  0x0018d2                  _e_set_led
-                  0x001c28                  _e_led_clear
-                  0x001c3e                  _e_set_body_led
-                  0x001c82                  _e_set_front_led
-                  0x001cc2                  _e_blink_led
-                  0x001dd4                  _e_blink_led0
-                  0x001e00                  _e_blink_led1
-                  0x001e26                  _e_blink_led2
-                  0x001e48                  _e_blink_led3
-                  0x001e70                  _e_blink_led4
-                  0x001e94                  _e_blink_led5
-                  0x001ebe                  _e_blink_led6
-                  0x001eea                  _e_blink_led7
-                  0x001f10                  _e_start_led_blinking
-                  0x001f1e                  _e_stop_led_blinking
-                  0x001f28                  _e_set_blinking_cycle
-                  0x001f3a                  _snake_led
-                  0x001f92                  _flow_led
-                  0x002010                  _k2000_led
-                  0x002090                  _right_led
-                  0x0020f6                  _left_led
-                  0x00215c                  _run_left_motor
-                  0x002240                  _run_right_motor
-                  0x002324                  _e_init_motors
-                  0x002336                  _e_set_speed_left
-                  0x0023b0                  _e_set_speed_right
-                  0x00242a                  _e_set_speed
-                  0x00246c                  _e_get_steps_left
-                  0x002474                  _e_set_steps_left
-                  0x002480                  _e_get_steps_right
-                  0x002488                  _e_set_steps_right
-                  0x002494                  _e_init_sound
-                  0x0024ae                  _e_play_sound
-                  0x0024c2                  _e_close_sound
-                  0x0024ca                  _e_init_codec_slave
-                  0x002576                  _e_init_dci_master
-                  0x0025b4                  _e_sub_dci_kickoff
-                  0x00262a                  e_sound_sample
-                  0x00bb6a                  __DefaultInterrupt
+                  0x000110                  __resetPRI
+                  0x000190                  _malloc
+                  0x000232                  _exit
+                  0x000256                  _free
+                  0x0002bc                  __Getmem
+                  0x000324                  ___divsi3
+                  0x000342                  ___floatsisf
+                  0x000398                  _sqrtf
+                  0x000402                  _atan2f
+                  0x00043c                  ___mulsf3
+                  0x0004a4                  ___subsf3
+                  0x0004a6                  ___addsf3
+                  0x000560                  ___eqsf2
+                  0x000560                  ___lesf2
+                  0x000560                  ___ltsf2
+                  0x000564                  ___fixsfsi
+                  0x0005a6                  ___gtsf2
+                  0x0005a6                  ___gesf2
+                  0x0005aa                  ___nesf2
+                  0x0005ae                  ___divsf3
+                  0x000632                  ___udivsi3
+                  0x000652                  __fpack
+                  0x00069e                  __funpack
+                  0x0006c8                  __fPropagateNaN
+                  0x0006da                  __fbopExit
+                  0x0006e2                  __fbopReturnNaN
+                  0x0006e8                  __funpack2
+                  0x0006f8                  _atanf
+                  0x0007c2                  __fcompare
+                  0x0007f8                  _aggressive
+                  0x000808                  _takeImage
+                  0x000818                  _processImage
+                  0x0008d2                  _gturnDirection
+                  0x000924                  _gturn
+                  0x000942                  _forward
+                  0x000950                  _setUpCamera
+                  0x000970                  _greenIsInMiddle
+                  0x00098a                  _curious
+                  0x0009de                  _LedFearFlash
+                  0x000a10                  _fear
+                  0x000b9e                  _robot_off
+                  0x000baa                  _main
+                  0x000c06                  _wait
+                  0x000c28                  _getselector
+                  0x000c60                  _love
+                  0x000c78                  _roam
+                  0x000c7e                  _e_init_port
+                  0x000d08                  _e_get_acc
+                  0x000d7c                  _e_get_acc_filtered
+                  0x000dfc                  _calculate_acc_raw
+                  0x000e2c                  _calculate_acc_spherical
+                  0x000f18                  _e_acc_calibr
+                  0x000f36                  _e_read_acc_spheric
+                  0x000f74                  _e_read_inclination
+                  0x000f80                  _e_read_orientation
+                  0x000f8c                  _e_read_acc
+                  0x000f98                  _e_read_acc_xyz
+                  0x000fbc                  _e_read_acc_x
+                  0x000fc6                  _e_read_acc_y
+                  0x000fd0                  _e_read_acc_z
+                  0x000fda                  _e_display_angle
+                  0x0012e2                  _e_init_ad_scan
+                  0x0013b2                  __ADCInterrupt
+                  0x0016f2                  _e_ad_is_acquisition_completed
+                  0x0016fc                  _e_ad_is_array_filled
+                  0x001706                  _e_ad_scan_on
+                  0x00170e                  _e_ad_scan_off
+                  0x001716                  _e_calibrate_ir
+                  0x0017ec                  _e_get_prox
+                  0x00181a                  _e_get_calibrated_prox
+                  0x001860                  _e_get_ambient_light
+                  0x001882                  _e_start_agendas_processing
+                  0x0018a4                  _e_end_agendas_processing
+                  0x0018ac                  _e_activate_agenda
+                  0x00190c                  _e_destroy_agenda
+                  0x00195c                  _e_set_agenda_cycle
+                  0x001992                  _e_reset_agenda
+                  0x0019c6                  _e_pause_agenda
+                  0x0019fa                  _e_restart_agenda
+                  0x001a2e                  __T2Interrupt
+                  0x001a98                  _e_set_led
+                  0x001dee                  _e_led_clear
+                  0x001e04                  _e_set_body_led
+                  0x001e48                  _e_set_front_led
+                  0x001e88                  _e_blink_led
+                  0x001f9a                  _e_blink_led0
+                  0x001fc6                  _e_blink_led1
+                  0x001fec                  _e_blink_led2
+                  0x00200e                  _e_blink_led3
+                  0x002036                  _e_blink_led4
+                  0x00205a                  _e_blink_led5
+                  0x002084                  _e_blink_led6
+                  0x0020b0                  _e_blink_led7
+                  0x0020d6                  _e_start_led_blinking
+                  0x0020e4                  _e_stop_led_blinking
+                  0x0020ee                  _e_set_blinking_cycle
+                  0x002100                  _snake_led
+                  0x002158                  _flow_led
+                  0x0021d6                  _k2000_led
+                  0x002256                  _right_led
+                  0x0022bc                  _left_led
+                  0x002322                  _run_left_motor
+                  0x002406                  _run_right_motor
+                  0x0024ea                  _e_init_motors
+                  0x0024fc                  _e_set_speed_left
+                  0x002576                  _e_set_speed_right
+                  0x0025f0                  _e_set_speed
+                  0x002632                  _e_get_steps_left
+                  0x00263a                  _e_set_steps_left
+                  0x002646                  _e_get_steps_right
+                  0x00264e                  _e_set_steps_right
+                  0x00265a                  _e_init_sound
+                  0x002674                  _e_play_sound
+                  0x002688                  _e_close_sound
+                  0x002690                  _e_init_codec_slave
+                  0x00273c                  _e_init_dci_master
+                  0x00277a                  _e_sub_dci_kickoff
+                  0x0027f0                  __T5Interrupt
+                  0x00283a                  _e_poxxxx_launch_capture
+                  0x002852                  _e_poxxxx_apply_timer_config
+                  0x0028f0                  _e_poxxxx_is_img_ready
+                  0x0028f8                  _e_poxxxx_config_cam
+                  0x002950                  _e_poxxxx_set_mirror
+                  0x00297e                  _e_poxxxx_write_cam_registers
+                  0x002990                  _e_poxxxx_init_cam
+                  0x002a00                  __T4Interrupt
+                  0x002a38                  _e_po3030k_write_cam_registers
+                  0x002a6a                  _e_po3030k_read_cam_registers
+                  0x002aa0                  _e_po3030k_set_color_mode
+                  0x002ade                  _e_po3030k_set_sampling_mode
+                  0x002b08                  _e_po3030k_set_speed
+                  0x002b4e                  _e_po3030k_set_wx
+                  0x002ba4                  _e_po3030k_set_wy
+                  0x002bf4                  _e_po3030k_set_vsync
+                  0x002c66                  _e_po3030k_set_mirror
+                  0x002ca2                  _e_po3030k_set_register
+                  0x002ce0                  _e_po3030k_get_register
+                  0x002d20                  _e_po3030k_set_bias
+                  0x002d32                  _e_po3030k_set_color_gain
+                  0x002d68                  _e_po3030k_set_integr_time
+                  0x002d8c                  _e_po3030k_set_adc_offset
+                  0x002d98                  _e_po3030k_set_sepia
+                  0x002db4                  _e_po3030k_set_lens_gain
+                  0x002dcc                  _e_po3030k_set_edge_prop
+                  0x002de2                  _e_po3030k_set_gamma_coef
+                  0x002e2a                  _e_po3030k_write_gamma_coef
+                  0x002e48                  _e_po3030k_sync_register_array
+                  0x002ea8                  _e_po3030k_SetColorMatrix
+                  0x002ed6                  _e_po3030k_set_cb_cr_gain
+                  0x002ee8                  _e_po3030k_set_brigh_contr
+                  0x002efa                  _e_po3030k_set_sepia_tone
+                  0x002f0c                  _e_po3030k_set_ww
+                  0x002f22                  _e_po3030k_set_awb_ae_tol
+                  0x002f40                  _e_po3030k_set_ae_speed
+                  0x002f60                  _e_po3030k_set_exposure
+                  0x002f80                  _e_po3030k_set_ref_exposure
+                  0x002f8c                  _e_po3030k_set_max_min_exp
+                  0x002faa                  _e_po3030k_set_max_min_awb
+                  0x002fd4                  _e_po3030k_set_weight_win
+                  0x00307a                  _e_po3030k_set_awb_ae
+                  0x0030b6                  _e_po3030k_set_flicker_mode
+                  0x0030d4                  _e_po3030k_set_flicker_detection
+                  0x0031ca                  _e_po3030k_set_flicker_man_set
+                  0x003288                  _e_po6030k_set_bank
+                  0x00329c                  _e_po6030k_write_register
+                  0x0032b8                  _e_po6030k_read_register
+                  0x0032d4                  _e_po6030k_set_bayer_clkdiv
+                  0x0032e4                  _e_po6030k_set_pclkdiv
+                  0x003418                  _e_po6030k_set_mode
+                  0x003470                  _e_po6030k_set_wx
+                  0x0034c6                  _e_po6030k_set_wy
+                  0x0034d2                  _e_po6030k_set_vsync
+                  0x003532                  _e_po6030k_set_sketch_mode
+                  0x003590                  _e_po6030k_set_mirror
+                  0x0035ca                  _e_po3030k_config_cam
+                  0x003806                  _e_po3030k_get_bytes_per_pixel
+                  0x00383e                  _e_po6030k_config_cam
+                  0x003ab0                  _e_po6030k_get_bytes_per_pixel
+                  0x003ae8                  _idle_i2c
+                  0x003b18                  _e_i2c_init
+                  0x003b52                  _e_i2c_reset
+                  0x003b9a                  _e_i2c_enable
+                  0x003ba6                  _e_i2c_disable
+                  0x003bb2                  _e_i2c_start
+                  0x003bf6                  _e_i2c_restart
+                  0x003c3a                  _e_i2c_stop
+                  0x003c70                  _e_i2c_ack
+                  0x003cd6                  _e_i2c_nack
+                  0x003d3c                  _e_i2c_read
+                  0x003de8                  _e_i2c_write
+                  0x003e22                  __MI2CInterrupt
+                  0x003e3a                  _e_i2cp_init
+                  0x003e42                  _e_i2cp_enable
+                  0x003e4a                  _e_i2cp_disable
+                  0x003e52                  _e_i2cp_read
+                  0x003e9a                  _e_i2cp_write
+                  0x003ed6                  e_sound_sample
+                  0x00d4c4                  __DefaultInterrupt
                   0xf8000a                  __FGS.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x000814                  _LedFearFlash
-                  0x0011ec                  __ADCInterrupt
-                  0x00bb6a                  __DefaultInterrupt
+                  0x0009de                  _LedFearFlash
+                  0x0013b2                  __ADCInterrupt
+                  0x00d4c4                  __DefaultInterrupt
                   0xf8000a                  __FGS.sec
-                  0x0002b8                  __Getmem
-                  0x001868                  __T2Interrupt
-                  0x0004a2                  ___addsf3
-                  0x0005aa                  ___divsf3
-                  0x000320                  ___divsi3
-                  0x00055c                  ___eqsf2
-                  0x000560                  ___fixsfsi
-                  0x00033e                  ___floatsisf
-                  0x0005a2                  ___gesf2
-                  0x0005a2                  ___gtsf2
-                  0x00055c                  ___lesf2
-                  0x00055c                  ___ltsf2
-                  0x000438                  ___mulsf3
-                  0x0005a6                  ___nesf2
-                  0x0004a0                  ___subsf3
-                  0x00062e                  ___udivsi3
-                  0x0006c4                  __fPropagateNaN
-                  0x0006d6                  __fbopExit
-                  0x0006de                  __fbopReturnNaN
-                  0x0007be                  __fcompare
-                  0x00064e                  __fpack
-                  0x00069a                  __funpack
-                  0x0006e4                  __funpack2
-                  0x00010c                  __resetPRI
-                  0x0007f4                  _aggressive
-                  0x0003fe                  _atan2f
-                  0x0006f4                  _atanf
-                  0x000c36                  _calculate_acc_raw
-                  0x000c66                  _calculate_acc_spherical
-                  0x000804                  _curious
-                  0x000d52                  _e_acc_calibr
-                  0x0016e6                  _e_activate_agenda
-                  0x00152c                  _e_ad_is_acquisition_completed
-                  0x001536                  _e_ad_is_array_filled
-                  0x001548                  _e_ad_scan_off
-                  0x001540                  _e_ad_scan_on
-                  0x001cc2                  _e_blink_led
-                  0x001dd4                  _e_blink_led0
-                  0x001e00                  _e_blink_led1
-                  0x001e26                  _e_blink_led2
-                  0x001e48                  _e_blink_led3
-                  0x001e70                  _e_blink_led4
-                  0x001e94                  _e_blink_led5
-                  0x001ebe                  _e_blink_led6
-                  0x001eea                  _e_blink_led7
-                  0x001550                  _e_calibrate_ir
-                  0x0024c2                  _e_close_sound
-                  0x001746                  _e_destroy_agenda
-                  0x000e14                  _e_display_angle
-                  0x0016de                  _e_end_agendas_processing
-                  0x000b42                  _e_get_acc
-                  0x000bb6                  _e_get_acc_filtered
-                  0x00169a                  _e_get_ambient_light
-                  0x001654                  _e_get_calibrated_prox
-                  0x001626                  _e_get_prox
-                  0x00246c                  _e_get_steps_left
-                  0x002480                  _e_get_steps_right
-                  0x00111c                  _e_init_ad_scan
-                  0x0024ca                  _e_init_codec_slave
-                  0x002576                  _e_init_dci_master
-                  0x002324                  _e_init_motors
-                  0x000ab8                  _e_init_port
-                  0x002494                  _e_init_sound
-                  0x001c28                  _e_led_clear
-                  0x001800                  _e_pause_agenda
-                  0x0024ae                  _e_play_sound
-                  0x000dc6                  _e_read_acc
-                  0x000d70                  _e_read_acc_spheric
-                  0x000df6                  _e_read_acc_x
-                  0x000dd2                  _e_read_acc_xyz
-                  0x000e00                  _e_read_acc_y
-                  0x000e0a                  _e_read_acc_z
-                  0x000dae                  _e_read_inclination
-                  0x000dba                  _e_read_orientation
-                  0x0017cc                  _e_reset_agenda
-                  0x001834                  _e_restart_agenda
-                  0x001796                  _e_set_agenda_cycle
-                  0x001f28                  _e_set_blinking_cycle
-                  0x001c3e                  _e_set_body_led
-                  0x001c82                  _e_set_front_led
-                  0x0018d2                  _e_set_led
-                  0x00242a                  _e_set_speed
-                  0x002336                  _e_set_speed_left
-                  0x0023b0                  _e_set_speed_right
-                  0x002474                  _e_set_steps_left
-                  0x002488                  _e_set_steps_right
-                  0x0016bc                  _e_start_agendas_processing
-                  0x001f10                  _e_start_led_blinking
-                  0x001f1e                  _e_stop_led_blinking
-                  0x0025b4                  _e_sub_dci_kickoff
-                  0x00022e                  _exit
-                  0x000846                  _fear
-                  0x001f92                  _flow_led
-                  0x000252                  _free
-                  0x000a6a                  _getselector
-                  0x002010                  _k2000_led
-                  0x0020f6                  _left_led
-                  0x000aa2                  _love
-                  0x0009f6                  _main
-                  0x00018c                  _malloc
-                  0x002090                  _right_led
-                  0x000ab2                  _roam
-                  0x0009de                  _robot_off
-                  0x00215c                  _run_left_motor
-                  0x002240                  _run_right_motor
-                  0x001f3a                  _snake_led
-                  0x000394                  _sqrtf
-                  0x000a48                  _wait
-                  0x00262a                  e_sound_sample
+                  0x0002bc                  __Getmem
+                  0x003e22                  __MI2CInterrupt
+                  0x001a2e                  __T2Interrupt
+                  0x002a00                  __T4Interrupt
+                  0x0027f0                  __T5Interrupt
+                  0x0004a6                  ___addsf3
+                  0x0005ae                  ___divsf3
+                  0x000324                  ___divsi3
+                  0x000560                  ___eqsf2
+                  0x000564                  ___fixsfsi
+                  0x000342                  ___floatsisf
+                  0x0005a6                  ___gesf2
+                  0x0005a6                  ___gtsf2
+                  0x000560                  ___lesf2
+                  0x000560                  ___ltsf2
+                  0x00043c                  ___mulsf3
+                  0x0005aa                  ___nesf2
+                  0x0004a4                  ___subsf3
+                  0x000632                  ___udivsi3
+                  0x0006c8                  __fPropagateNaN
+                  0x0006da                  __fbopExit
+                  0x0006e2                  __fbopReturnNaN
+                  0x0007c2                  __fcompare
+                  0x000652                  __fpack
+                  0x00069e                  __funpack
+                  0x0006e8                  __funpack2
+                  0x000110                  __resetPRI
+                  0x0007f8                  _aggressive
+                  0x000402                  _atan2f
+                  0x0006f8                  _atanf
+                  0x000dfc                  _calculate_acc_raw
+                  0x000e2c                  _calculate_acc_spherical
+                  0x00098a                  _curious
+                  0x000f18                  _e_acc_calibr
+                  0x0018ac                  _e_activate_agenda
+                  0x0016f2                  _e_ad_is_acquisition_completed
+                  0x0016fc                  _e_ad_is_array_filled
+                  0x00170e                  _e_ad_scan_off
+                  0x001706                  _e_ad_scan_on
+                  0x001e88                  _e_blink_led
+                  0x001f9a                  _e_blink_led0
+                  0x001fc6                  _e_blink_led1
+                  0x001fec                  _e_blink_led2
+                  0x00200e                  _e_blink_led3
+                  0x002036                  _e_blink_led4
+                  0x00205a                  _e_blink_led5
+                  0x002084                  _e_blink_led6
+                  0x0020b0                  _e_blink_led7
+                  0x001716                  _e_calibrate_ir
+                  0x002688                  _e_close_sound
+                  0x00190c                  _e_destroy_agenda
+                  0x000fda                  _e_display_angle
+                  0x0018a4                  _e_end_agendas_processing
+                  0x000d08                  _e_get_acc
+                  0x000d7c                  _e_get_acc_filtered
+                  0x001860                  _e_get_ambient_light
+                  0x00181a                  _e_get_calibrated_prox
+                  0x0017ec                  _e_get_prox
+                  0x002632                  _e_get_steps_left
+                  0x002646                  _e_get_steps_right
+                  0x003c70                  _e_i2c_ack
+                  0x003ba6                  _e_i2c_disable
+                  0x003b9a                  _e_i2c_enable
+                  0x003b18                  _e_i2c_init
+                  0x003cd6                  _e_i2c_nack
+                  0x003d3c                  _e_i2c_read
+                  0x003b52                  _e_i2c_reset
+                  0x003bf6                  _e_i2c_restart
+                  0x003bb2                  _e_i2c_start
+                  0x003c3a                  _e_i2c_stop
+                  0x003de8                  _e_i2c_write
+                  0x003e4a                  _e_i2cp_disable
+                  0x003e42                  _e_i2cp_enable
+                  0x003e3a                  _e_i2cp_init
+                  0x003e52                  _e_i2cp_read
+                  0x003e9a                  _e_i2cp_write
+                  0x0012e2                  _e_init_ad_scan
+                  0x002690                  _e_init_codec_slave
+                  0x00273c                  _e_init_dci_master
+                  0x0024ea                  _e_init_motors
+                  0x000c7e                  _e_init_port
+                  0x00265a                  _e_init_sound
+                  0x001dee                  _e_led_clear
+                  0x0019c6                  _e_pause_agenda
+                  0x002674                  _e_play_sound
+                  0x002ea8                  _e_po3030k_SetColorMatrix
+                  0x0035ca                  _e_po3030k_config_cam
+                  0x003806                  _e_po3030k_get_bytes_per_pixel
+                  0x002ce0                  _e_po3030k_get_register
+                  0x002a6a                  _e_po3030k_read_cam_registers
+                  0x002d8c                  _e_po3030k_set_adc_offset
+                  0x002f40                  _e_po3030k_set_ae_speed
+                  0x00307a                  _e_po3030k_set_awb_ae
+                  0x002f22                  _e_po3030k_set_awb_ae_tol
+                  0x002d20                  _e_po3030k_set_bias
+                  0x002ee8                  _e_po3030k_set_brigh_contr
+                  0x002ed6                  _e_po3030k_set_cb_cr_gain
+                  0x002d32                  _e_po3030k_set_color_gain
+                  0x002aa0                  _e_po3030k_set_color_mode
+                  0x002dcc                  _e_po3030k_set_edge_prop
+                  0x002f60                  _e_po3030k_set_exposure
+                  0x0030d4                  _e_po3030k_set_flicker_detection
+                  0x0031ca                  _e_po3030k_set_flicker_man_set
+                  0x0030b6                  _e_po3030k_set_flicker_mode
+                  0x002de2                  _e_po3030k_set_gamma_coef
+                  0x002d68                  _e_po3030k_set_integr_time
+                  0x002db4                  _e_po3030k_set_lens_gain
+                  0x002faa                  _e_po3030k_set_max_min_awb
+                  0x002f8c                  _e_po3030k_set_max_min_exp
+                  0x002c66                  _e_po3030k_set_mirror
+                  0x002f80                  _e_po3030k_set_ref_exposure
+                  0x002ca2                  _e_po3030k_set_register
+                  0x002ade                  _e_po3030k_set_sampling_mode
+                  0x002d98                  _e_po3030k_set_sepia
+                  0x002efa                  _e_po3030k_set_sepia_tone
+                  0x002b08                  _e_po3030k_set_speed
+                  0x002bf4                  _e_po3030k_set_vsync
+                  0x002fd4                  _e_po3030k_set_weight_win
+                  0x002f0c                  _e_po3030k_set_ww
+                  0x002b4e                  _e_po3030k_set_wx
+                  0x002ba4                  _e_po3030k_set_wy
+                  0x002e48                  _e_po3030k_sync_register_array
+                  0x002a38                  _e_po3030k_write_cam_registers
+                  0x002e2a                  _e_po3030k_write_gamma_coef
+                  0x00383e                  _e_po6030k_config_cam
+                  0x003ab0                  _e_po6030k_get_bytes_per_pixel
+                  0x0032b8                  _e_po6030k_read_register
+                  0x003288                  _e_po6030k_set_bank
+                  0x0032d4                  _e_po6030k_set_bayer_clkdiv
+                  0x003590                  _e_po6030k_set_mirror
+                  0x003418                  _e_po6030k_set_mode
+                  0x0032e4                  _e_po6030k_set_pclkdiv
+                  0x003532                  _e_po6030k_set_sketch_mode
+                  0x0034d2                  _e_po6030k_set_vsync
+                  0x003470                  _e_po6030k_set_wx
+                  0x0034c6                  _e_po6030k_set_wy
+                  0x00329c                  _e_po6030k_write_register
+                  0x002852                  _e_poxxxx_apply_timer_config
+                  0x0028f8                  _e_poxxxx_config_cam
+                  0x002990                  _e_poxxxx_init_cam
+                  0x0028f0                  _e_poxxxx_is_img_ready
+                  0x00283a                  _e_poxxxx_launch_capture
+                  0x002950                  _e_poxxxx_set_mirror
+                  0x00297e                  _e_poxxxx_write_cam_registers
+                  0x000f8c                  _e_read_acc
+                  0x000f36                  _e_read_acc_spheric
+                  0x000fbc                  _e_read_acc_x
+                  0x000f98                  _e_read_acc_xyz
+                  0x000fc6                  _e_read_acc_y
+                  0x000fd0                  _e_read_acc_z
+                  0x000f74                  _e_read_inclination
+                  0x000f80                  _e_read_orientation
+                  0x001992                  _e_reset_agenda
+                  0x0019fa                  _e_restart_agenda
+                  0x00195c                  _e_set_agenda_cycle
+                  0x0020ee                  _e_set_blinking_cycle
+                  0x001e04                  _e_set_body_led
+                  0x001e48                  _e_set_front_led
+                  0x001a98                  _e_set_led
+                  0x0025f0                  _e_set_speed
+                  0x0024fc                  _e_set_speed_left
+                  0x002576                  _e_set_speed_right
+                  0x00263a                  _e_set_steps_left
+                  0x00264e                  _e_set_steps_right
+                  0x001882                  _e_start_agendas_processing
+                  0x0020d6                  _e_start_led_blinking
+                  0x0020e4                  _e_stop_led_blinking
+                  0x00277a                  _e_sub_dci_kickoff
+                  0x000232                  _exit
+                  0x000a10                  _fear
+                  0x002158                  _flow_led
+                  0x000942                  _forward
+                  0x000256                  _free
+                  0x000c28                  _getselector
+                  0x000970                  _greenIsInMiddle
+                  0x000924                  _gturn
+                  0x0008d2                  _gturnDirection
+                  0x003ae8                  _idle_i2c
+                  0x0021d6                  _k2000_led
+                  0x0022bc                  _left_led
+                  0x000c60                  _love
+                  0x000baa                  _main
+                  0x000190                  _malloc
+                  0x000818                  _processImage
+                  0x002256                  _right_led
+                  0x000c78                  _roam
+                  0x000b9e                  _robot_off
+                  0x002322                  _run_left_motor
+                  0x002406                  _run_right_motor
+                  0x000950                  _setUpCamera
+                  0x002100                  _snake_led
+                  0x000398                  _sqrtf
+                  0x000808                  _takeImage
+                  0x000c06                  _wait
+                  0x003ed6                  e_sound_sample
 
 Memory Configuration
 
@@ -443,9 +640,18 @@ LOAD e_const_sound.o
 LOAD e_init_codec_slave.o
 LOAD e_init_dci_master.o
 LOAD e_sub_dci_kickoff.o
-LOAD U:\_Robotics\Coursework\Libraries clean\uart_char.a
-LOAD U:\_Robotics\Coursework\Other Libraries\libdsp-coff.a
-LOAD U:\_Robotics\Coursework\Other Libraries\libdsp-elf.a
+LOAD e_timers.o
+LOAD e_common.o
+LOAD e_interrupt.o
+LOAD e_po3030k_registers.o
+LOAD e_po6030k_registers.o
+LOAD e_calc_po3030k.o
+LOAD e_calc_po6030k.o
+LOAD e_I2C_master_module.o
+LOAD e_I2C_protocol.o
+LOAD U:\robotics\Robotics-Coursework-master\Coursework\Libraries clean\uart_char.a
+LOAD U:\robotics\Robotics-Coursework-master\Coursework\Other Libraries\libdsp-coff.a
+LOAD U:\robotics\Robotics-Coursework-master\Coursework\Other Libraries\libdsp-elf.a
                     0xf80000                  __FOSC = 0xf80000
                     0xf80002                  __FWDT = 0xf80002
                     0xf80004                  __FBORPOR = 0xf80004
@@ -465,179 +671,274 @@ LOAD U:\_Robotics\Coursework\Other Libraries\libdsp-elf.a
                     0x1800                  __YDATA_BASE = 0x1800
 
 .reset            0x000000          0x4
-                  0x000000          0x2 SHORT 0x10c <code 336> (__reset)
+                  0x000000          0x2 SHORT 0x110 <code 336> (__reset)
                   0x000001          0x2 SHORT 0x4
                   0x000002          0x2 SHORT 0x0 ((<code 336> (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x000100       0x252a
+.text             0x000100       0x3dd6
  *(.handle)
- .handle          0x000100          0xc jump_table
+ .handle          0x000100         0x10 jump_table
  *(.libc)
- .libc            0x00010c         0x80 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libpic30-coff.a(crt0.o)
-                  0x00010c                  _resetPRI
-                  0x00010c                  _reset
-                  0x000120                  _psv_init
-                  0x000130                  _data_init
- .libc            0x00018c         0xa2 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libc-coff.a(malloc.o)
-                  0x00018c                  malloc
- .libc            0x00022e         0x24 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libc-coff.a(exit.o)
-                  0x00022e                  exit
- .libc            0x000252         0x66 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libc-coff.a(free.o)
-                  0x000252                  free
- .libc            0x0002b8          0xe q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libc-coff.a(xgetmem.o)
-                  0x0002b8                  _Getmem
- .libc            0x0002c6         0x10 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libpic30-coff.a(_exit.o)
-                  0x0002c6                  _exit
- .libc            0x0002d6         0x2c q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libpic30-coff.a(sbrk.o)
-                  0x0002d6                  sbrk
- .libc            0x000302         0x1e q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libpic30-coff.a(brk.o)
-                  0x000302                  brk
+ .libc            0x000110         0x80 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libpic30-coff.a(crt0.o)
+                  0x000110                  _resetPRI
+                  0x000110                  _reset
+                  0x000124                  _psv_init
+                  0x000134                  _data_init
+ .libc            0x000190         0xa2 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libc-coff.a(malloc.o)
+                  0x000190                  malloc
+ .libc            0x000232         0x24 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libc-coff.a(exit.o)
+                  0x000232                  exit
+ .libc            0x000256         0x66 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libc-coff.a(free.o)
+                  0x000256                  free
+ .libc            0x0002bc          0xe q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libc-coff.a(xgetmem.o)
+                  0x0002bc                  _Getmem
+ .libc            0x0002ca         0x10 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libpic30-coff.a(_exit.o)
+                  0x0002ca                  _exit
+ .libc            0x0002da         0x2c q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libpic30-coff.a(sbrk.o)
+                  0x0002da                  sbrk
+ .libc            0x000306         0x1e q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libpic30-coff.a(brk.o)
+                  0x000306                  brk
  *(.libm)
- .libm            0x000320         0x1e q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(divsi3.o)
-                  0x000320                  __divsi3
- .libm            0x00033e         0x56 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(floatsisf.o)
-                  0x00033e                  __floatsisf
- .libm            0x000394         0x6a q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(sqrtf.o)
-                  0x000394                  sqrtf
- .libm            0x0003fe         0x3a q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(atan2f.o)
-                  0x0003fe                  atan2f
- .libm            0x000438         0x68 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(mulsf3.o)
-                  0x000438                  __mulsf3
- .libm            0x0004a0         0xbc q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(addsf3.o)
-                  0x0004a0                  __subsf3
-                  0x0004a2                  __addsf3
- .libm            0x00055c          0x4 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(feqltle.o)
-                  0x00055c                  __eqsf2
-                  0x00055c                  __ltsf2
-                  0x00055c                  __lesf2
- .libm            0x000560         0x42 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(fixsfsi.o)
-                  0x000560                  __fixsfsi
- .libm            0x0005a2          0x4 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(fgtge.o)
-                  0x0005a2                  __gesf2
-                  0x0005a2                  __gtsf2
- .libm            0x0005a6          0x4 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(fne.o)
-                  0x0005a6                  __nesf2
- .libm            0x0005aa         0x84 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(divsf3.o)
-                  0x0005aa                  __divsf3
- .libm            0x00062e         0x20 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(udivsi3.o)
-                  0x00062e                  __udivsi3
- .libm            0x00064e         0x4c q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(fpack.o)
-                  0x00064e                  _fpack
- .libm            0x00069a         0x2a q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(funpack.o)
-                  0x00069a                  _funpack
- .libm            0x0006c4         0x20 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(futil.o)
-                  0x0006c4                  _fPropagateNaN
-                  0x0006d6                  _fbopExit
-                  0x0006de                  _fbopReturnNaN
- .libm            0x0006e4         0x10 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(funpack2.o)
-                  0x0006e4                  _funpack2
- .libm            0x0006f4         0xca q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(atanf.o)
-                  0x0006f4                  atanf
- .libm            0x0007be         0x36 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(fcompare.o)
-                  0x0007be                  _fcompare
+ .libm            0x000324         0x1e q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(divsi3.o)
+                  0x000324                  __divsi3
+ .libm            0x000342         0x56 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(floatsisf.o)
+                  0x000342                  __floatsisf
+ .libm            0x000398         0x6a q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(sqrtf.o)
+                  0x000398                  sqrtf
+ .libm            0x000402         0x3a q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(atan2f.o)
+                  0x000402                  atan2f
+ .libm            0x00043c         0x68 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(mulsf3.o)
+                  0x00043c                  __mulsf3
+ .libm            0x0004a4         0xbc q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(addsf3.o)
+                  0x0004a4                  __subsf3
+                  0x0004a6                  __addsf3
+ .libm            0x000560          0x4 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(feqltle.o)
+                  0x000560                  __eqsf2
+                  0x000560                  __ltsf2
+                  0x000560                  __lesf2
+ .libm            0x000564         0x42 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(fixsfsi.o)
+                  0x000564                  __fixsfsi
+ .libm            0x0005a6          0x4 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(fgtge.o)
+                  0x0005a6                  __gesf2
+                  0x0005a6                  __gtsf2
+ .libm            0x0005aa          0x4 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(fne.o)
+                  0x0005aa                  __nesf2
+ .libm            0x0005ae         0x84 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(divsf3.o)
+                  0x0005ae                  __divsf3
+ .libm            0x000632         0x20 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(udivsi3.o)
+                  0x000632                  __udivsi3
+ .libm            0x000652         0x4c q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(fpack.o)
+                  0x000652                  _fpack
+ .libm            0x00069e         0x2a q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(funpack.o)
+                  0x00069e                  _funpack
+ .libm            0x0006c8         0x20 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(futil.o)
+                  0x0006c8                  _fPropagateNaN
+                  0x0006da                  _fbopExit
+                  0x0006e2                  _fbopReturnNaN
+ .libm            0x0006e8         0x10 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(funpack2.o)
+                  0x0006e8                  _funpack2
+ .libm            0x0006f8         0xca q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(atanf.o)
+                  0x0006f8                  atanf
+ .libm            0x0007c2         0x36 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(fcompare.o)
+                  0x0007c2                  _fcompare
  *(.libdsp)
  *(.lib*)
  *(.text)
- .text            0x0007f4         0x10 aggressive.o
-                  0x0007f4                  aggressive
- .text            0x000804         0x10 curious.o
-                  0x000804                  curious
- .text            0x000814        0x1ca fear.o
-                  0x000814                  LedFearFlash
-                  0x000846                  fear
- .text            0x0009de         0x6a main.o
-                  0x0009de                  robot_off
-                  0x0009f6                  main
- .text            0x000a48         0x5a utility.o
-                  0x000a48                  wait
-                  0x000a6a                  getselector
- .text            0x000aa2         0x10 love.o
-                  0x000aa2                  love
- .text            0x000ab2          0x6 roam.o
-                  0x000ab2                  roam
- .text            0x000ab8         0x8a e_init_port.o
-                  0x000ab8                  e_init_port
- .text            0x000b42        0x5da e_acc.o
-                  0x000b42                  e_get_acc
-                  0x000bb6                  e_get_acc_filtered
-                  0x000c36                  calculate_acc_raw
-                  0x000c66                  calculate_acc_spherical
-                  0x000d52                  e_acc_calibr
-                  0x000d70                  e_read_acc_spheric
-                  0x000dae                  e_read_inclination
-                  0x000dba                  e_read_orientation
-                  0x000dc6                  e_read_acc
-                  0x000dd2                  e_read_acc_xyz
-                  0x000df6                  e_read_acc_x
-                  0x000e00                  e_read_acc_y
-                  0x000e0a                  e_read_acc_z
-                  0x000e14                  e_display_angle
- .text            0x00111c        0x434 e_ad_conv.o
-                  0x00111c                  e_init_ad_scan
-                  0x0011ec                  _ADCInterrupt
-                  0x00152c                  e_ad_is_acquisition_completed
-                  0x001536                  e_ad_is_array_filled
-                  0x001540                  e_ad_scan_on
-                  0x001548                  e_ad_scan_off
- .text            0x001550        0x16c e_prox.o
-                  0x001550                  e_calibrate_ir
-                  0x001626                  e_get_prox
-                  0x001654                  e_get_calibrated_prox
-                  0x00169a                  e_get_ambient_light
- .text            0x0016bc        0x216 e_agenda.o
-                  0x0016bc                  e_start_agendas_processing
-                  0x0016de                  e_end_agendas_processing
-                  0x0016e6                  e_activate_agenda
-                  0x001746                  e_destroy_agenda
-                  0x001796                  e_set_agenda_cycle
-                  0x0017cc                  e_reset_agenda
-                  0x001800                  e_pause_agenda
-                  0x001834                  e_restart_agenda
-                  0x001868                  _T2Interrupt
- .text            0x0018d2        0x88a e_led.o
-                  0x0018d2                  e_set_led
-                  0x001c28                  e_led_clear
-                  0x001c3e                  e_set_body_led
-                  0x001c82                  e_set_front_led
-                  0x001cc2                  e_blink_led
-                  0x001dd4                  e_blink_led0
-                  0x001e00                  e_blink_led1
-                  0x001e26                  e_blink_led2
-                  0x001e48                  e_blink_led3
-                  0x001e70                  e_blink_led4
-                  0x001e94                  e_blink_led5
-                  0x001ebe                  e_blink_led6
-                  0x001eea                  e_blink_led7
-                  0x001f10                  e_start_led_blinking
-                  0x001f1e                  e_stop_led_blinking
-                  0x001f28                  e_set_blinking_cycle
-                  0x001f3a                  snake_led
-                  0x001f92                  flow_led
-                  0x002010                  k2000_led
-                  0x002090                  right_led
-                  0x0020f6                  left_led
- .text            0x00215c        0x338 e_motors.o
-                  0x00215c                  run_left_motor
-                  0x002240                  run_right_motor
-                  0x002324                  e_init_motors
-                  0x002336                  e_set_speed_left
-                  0x0023b0                  e_set_speed_right
-                  0x00242a                  e_set_speed
-                  0x00246c                  e_get_steps_left
-                  0x002474                  e_set_steps_left
-                  0x002480                  e_get_steps_right
-                  0x002488                  e_set_steps_right
- .text            0x002494         0x36 e_sound.o
-                  0x002494                  e_init_sound
-                  0x0024ae                  e_play_sound
-                  0x0024c2                  e_close_sound
- .text            0x0024ca         0xac e_init_codec_slave.o
-                  0x0024ca                  e_init_codec_slave
- .text            0x002576         0x3e e_init_dci_master.o
-                  0x002576                  e_init_dci_master
- .text            0x0025b4         0x76 e_sub_dci_kickoff.o
-                  0x0025b4                  e_sub_dci_kickoff
+ .text            0x0007f8         0x10 aggressive.o
+                  0x0007f8                  aggressive
+ .text            0x000808        0x1d6 curious.o
+                  0x000808                  takeImage
+                  0x000818                  processImage
+                  0x0008d2                  gturnDirection
+                  0x000924                  gturn
+                  0x000942                  forward
+                  0x000950                  setUpCamera
+                  0x000970                  greenIsInMiddle
+                  0x00098a                  curious
+ .text            0x0009de        0x1c0 fear.o
+                  0x0009de                  LedFearFlash
+                  0x000a10                  fear
+ .text            0x000b9e         0x68 main.o
+                  0x000b9e                  robot_off
+                  0x000baa                  main
+ .text            0x000c06         0x5a utility.o
+                  0x000c06                  wait
+                  0x000c28                  getselector
+ .text            0x000c60         0x18 love.o
+                  0x000c60                  love
+ .text            0x000c78          0x6 roam.o
+                  0x000c78                  roam
+ .text            0x000c7e         0x8a e_init_port.o
+                  0x000c7e                  e_init_port
+ .text            0x000d08        0x5da e_acc.o
+                  0x000d08                  e_get_acc
+                  0x000d7c                  e_get_acc_filtered
+                  0x000dfc                  calculate_acc_raw
+                  0x000e2c                  calculate_acc_spherical
+                  0x000f18                  e_acc_calibr
+                  0x000f36                  e_read_acc_spheric
+                  0x000f74                  e_read_inclination
+                  0x000f80                  e_read_orientation
+                  0x000f8c                  e_read_acc
+                  0x000f98                  e_read_acc_xyz
+                  0x000fbc                  e_read_acc_x
+                  0x000fc6                  e_read_acc_y
+                  0x000fd0                  e_read_acc_z
+                  0x000fda                  e_display_angle
+ .text            0x0012e2        0x434 e_ad_conv.o
+                  0x0012e2                  e_init_ad_scan
+                  0x0013b2                  _ADCInterrupt
+                  0x0016f2                  e_ad_is_acquisition_completed
+                  0x0016fc                  e_ad_is_array_filled
+                  0x001706                  e_ad_scan_on
+                  0x00170e                  e_ad_scan_off
+ .text            0x001716        0x16c e_prox.o
+                  0x001716                  e_calibrate_ir
+                  0x0017ec                  e_get_prox
+                  0x00181a                  e_get_calibrated_prox
+                  0x001860                  e_get_ambient_light
+ .text            0x001882        0x216 e_agenda.o
+                  0x001882                  e_start_agendas_processing
+                  0x0018a4                  e_end_agendas_processing
+                  0x0018ac                  e_activate_agenda
+                  0x00190c                  e_destroy_agenda
+                  0x00195c                  e_set_agenda_cycle
+                  0x001992                  e_reset_agenda
+                  0x0019c6                  e_pause_agenda
+                  0x0019fa                  e_restart_agenda
+                  0x001a2e                  _T2Interrupt
+ .text            0x001a98        0x88a e_led.o
+                  0x001a98                  e_set_led
+                  0x001dee                  e_led_clear
+                  0x001e04                  e_set_body_led
+                  0x001e48                  e_set_front_led
+                  0x001e88                  e_blink_led
+                  0x001f9a                  e_blink_led0
+                  0x001fc6                  e_blink_led1
+                  0x001fec                  e_blink_led2
+                  0x00200e                  e_blink_led3
+                  0x002036                  e_blink_led4
+                  0x00205a                  e_blink_led5
+                  0x002084                  e_blink_led6
+                  0x0020b0                  e_blink_led7
+                  0x0020d6                  e_start_led_blinking
+                  0x0020e4                  e_stop_led_blinking
+                  0x0020ee                  e_set_blinking_cycle
+                  0x002100                  snake_led
+                  0x002158                  flow_led
+                  0x0021d6                  k2000_led
+                  0x002256                  right_led
+                  0x0022bc                  left_led
+ .text            0x002322        0x338 e_motors.o
+                  0x002322                  run_left_motor
+                  0x002406                  run_right_motor
+                  0x0024ea                  e_init_motors
+                  0x0024fc                  e_set_speed_left
+                  0x002576                  e_set_speed_right
+                  0x0025f0                  e_set_speed
+                  0x002632                  e_get_steps_left
+                  0x00263a                  e_set_steps_left
+                  0x002646                  e_get_steps_right
+                  0x00264e                  e_set_steps_right
+ .text            0x00265a         0x36 e_sound.o
+                  0x00265a                  e_init_sound
+                  0x002674                  e_play_sound
+                  0x002688                  e_close_sound
+ .text            0x002690         0xac e_init_codec_slave.o
+                  0x002690                  e_init_codec_slave
+ .text            0x00273c         0x3e e_init_dci_master.o
+                  0x00273c                  e_init_dci_master
+ .text            0x00277a         0x76 e_sub_dci_kickoff.o
+                  0x00277a                  e_sub_dci_kickoff
+ .text            0x0027f0        0x108 e_timers.o
+                  0x0027f0                  _T5Interrupt
+                  0x00283a                  e_poxxxx_launch_capture
+                  0x002852                  e_poxxxx_apply_timer_config
+                  0x0028f0                  e_poxxxx_is_img_ready
+ .text            0x0028f8        0x108 e_common.o
+                  0x0028f8                  e_poxxxx_config_cam
+                  0x002950                  e_poxxxx_set_mirror
+                  0x00297e                  e_poxxxx_write_cam_registers
+                  0x002990                  e_poxxxx_init_cam
+ .text            0x002a00         0x38 e_interrupt.o
+                  0x002a00                  _T4Interrupt
+ .text            0x002a38        0x850 e_po3030k_registers.o
+                  0x002a38                  e_po3030k_write_cam_registers
+                  0x002a6a                  e_po3030k_read_cam_registers
+                  0x002aa0                  e_po3030k_set_color_mode
+                  0x002ade                  e_po3030k_set_sampling_mode
+                  0x002b08                  e_po3030k_set_speed
+                  0x002b4e                  e_po3030k_set_wx
+                  0x002ba4                  e_po3030k_set_wy
+                  0x002bf4                  e_po3030k_set_vsync
+                  0x002c66                  e_po3030k_set_mirror
+                  0x002ca2                  e_po3030k_set_register
+                  0x002ce0                  e_po3030k_get_register
+                  0x002d20                  e_po3030k_set_bias
+                  0x002d32                  e_po3030k_set_color_gain
+                  0x002d68                  e_po3030k_set_integr_time
+                  0x002d8c                  e_po3030k_set_adc_offset
+                  0x002d98                  e_po3030k_set_sepia
+                  0x002db4                  e_po3030k_set_lens_gain
+                  0x002dcc                  e_po3030k_set_edge_prop
+                  0x002de2                  e_po3030k_set_gamma_coef
+                  0x002e2a                  e_po3030k_write_gamma_coef
+                  0x002e48                  e_po3030k_sync_register_array
+                  0x002ea8                  e_po3030k_SetColorMatrix
+                  0x002ed6                  e_po3030k_set_cb_cr_gain
+                  0x002ee8                  e_po3030k_set_brigh_contr
+                  0x002efa                  e_po3030k_set_sepia_tone
+                  0x002f0c                  e_po3030k_set_ww
+                  0x002f22                  e_po3030k_set_awb_ae_tol
+                  0x002f40                  e_po3030k_set_ae_speed
+                  0x002f60                  e_po3030k_set_exposure
+                  0x002f80                  e_po3030k_set_ref_exposure
+                  0x002f8c                  e_po3030k_set_max_min_exp
+                  0x002faa                  e_po3030k_set_max_min_awb
+                  0x002fd4                  e_po3030k_set_weight_win
+                  0x00307a                  e_po3030k_set_awb_ae
+                  0x0030b6                  e_po3030k_set_flicker_mode
+                  0x0030d4                  e_po3030k_set_flicker_detection
+                  0x0031ca                  e_po3030k_set_flicker_man_set
+ .text            0x003288        0x342 e_po6030k_registers.o
+                  0x003288                  e_po6030k_set_bank
+                  0x00329c                  e_po6030k_write_register
+                  0x0032b8                  e_po6030k_read_register
+                  0x0032d4                  e_po6030k_set_bayer_clkdiv
+                  0x0032e4                  e_po6030k_set_pclkdiv
+                  0x003418                  e_po6030k_set_mode
+                  0x003470                  e_po6030k_set_wx
+                  0x0034c6                  e_po6030k_set_wy
+                  0x0034d2                  e_po6030k_set_vsync
+                  0x003532                  e_po6030k_set_sketch_mode
+                  0x003590                  e_po6030k_set_mirror
+ .text            0x0035ca        0x274 e_calc_po3030k.o
+                  0x0035ca                  e_po3030k_config_cam
+                  0x003806                  e_po3030k_get_bytes_per_pixel
+ .text            0x00383e        0x2aa e_calc_po6030k.o
+                  0x00383e                  e_po6030k_config_cam
+                  0x003ab0                  e_po6030k_get_bytes_per_pixel
+ .text            0x003ae8        0x352 e_I2C_master_module.o
+                  0x003ae8                  idle_i2c
+                  0x003b18                  e_i2c_init
+                  0x003b52                  e_i2c_reset
+                  0x003b9a                  e_i2c_enable
+                  0x003ba6                  e_i2c_disable
+                  0x003bb2                  e_i2c_start
+                  0x003bf6                  e_i2c_restart
+                  0x003c3a                  e_i2c_stop
+                  0x003c70                  e_i2c_ack
+                  0x003cd6                  e_i2c_nack
+                  0x003d3c                  e_i2c_read
+                  0x003de8                  e_i2c_write
+                  0x003e22                  _MI2CInterrupt
+ .text            0x003e3a         0x9c e_I2C_protocol.o
+                  0x003e3a                  e_i2cp_init
+                  0x003e42                  e_i2cp_enable
+                  0x003e4a                  e_i2cp_disable
+                  0x003e52                  e_i2cp_read
+                  0x003e9a                  e_i2cp_write
 
 usercode
  *(usercode)
@@ -718,132 +1019,132 @@ userdata
  *(.debug_aranges)
 
 .ivt              0x000004         0x7c
-                  0x000004          0x4 LONG 0xbb6a DEFINED (__ReservedTrap0)?<code 336> (__ReservedTrap0):<code 336> (__DefaultInterrupt)
-                  0x000006          0x4 LONG 0xbb6a DEFINED (__OscillatorFail)?<code 336> (__OscillatorFail):<code 336> (__DefaultInterrupt)
-                  0x000008          0x4 LONG 0xbb6a DEFINED (__AddressError)?<code 336> (__AddressError):<code 336> (__DefaultInterrupt)
-                  0x00000a          0x4 LONG 0xbb6a DEFINED (__StackError)?<code 336> (__StackError):<code 336> (__DefaultInterrupt)
-                  0x00000c          0x4 LONG 0xbb6a DEFINED (__MathError)?<code 336> (__MathError):<code 336> (__DefaultInterrupt)
-                  0x00000e          0x4 LONG 0xbb6a DEFINED (__ReservedTrap5)?<code 336> (__ReservedTrap5):<code 336> (__DefaultInterrupt)
-                  0x000010          0x4 LONG 0xbb6a DEFINED (__ReservedTrap6)?<code 336> (__ReservedTrap6):<code 336> (__DefaultInterrupt)
-                  0x000012          0x4 LONG 0xbb6a DEFINED (__ReservedTrap7)?<code 336> (__ReservedTrap7):<code 336> (__DefaultInterrupt)
-                  0x000014          0x4 LONG 0xbb6a DEFINED (__INT0Interrupt)?<code 336> (__INT0Interrupt):<code 336> (__DefaultInterrupt)
-                  0x000016          0x4 LONG 0xbb6a DEFINED (__IC1Interrupt)?<code 336> (__IC1Interrupt):<code 336> (__DefaultInterrupt)
-                  0x000018          0x4 LONG 0xbb6a DEFINED (__OC1Interrupt)?<code 336> (__OC1Interrupt):<code 336> (__DefaultInterrupt)
-                  0x00001a          0x4 LONG 0xbb6a DEFINED (__T1Interrupt)?<code 336> (__T1Interrupt):<code 336> (__DefaultInterrupt)
-                  0x00001c          0x4 LONG 0xbb6a DEFINED (__IC2Interrupt)?<code 336> (__IC2Interrupt):<code 336> (__DefaultInterrupt)
-                  0x00001e          0x4 LONG 0xbb6a DEFINED (__OC2Interrupt)?<code 336> (__OC2Interrupt):<code 336> (__DefaultInterrupt)
-                  0x000020          0x4 LONG 0x1868 DEFINED (__T2Interrupt)?<code 336> (__T2Interrupt):<code 336> (__DefaultInterrupt)
-                  0x000022          0x4 LONG 0xbb6a DEFINED (__T3Interrupt)?<code 336> (__T3Interrupt):<code 336> (__DefaultInterrupt)
-                  0x000024          0x4 LONG 0xbb6a DEFINED (__SPI1Interrupt)?<code 336> (__SPI1Interrupt):<code 336> (__DefaultInterrupt)
-                  0x000026          0x4 LONG 0xbb6a DEFINED (__U1RXInterrupt)?<code 336> (__U1RXInterrupt):<code 336> (__DefaultInterrupt)
-                  0x000028          0x4 LONG 0xbb6a DEFINED (__U1TXInterrupt)?<code 336> (__U1TXInterrupt):<code 336> (__DefaultInterrupt)
-                  0x00002a          0x4 LONG 0x11ec DEFINED (__ADCInterrupt)?<code 336> (__ADCInterrupt):<code 336> (__DefaultInterrupt)
-                  0x00002c          0x4 LONG 0xbb6a DEFINED (__NVMInterrupt)?<code 336> (__NVMInterrupt):<code 336> (__DefaultInterrupt)
-                  0x00002e          0x4 LONG 0xbb6a DEFINED (__SI2CInterrupt)?<code 336> (__SI2CInterrupt):<code 336> (__DefaultInterrupt)
-                  0x000030          0x4 LONG 0xbb6a DEFINED (__MI2CInterrupt)?<code 336> (__MI2CInterrupt):<code 336> (__DefaultInterrupt)
-                  0x000032          0x4 LONG 0xbb6a DEFINED (__CNInterrupt)?<code 336> (__CNInterrupt):<code 336> (__DefaultInterrupt)
-                  0x000034          0x4 LONG 0xbb6a DEFINED (__INT1Interrupt)?<code 336> (__INT1Interrupt):<code 336> (__DefaultInterrupt)
-                  0x000036          0x4 LONG 0xbb6a DEFINED (__IC7Interrupt)?<code 336> (__IC7Interrupt):<code 336> (__DefaultInterrupt)
-                  0x000038          0x4 LONG 0xbb6a DEFINED (__IC8Interrupt)?<code 336> (__IC8Interrupt):<code 336> (__DefaultInterrupt)
-                  0x00003a          0x4 LONG 0xbb6a DEFINED (__OC3Interrupt)?<code 336> (__OC3Interrupt):<code 336> (__DefaultInterrupt)
-                  0x00003c          0x4 LONG 0xbb6a DEFINED (__OC4Interrupt)?<code 336> (__OC4Interrupt):<code 336> (__DefaultInterrupt)
-                  0x00003e          0x4 LONG 0xbb6a DEFINED (__T4Interrupt)?<code 336> (__T4Interrupt):<code 336> (__DefaultInterrupt)
-                  0x000040          0x4 LONG 0xbb6a DEFINED (__T5Interrupt)?<code 336> (__T5Interrupt):<code 336> (__DefaultInterrupt)
-                  0x000042          0x4 LONG 0xbb6a DEFINED (__INT2Interrupt)?<code 336> (__INT2Interrupt):<code 336> (__DefaultInterrupt)
-                  0x000044          0x4 LONG 0xbb6a DEFINED (__U2RXInterrupt)?<code 336> (__U2RXInterrupt):<code 336> (__DefaultInterrupt)
-                  0x000046          0x4 LONG 0xbb6a DEFINED (__U2TXInterrupt)?<code 336> (__U2TXInterrupt):<code 336> (__DefaultInterrupt)
-                  0x000048          0x4 LONG 0xbb6a DEFINED (__SPI2Interrupt)?<code 336> (__SPI2Interrupt):<code 336> (__DefaultInterrupt)
-                  0x00004a          0x4 LONG 0xbb6a DEFINED (__C1Interrupt)?<code 336> (__C1Interrupt):<code 336> (__DefaultInterrupt)
-                  0x00004c          0x4 LONG 0xbb6a DEFINED (__IC3Interrupt)?<code 336> (__IC3Interrupt):<code 336> (__DefaultInterrupt)
-                  0x00004e          0x4 LONG 0xbb6a DEFINED (__IC4Interrupt)?<code 336> (__IC4Interrupt):<code 336> (__DefaultInterrupt)
-                  0x000050          0x4 LONG 0xbb6a DEFINED (__IC5Interrupt)?<code 336> (__IC5Interrupt):<code 336> (__DefaultInterrupt)
-                  0x000052          0x4 LONG 0xbb6a DEFINED (__IC6Interrupt)?<code 336> (__IC6Interrupt):<code 336> (__DefaultInterrupt)
-                  0x000054          0x4 LONG 0xbb6a DEFINED (__OC5Interrupt)?<code 336> (__OC5Interrupt):<code 336> (__DefaultInterrupt)
-                  0x000056          0x4 LONG 0xbb6a DEFINED (__OC6Interrupt)?<code 336> (__OC6Interrupt):<code 336> (__DefaultInterrupt)
-                  0x000058          0x4 LONG 0xbb6a DEFINED (__OC7Interrupt)?<code 336> (__OC7Interrupt):<code 336> (__DefaultInterrupt)
-                  0x00005a          0x4 LONG 0xbb6a DEFINED (__OC8Interrupt)?<code 336> (__OC8Interrupt):<code 336> (__DefaultInterrupt)
-                  0x00005c          0x4 LONG 0xbb6a DEFINED (__INT3Interrupt)?<code 336> (__INT3Interrupt):<code 336> (__DefaultInterrupt)
-                  0x00005e          0x4 LONG 0xbb6a DEFINED (__INT4Interrupt)?<code 336> (__INT4Interrupt):<code 336> (__DefaultInterrupt)
-                  0x000060          0x4 LONG 0xbb6a DEFINED (__C2Interrupt)?<code 336> (__C2Interrupt):<code 336> (__DefaultInterrupt)
-                  0x000062          0x4 LONG 0xbb6a DEFINED (__PWMInterrupt)?<code 336> (__PWMInterrupt):<code 336> (__DefaultInterrupt)
-                  0x000064          0x4 LONG 0xbb6a DEFINED (__QEIInterrupt)?<code 336> (__QEIInterrupt):<code 336> (__DefaultInterrupt)
-                  0x000066          0x4 LONG 0xbb6a DEFINED (__DCIInterrupt)?<code 336> (__DCIInterrupt):<code 336> (__DefaultInterrupt)
-                  0x000068          0x4 LONG 0xbb6a DEFINED (__LVDInterrupt)?<code 336> (__LVDInterrupt):<code 336> (__DefaultInterrupt)
-                  0x00006a          0x4 LONG 0xbb6a DEFINED (__FLTAInterrupt)?<code 336> (__FLTAInterrupt):<code 336> (__DefaultInterrupt)
-                  0x00006c          0x4 LONG 0xbb6a DEFINED (__FLTBInterrupt)?<code 336> (__FLTBInterrupt):<code 336> (__DefaultInterrupt)
-                  0x00006e          0x4 LONG 0xbb6a DEFINED (__Interrupt45)?<code 336> (__Interrupt45):<code 336> (__DefaultInterrupt)
-                  0x000070          0x4 LONG 0xbb6a DEFINED (__Interrupt46)?<code 336> (__Interrupt46):<code 336> (__DefaultInterrupt)
-                  0x000072          0x4 LONG 0xbb6a DEFINED (__Interrupt47)?<code 336> (__Interrupt47):<code 336> (__DefaultInterrupt)
-                  0x000074          0x4 LONG 0xbb6a DEFINED (__Interrupt48)?<code 336> (__Interrupt48):<code 336> (__DefaultInterrupt)
-                  0x000076          0x4 LONG 0xbb6a DEFINED (__Interrupt49)?<code 336> (__Interrupt49):<code 336> (__DefaultInterrupt)
-                  0x000078          0x4 LONG 0xbb6a DEFINED (__Interrupt50)?<code 336> (__Interrupt50):<code 336> (__DefaultInterrupt)
-                  0x00007a          0x4 LONG 0xbb6a DEFINED (__Interrupt51)?<code 336> (__Interrupt51):<code 336> (__DefaultInterrupt)
-                  0x00007c          0x4 LONG 0xbb6a DEFINED (__Interrupt52)?<code 336> (__Interrupt52):<code 336> (__DefaultInterrupt)
-                  0x00007e          0x4 LONG 0xbb6a DEFINED (__Interrupt53)?<code 336> (__Interrupt53):<code 336> (__DefaultInterrupt)
+                  0x000004          0x4 LONG 0xd4c4 DEFINED (__ReservedTrap0)?<code 336> (__ReservedTrap0):<code 336> (__DefaultInterrupt)
+                  0x000006          0x4 LONG 0xd4c4 DEFINED (__OscillatorFail)?<code 336> (__OscillatorFail):<code 336> (__DefaultInterrupt)
+                  0x000008          0x4 LONG 0xd4c4 DEFINED (__AddressError)?<code 336> (__AddressError):<code 336> (__DefaultInterrupt)
+                  0x00000a          0x4 LONG 0xd4c4 DEFINED (__StackError)?<code 336> (__StackError):<code 336> (__DefaultInterrupt)
+                  0x00000c          0x4 LONG 0xd4c4 DEFINED (__MathError)?<code 336> (__MathError):<code 336> (__DefaultInterrupt)
+                  0x00000e          0x4 LONG 0xd4c4 DEFINED (__ReservedTrap5)?<code 336> (__ReservedTrap5):<code 336> (__DefaultInterrupt)
+                  0x000010          0x4 LONG 0xd4c4 DEFINED (__ReservedTrap6)?<code 336> (__ReservedTrap6):<code 336> (__DefaultInterrupt)
+                  0x000012          0x4 LONG 0xd4c4 DEFINED (__ReservedTrap7)?<code 336> (__ReservedTrap7):<code 336> (__DefaultInterrupt)
+                  0x000014          0x4 LONG 0xd4c4 DEFINED (__INT0Interrupt)?<code 336> (__INT0Interrupt):<code 336> (__DefaultInterrupt)
+                  0x000016          0x4 LONG 0xd4c4 DEFINED (__IC1Interrupt)?<code 336> (__IC1Interrupt):<code 336> (__DefaultInterrupt)
+                  0x000018          0x4 LONG 0xd4c4 DEFINED (__OC1Interrupt)?<code 336> (__OC1Interrupt):<code 336> (__DefaultInterrupt)
+                  0x00001a          0x4 LONG 0xd4c4 DEFINED (__T1Interrupt)?<code 336> (__T1Interrupt):<code 336> (__DefaultInterrupt)
+                  0x00001c          0x4 LONG 0xd4c4 DEFINED (__IC2Interrupt)?<code 336> (__IC2Interrupt):<code 336> (__DefaultInterrupt)
+                  0x00001e          0x4 LONG 0xd4c4 DEFINED (__OC2Interrupt)?<code 336> (__OC2Interrupt):<code 336> (__DefaultInterrupt)
+                  0x000020          0x4 LONG 0x1a2e DEFINED (__T2Interrupt)?<code 336> (__T2Interrupt):<code 336> (__DefaultInterrupt)
+                  0x000022          0x4 LONG 0xd4c4 DEFINED (__T3Interrupt)?<code 336> (__T3Interrupt):<code 336> (__DefaultInterrupt)
+                  0x000024          0x4 LONG 0xd4c4 DEFINED (__SPI1Interrupt)?<code 336> (__SPI1Interrupt):<code 336> (__DefaultInterrupt)
+                  0x000026          0x4 LONG 0xd4c4 DEFINED (__U1RXInterrupt)?<code 336> (__U1RXInterrupt):<code 336> (__DefaultInterrupt)
+                  0x000028          0x4 LONG 0xd4c4 DEFINED (__U1TXInterrupt)?<code 336> (__U1TXInterrupt):<code 336> (__DefaultInterrupt)
+                  0x00002a          0x4 LONG 0x13b2 DEFINED (__ADCInterrupt)?<code 336> (__ADCInterrupt):<code 336> (__DefaultInterrupt)
+                  0x00002c          0x4 LONG 0xd4c4 DEFINED (__NVMInterrupt)?<code 336> (__NVMInterrupt):<code 336> (__DefaultInterrupt)
+                  0x00002e          0x4 LONG 0xd4c4 DEFINED (__SI2CInterrupt)?<code 336> (__SI2CInterrupt):<code 336> (__DefaultInterrupt)
+                  0x000030          0x4 LONG 0x3e22 DEFINED (__MI2CInterrupt)?<code 336> (__MI2CInterrupt):<code 336> (__DefaultInterrupt)
+                  0x000032          0x4 LONG 0xd4c4 DEFINED (__CNInterrupt)?<code 336> (__CNInterrupt):<code 336> (__DefaultInterrupt)
+                  0x000034          0x4 LONG 0xd4c4 DEFINED (__INT1Interrupt)?<code 336> (__INT1Interrupt):<code 336> (__DefaultInterrupt)
+                  0x000036          0x4 LONG 0xd4c4 DEFINED (__IC7Interrupt)?<code 336> (__IC7Interrupt):<code 336> (__DefaultInterrupt)
+                  0x000038          0x4 LONG 0xd4c4 DEFINED (__IC8Interrupt)?<code 336> (__IC8Interrupt):<code 336> (__DefaultInterrupt)
+                  0x00003a          0x4 LONG 0xd4c4 DEFINED (__OC3Interrupt)?<code 336> (__OC3Interrupt):<code 336> (__DefaultInterrupt)
+                  0x00003c          0x4 LONG 0xd4c4 DEFINED (__OC4Interrupt)?<code 336> (__OC4Interrupt):<code 336> (__DefaultInterrupt)
+                  0x00003e          0x4 LONG 0x2a00 DEFINED (__T4Interrupt)?<code 336> (__T4Interrupt):<code 336> (__DefaultInterrupt)
+                  0x000040          0x4 LONG 0x27f0 DEFINED (__T5Interrupt)?<code 336> (__T5Interrupt):<code 336> (__DefaultInterrupt)
+                  0x000042          0x4 LONG 0xd4c4 DEFINED (__INT2Interrupt)?<code 336> (__INT2Interrupt):<code 336> (__DefaultInterrupt)
+                  0x000044          0x4 LONG 0xd4c4 DEFINED (__U2RXInterrupt)?<code 336> (__U2RXInterrupt):<code 336> (__DefaultInterrupt)
+                  0x000046          0x4 LONG 0xd4c4 DEFINED (__U2TXInterrupt)?<code 336> (__U2TXInterrupt):<code 336> (__DefaultInterrupt)
+                  0x000048          0x4 LONG 0xd4c4 DEFINED (__SPI2Interrupt)?<code 336> (__SPI2Interrupt):<code 336> (__DefaultInterrupt)
+                  0x00004a          0x4 LONG 0xd4c4 DEFINED (__C1Interrupt)?<code 336> (__C1Interrupt):<code 336> (__DefaultInterrupt)
+                  0x00004c          0x4 LONG 0xd4c4 DEFINED (__IC3Interrupt)?<code 336> (__IC3Interrupt):<code 336> (__DefaultInterrupt)
+                  0x00004e          0x4 LONG 0xd4c4 DEFINED (__IC4Interrupt)?<code 336> (__IC4Interrupt):<code 336> (__DefaultInterrupt)
+                  0x000050          0x4 LONG 0xd4c4 DEFINED (__IC5Interrupt)?<code 336> (__IC5Interrupt):<code 336> (__DefaultInterrupt)
+                  0x000052          0x4 LONG 0xd4c4 DEFINED (__IC6Interrupt)?<code 336> (__IC6Interrupt):<code 336> (__DefaultInterrupt)
+                  0x000054          0x4 LONG 0xd4c4 DEFINED (__OC5Interrupt)?<code 336> (__OC5Interrupt):<code 336> (__DefaultInterrupt)
+                  0x000056          0x4 LONG 0xd4c4 DEFINED (__OC6Interrupt)?<code 336> (__OC6Interrupt):<code 336> (__DefaultInterrupt)
+                  0x000058          0x4 LONG 0xd4c4 DEFINED (__OC7Interrupt)?<code 336> (__OC7Interrupt):<code 336> (__DefaultInterrupt)
+                  0x00005a          0x4 LONG 0xd4c4 DEFINED (__OC8Interrupt)?<code 336> (__OC8Interrupt):<code 336> (__DefaultInterrupt)
+                  0x00005c          0x4 LONG 0xd4c4 DEFINED (__INT3Interrupt)?<code 336> (__INT3Interrupt):<code 336> (__DefaultInterrupt)
+                  0x00005e          0x4 LONG 0xd4c4 DEFINED (__INT4Interrupt)?<code 336> (__INT4Interrupt):<code 336> (__DefaultInterrupt)
+                  0x000060          0x4 LONG 0xd4c4 DEFINED (__C2Interrupt)?<code 336> (__C2Interrupt):<code 336> (__DefaultInterrupt)
+                  0x000062          0x4 LONG 0xd4c4 DEFINED (__PWMInterrupt)?<code 336> (__PWMInterrupt):<code 336> (__DefaultInterrupt)
+                  0x000064          0x4 LONG 0xd4c4 DEFINED (__QEIInterrupt)?<code 336> (__QEIInterrupt):<code 336> (__DefaultInterrupt)
+                  0x000066          0x4 LONG 0xd4c4 DEFINED (__DCIInterrupt)?<code 336> (__DCIInterrupt):<code 336> (__DefaultInterrupt)
+                  0x000068          0x4 LONG 0xd4c4 DEFINED (__LVDInterrupt)?<code 336> (__LVDInterrupt):<code 336> (__DefaultInterrupt)
+                  0x00006a          0x4 LONG 0xd4c4 DEFINED (__FLTAInterrupt)?<code 336> (__FLTAInterrupt):<code 336> (__DefaultInterrupt)
+                  0x00006c          0x4 LONG 0xd4c4 DEFINED (__FLTBInterrupt)?<code 336> (__FLTBInterrupt):<code 336> (__DefaultInterrupt)
+                  0x00006e          0x4 LONG 0xd4c4 DEFINED (__Interrupt45)?<code 336> (__Interrupt45):<code 336> (__DefaultInterrupt)
+                  0x000070          0x4 LONG 0xd4c4 DEFINED (__Interrupt46)?<code 336> (__Interrupt46):<code 336> (__DefaultInterrupt)
+                  0x000072          0x4 LONG 0xd4c4 DEFINED (__Interrupt47)?<code 336> (__Interrupt47):<code 336> (__DefaultInterrupt)
+                  0x000074          0x4 LONG 0xd4c4 DEFINED (__Interrupt48)?<code 336> (__Interrupt48):<code 336> (__DefaultInterrupt)
+                  0x000076          0x4 LONG 0xd4c4 DEFINED (__Interrupt49)?<code 336> (__Interrupt49):<code 336> (__DefaultInterrupt)
+                  0x000078          0x4 LONG 0xd4c4 DEFINED (__Interrupt50)?<code 336> (__Interrupt50):<code 336> (__DefaultInterrupt)
+                  0x00007a          0x4 LONG 0xd4c4 DEFINED (__Interrupt51)?<code 336> (__Interrupt51):<code 336> (__DefaultInterrupt)
+                  0x00007c          0x4 LONG 0xd4c4 DEFINED (__Interrupt52)?<code 336> (__Interrupt52):<code 336> (__DefaultInterrupt)
+                  0x00007e          0x4 LONG 0xd4c4 DEFINED (__Interrupt53)?<code 336> (__Interrupt53):<code 336> (__DefaultInterrupt)
 
 .aivt             0x000084         0x7c
-                  0x000084          0x4 LONG 0xbb6a DEFINED (__AltReservedTrap0)?<code 336> (__AltReservedTrap0):DEFINED (__ReservedTrap0)?<code 336> (__ReservedTrap0):<code 336> (__DefaultInterrupt)
-                  0x000086          0x4 LONG 0xbb6a DEFINED (__AltOscillatorFail)?<code 336> (__AltOscillatorFail):DEFINED (__OscillatorFail)?<code 336> (__OscillatorFail):<code 336> (__DefaultInterrupt)
-                  0x000088          0x4 LONG 0xbb6a DEFINED (__AltAddressError)?<code 336> (__AltAddressError):DEFINED (__AddressError)?<code 336> (__AddressError):<code 336> (__DefaultInterrupt)
-                  0x00008a          0x4 LONG 0xbb6a DEFINED (__AltStackError)?<code 336> (__AltStackError):DEFINED (__StackError)?<code 336> (__StackError):<code 336> (__DefaultInterrupt)
-                  0x00008c          0x4 LONG 0xbb6a DEFINED (__AltMathError)?<code 336> (__AltMathError):DEFINED (__MathError)?<code 336> (__MathError):<code 336> (__DefaultInterrupt)
-                  0x00008e          0x4 LONG 0xbb6a DEFINED (__AltReservedTrap5)?<code 336> (__AltReservedTrap5):DEFINED (__ReservedTrap5)?<code 336> (__ReservedTrap5):<code 336> (__DefaultInterrupt)
-                  0x000090          0x4 LONG 0xbb6a DEFINED (__AltReservedTrap6)?<code 336> (__AltReservedTrap6):DEFINED (__ReservedTrap6)?<code 336> (__ReservedTrap6):<code 336> (__DefaultInterrupt)
-                  0x000092          0x4 LONG 0xbb6a DEFINED (__AltReservedTrap7)?<code 336> (__AltReservedTrap7):DEFINED (__ReservedTrap7)?<code 336> (__ReservedTrap7):<code 336> (__DefaultInterrupt)
-                  0x000094          0x4 LONG 0xbb6a DEFINED (__AltINT0Interrupt)?<code 336> (__AltINT0Interrupt):DEFINED (__INT0Interrupt)?<code 336> (__INT0Interrupt):<code 336> (__DefaultInterrupt)
-                  0x000096          0x4 LONG 0xbb6a DEFINED (__AltIC1Interrupt)?<code 336> (__AltIC1Interrupt):DEFINED (__IC1Interrupt)?<code 336> (__IC1Interrupt):<code 336> (__DefaultInterrupt)
-                  0x000098          0x4 LONG 0xbb6a DEFINED (__AltOC1Interrupt)?<code 336> (__AltOC1Interrupt):DEFINED (__OC1Interrupt)?<code 336> (__OC1Interrupt):<code 336> (__DefaultInterrupt)
-                  0x00009a          0x4 LONG 0xbb6a DEFINED (__AltT1Interrupt)?<code 336> (__AltT1Interrupt):DEFINED (__T1Interrupt)?<code 336> (__T1Interrupt):<code 336> (__DefaultInterrupt)
-                  0x00009c          0x4 LONG 0xbb6a DEFINED (__AltIC2Interrupt)?<code 336> (__AltIC2Interrupt):DEFINED (__IC2Interrupt)?<code 336> (__IC2Interrupt):<code 336> (__DefaultInterrupt)
-                  0x00009e          0x4 LONG 0xbb6a DEFINED (__AltOC2Interrupt)?<code 336> (__AltOC2Interrupt):DEFINED (__OC2Interrupt)?<code 336> (__OC2Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000a0          0x4 LONG 0x1868 DEFINED (__AltT2Interrupt)?<code 336> (__AltT2Interrupt):DEFINED (__T2Interrupt)?<code 336> (__T2Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000a2          0x4 LONG 0xbb6a DEFINED (__AltT3Interrupt)?<code 336> (__AltT3Interrupt):DEFINED (__T3Interrupt)?<code 336> (__T3Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000a4          0x4 LONG 0xbb6a DEFINED (__AltSPI1Interrupt)?<code 336> (__AltSPI1Interrupt):DEFINED (__SPI1Interrupt)?<code 336> (__SPI1Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000a6          0x4 LONG 0xbb6a DEFINED (__AltU1RXInterrupt)?<code 336> (__AltU1RXInterrupt):DEFINED (__U1RXInterrupt)?<code 336> (__U1RXInterrupt):<code 336> (__DefaultInterrupt)
-                  0x0000a8          0x4 LONG 0xbb6a DEFINED (__AltU1TXInterrupt)?<code 336> (__AltU1TXInterrupt):DEFINED (__U1TXInterrupt)?<code 336> (__U1TXInterrupt):<code 336> (__DefaultInterrupt)
-                  0x0000aa          0x4 LONG 0x11ec DEFINED (__AltADCInterrupt)?<code 336> (__AltADCInterrupt):DEFINED (__ADCInterrupt)?<code 336> (__ADCInterrupt):<code 336> (__DefaultInterrupt)
-                  0x0000ac          0x4 LONG 0xbb6a DEFINED (__AltNVMInterrupt)?<code 336> (__AltNVMInterrupt):DEFINED (__NVMInterrupt)?<code 336> (__NVMInterrupt):<code 336> (__DefaultInterrupt)
-                  0x0000ae          0x4 LONG 0xbb6a DEFINED (__AltSI2CInterrupt)?<code 336> (__AltSI2CInterrupt):DEFINED (__SI2CInterrupt)?<code 336> (__SI2CInterrupt):<code 336> (__DefaultInterrupt)
-                  0x0000b0          0x4 LONG 0xbb6a DEFINED (__AltMI2CInterrupt)?<code 336> (__AltMI2CInterrupt):DEFINED (__MI2CInterrupt)?<code 336> (__MI2CInterrupt):<code 336> (__DefaultInterrupt)
-                  0x0000b2          0x4 LONG 0xbb6a DEFINED (__AltCNInterrupt)?<code 336> (__AltCNInterrupt):DEFINED (__CNInterrupt)?<code 336> (__CNInterrupt):<code 336> (__DefaultInterrupt)
-                  0x0000b4          0x4 LONG 0xbb6a DEFINED (__AltINT1Interrupt)?<code 336> (__AltINT1Interrupt):DEFINED (__INT1Interrupt)?<code 336> (__INT1Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000b6          0x4 LONG 0xbb6a DEFINED (__AltIC7Interrupt)?<code 336> (__AltIC7Interrupt):DEFINED (__IC7Interrupt)?<code 336> (__IC7Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000b8          0x4 LONG 0xbb6a DEFINED (__AltIC8Interrupt)?<code 336> (__AltIC8Interrupt):DEFINED (__IC8Interrupt)?<code 336> (__IC8Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000ba          0x4 LONG 0xbb6a DEFINED (__AltOC3Interrupt)?<code 336> (__AltOC3Interrupt):DEFINED (__OC3Interrupt)?<code 336> (__OC3Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000bc          0x4 LONG 0xbb6a DEFINED (__AltOC4Interrupt)?<code 336> (__AltOC4Interrupt):DEFINED (__OC4Interrupt)?<code 336> (__OC4Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000be          0x4 LONG 0xbb6a DEFINED (__AltT4Interrupt)?<code 336> (__AltT4Interrupt):DEFINED (__T4Interrupt)?<code 336> (__T4Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000c0          0x4 LONG 0xbb6a DEFINED (__AltT5Interrupt)?<code 336> (__AltT5Interrupt):DEFINED (__T5Interrupt)?<code 336> (__T5Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000c2          0x4 LONG 0xbb6a DEFINED (__AltINT2Interrupt)?<code 336> (__AltINT2Interrupt):DEFINED (__INT2Interrupt)?<code 336> (__INT2Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000c4          0x4 LONG 0xbb6a DEFINED (__AltU2RXInterrupt)?<code 336> (__AltU2RXInterrupt):DEFINED (__U2RXInterrupt)?<code 336> (__U2RXInterrupt):<code 336> (__DefaultInterrupt)
-                  0x0000c6          0x4 LONG 0xbb6a DEFINED (__AltU2TXInterrupt)?<code 336> (__AltU2TXInterrupt):DEFINED (__U2TXInterrupt)?<code 336> (__U2TXInterrupt):<code 336> (__DefaultInterrupt)
-                  0x0000c8          0x4 LONG 0xbb6a DEFINED (__AltSPI2Interrupt)?<code 336> (__AltSPI2Interrupt):DEFINED (__SPI2Interrupt)?<code 336> (__SPI2Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000ca          0x4 LONG 0xbb6a DEFINED (__AltC1Interrupt)?<code 336> (__AltC1Interrupt):DEFINED (__C1Interrupt)?<code 336> (__C1Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000cc          0x4 LONG 0xbb6a DEFINED (__AltIC3Interrupt)?<code 336> (__AltIC3Interrupt):DEFINED (__IC3Interrupt)?<code 336> (__IC3Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000ce          0x4 LONG 0xbb6a DEFINED (__AltIC4Interrupt)?<code 336> (__AltIC4Interrupt):DEFINED (__IC4Interrupt)?<code 336> (__IC4Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000d0          0x4 LONG 0xbb6a DEFINED (__AltIC5Interrupt)?<code 336> (__AltIC5Interrupt):DEFINED (__IC5Interrupt)?<code 336> (__IC5Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000d2          0x4 LONG 0xbb6a DEFINED (__AltIC6Interrupt)?<code 336> (__AltIC6Interrupt):DEFINED (__IC6Interrupt)?<code 336> (__IC6Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000d4          0x4 LONG 0xbb6a DEFINED (__AltOC5Interrupt)?<code 336> (__AltOC5Interrupt):DEFINED (__OC5Interrupt)?<code 336> (__OC5Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000d6          0x4 LONG 0xbb6a DEFINED (__AltOC6Interrupt)?<code 336> (__AltOC6Interrupt):DEFINED (__OC6Interrupt)?<code 336> (__OC6Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000d8          0x4 LONG 0xbb6a DEFINED (__AltOC7Interrupt)?<code 336> (__AltOC7Interrupt):DEFINED (__OC7Interrupt)?<code 336> (__OC7Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000da          0x4 LONG 0xbb6a DEFINED (__AltOC8Interrupt)?<code 336> (__AltOC8Interrupt):DEFINED (__OC8Interrupt)?<code 336> (__OC8Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000dc          0x4 LONG 0xbb6a DEFINED (__AltINT3Interrupt)?<code 336> (__AltINT3Interrupt):DEFINED (__INT3Interrupt)?<code 336> (__INT3Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000de          0x4 LONG 0xbb6a DEFINED (__AltINT4Interrupt)?<code 336> (__AltINT4Interrupt):DEFINED (__INT4Interrupt)?<code 336> (__INT4Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000e0          0x4 LONG 0xbb6a DEFINED (__AltC2Interrupt)?<code 336> (__AltC2Interrupt):DEFINED (__C2Interrupt)?<code 336> (__C2Interrupt):<code 336> (__DefaultInterrupt)
-                  0x0000e2          0x4 LONG 0xbb6a DEFINED (__AltPWMInterrupt)?<code 336> (__AltPWMInterrupt):DEFINED (__PWMInterrupt)?<code 336> (__PWMInterrupt):<code 336> (__DefaultInterrupt)
-                  0x0000e4          0x4 LONG 0xbb6a DEFINED (__AltQEIInterrupt)?<code 336> (__AltQEIInterrupt):DEFINED (__QEIInterrupt)?<code 336> (__QEIInterrupt):<code 336> (__DefaultInterrupt)
-                  0x0000e6          0x4 LONG 0xbb6a DEFINED (__AltDCIInterrupt)?<code 336> (__AltDCIInterrupt):DEFINED (__DCIInterrupt)?<code 336> (__DCIInterrupt):<code 336> (__DefaultInterrupt)
-                  0x0000e8          0x4 LONG 0xbb6a DEFINED (__AltLVDInterrupt)?<code 336> (__AltLVDInterrupt):DEFINED (__LVDInterrupt)?<code 336> (__LVDInterrupt):<code 336> (__DefaultInterrupt)
-                  0x0000ea          0x4 LONG 0xbb6a DEFINED (__AltFLTAInterrupt)?<code 336> (__AltFLTAInterrupt):DEFINED (__FLTAInterrupt)?<code 336> (__FLTAInterrupt):<code 336> (__DefaultInterrupt)
-                  0x0000ec          0x4 LONG 0xbb6a DEFINED (__AltFLTBInterrupt)?<code 336> (__AltFLTBInterrupt):DEFINED (__FLTBInterrupt)?<code 336> (__FLTBInterrupt):<code 336> (__DefaultInterrupt)
-                  0x0000ee          0x4 LONG 0xbb6a DEFINED (__AltInterrupt45)?<code 336> (__AltInterrupt45):DEFINED (__Interrupt45)?<code 336> (__Interrupt45):<code 336> (__DefaultInterrupt)
-                  0x0000f0          0x4 LONG 0xbb6a DEFINED (__AltInterrupt46)?<code 336> (__AltInterrupt46):DEFINED (__Interrupt46)?<code 336> (__Interrupt46):<code 336> (__DefaultInterrupt)
-                  0x0000f2          0x4 LONG 0xbb6a DEFINED (__AltInterrupt47)?<code 336> (__AltInterrupt47):DEFINED (__Interrupt47)?<code 336> (__Interrupt47):<code 336> (__DefaultInterrupt)
-                  0x0000f4          0x4 LONG 0xbb6a DEFINED (__AltInterrupt48)?<code 336> (__AltInterrupt48):DEFINED (__Interrupt48)?<code 336> (__Interrupt48):<code 336> (__DefaultInterrupt)
-                  0x0000f6          0x4 LONG 0xbb6a DEFINED (__AltInterrupt49)?<code 336> (__AltInterrupt49):DEFINED (__Interrupt49)?<code 336> (__Interrupt49):<code 336> (__DefaultInterrupt)
-                  0x0000f8          0x4 LONG 0xbb6a DEFINED (__AltInterrupt50)?<code 336> (__AltInterrupt50):DEFINED (__Interrupt50)?<code 336> (__Interrupt50):<code 336> (__DefaultInterrupt)
-                  0x0000fa          0x4 LONG 0xbb6a DEFINED (__AltInterrupt51)?<code 336> (__AltInterrupt51):DEFINED (__Interrupt51)?<code 336> (__Interrupt51):<code 336> (__DefaultInterrupt)
-                  0x0000fc          0x4 LONG 0xbb6a DEFINED (__AltInterrupt52)?<code 336> (__AltInterrupt52):DEFINED (__Interrupt52)?<code 336> (__Interrupt52):<code 336> (__DefaultInterrupt)
-                  0x0000fe          0x4 LONG 0xbb6a DEFINED (__AltInterrupt53)?<code 336> (__AltInterrupt53):DEFINED (__Interrupt53)?<code 336> (__Interrupt53):<code 336> (__DefaultInterrupt)
+                  0x000084          0x4 LONG 0xd4c4 DEFINED (__AltReservedTrap0)?<code 336> (__AltReservedTrap0):DEFINED (__ReservedTrap0)?<code 336> (__ReservedTrap0):<code 336> (__DefaultInterrupt)
+                  0x000086          0x4 LONG 0xd4c4 DEFINED (__AltOscillatorFail)?<code 336> (__AltOscillatorFail):DEFINED (__OscillatorFail)?<code 336> (__OscillatorFail):<code 336> (__DefaultInterrupt)
+                  0x000088          0x4 LONG 0xd4c4 DEFINED (__AltAddressError)?<code 336> (__AltAddressError):DEFINED (__AddressError)?<code 336> (__AddressError):<code 336> (__DefaultInterrupt)
+                  0x00008a          0x4 LONG 0xd4c4 DEFINED (__AltStackError)?<code 336> (__AltStackError):DEFINED (__StackError)?<code 336> (__StackError):<code 336> (__DefaultInterrupt)
+                  0x00008c          0x4 LONG 0xd4c4 DEFINED (__AltMathError)?<code 336> (__AltMathError):DEFINED (__MathError)?<code 336> (__MathError):<code 336> (__DefaultInterrupt)
+                  0x00008e          0x4 LONG 0xd4c4 DEFINED (__AltReservedTrap5)?<code 336> (__AltReservedTrap5):DEFINED (__ReservedTrap5)?<code 336> (__ReservedTrap5):<code 336> (__DefaultInterrupt)
+                  0x000090          0x4 LONG 0xd4c4 DEFINED (__AltReservedTrap6)?<code 336> (__AltReservedTrap6):DEFINED (__ReservedTrap6)?<code 336> (__ReservedTrap6):<code 336> (__DefaultInterrupt)
+                  0x000092          0x4 LONG 0xd4c4 DEFINED (__AltReservedTrap7)?<code 336> (__AltReservedTrap7):DEFINED (__ReservedTrap7)?<code 336> (__ReservedTrap7):<code 336> (__DefaultInterrupt)
+                  0x000094          0x4 LONG 0xd4c4 DEFINED (__AltINT0Interrupt)?<code 336> (__AltINT0Interrupt):DEFINED (__INT0Interrupt)?<code 336> (__INT0Interrupt):<code 336> (__DefaultInterrupt)
+                  0x000096          0x4 LONG 0xd4c4 DEFINED (__AltIC1Interrupt)?<code 336> (__AltIC1Interrupt):DEFINED (__IC1Interrupt)?<code 336> (__IC1Interrupt):<code 336> (__DefaultInterrupt)
+                  0x000098          0x4 LONG 0xd4c4 DEFINED (__AltOC1Interrupt)?<code 336> (__AltOC1Interrupt):DEFINED (__OC1Interrupt)?<code 336> (__OC1Interrupt):<code 336> (__DefaultInterrupt)
+                  0x00009a          0x4 LONG 0xd4c4 DEFINED (__AltT1Interrupt)?<code 336> (__AltT1Interrupt):DEFINED (__T1Interrupt)?<code 336> (__T1Interrupt):<code 336> (__DefaultInterrupt)
+                  0x00009c          0x4 LONG 0xd4c4 DEFINED (__AltIC2Interrupt)?<code 336> (__AltIC2Interrupt):DEFINED (__IC2Interrupt)?<code 336> (__IC2Interrupt):<code 336> (__DefaultInterrupt)
+                  0x00009e          0x4 LONG 0xd4c4 DEFINED (__AltOC2Interrupt)?<code 336> (__AltOC2Interrupt):DEFINED (__OC2Interrupt)?<code 336> (__OC2Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000a0          0x4 LONG 0x1a2e DEFINED (__AltT2Interrupt)?<code 336> (__AltT2Interrupt):DEFINED (__T2Interrupt)?<code 336> (__T2Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000a2          0x4 LONG 0xd4c4 DEFINED (__AltT3Interrupt)?<code 336> (__AltT3Interrupt):DEFINED (__T3Interrupt)?<code 336> (__T3Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000a4          0x4 LONG 0xd4c4 DEFINED (__AltSPI1Interrupt)?<code 336> (__AltSPI1Interrupt):DEFINED (__SPI1Interrupt)?<code 336> (__SPI1Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000a6          0x4 LONG 0xd4c4 DEFINED (__AltU1RXInterrupt)?<code 336> (__AltU1RXInterrupt):DEFINED (__U1RXInterrupt)?<code 336> (__U1RXInterrupt):<code 336> (__DefaultInterrupt)
+                  0x0000a8          0x4 LONG 0xd4c4 DEFINED (__AltU1TXInterrupt)?<code 336> (__AltU1TXInterrupt):DEFINED (__U1TXInterrupt)?<code 336> (__U1TXInterrupt):<code 336> (__DefaultInterrupt)
+                  0x0000aa          0x4 LONG 0x13b2 DEFINED (__AltADCInterrupt)?<code 336> (__AltADCInterrupt):DEFINED (__ADCInterrupt)?<code 336> (__ADCInterrupt):<code 336> (__DefaultInterrupt)
+                  0x0000ac          0x4 LONG 0xd4c4 DEFINED (__AltNVMInterrupt)?<code 336> (__AltNVMInterrupt):DEFINED (__NVMInterrupt)?<code 336> (__NVMInterrupt):<code 336> (__DefaultInterrupt)
+                  0x0000ae          0x4 LONG 0xd4c4 DEFINED (__AltSI2CInterrupt)?<code 336> (__AltSI2CInterrupt):DEFINED (__SI2CInterrupt)?<code 336> (__SI2CInterrupt):<code 336> (__DefaultInterrupt)
+                  0x0000b0          0x4 LONG 0x3e22 DEFINED (__AltMI2CInterrupt)?<code 336> (__AltMI2CInterrupt):DEFINED (__MI2CInterrupt)?<code 336> (__MI2CInterrupt):<code 336> (__DefaultInterrupt)
+                  0x0000b2          0x4 LONG 0xd4c4 DEFINED (__AltCNInterrupt)?<code 336> (__AltCNInterrupt):DEFINED (__CNInterrupt)?<code 336> (__CNInterrupt):<code 336> (__DefaultInterrupt)
+                  0x0000b4          0x4 LONG 0xd4c4 DEFINED (__AltINT1Interrupt)?<code 336> (__AltINT1Interrupt):DEFINED (__INT1Interrupt)?<code 336> (__INT1Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000b6          0x4 LONG 0xd4c4 DEFINED (__AltIC7Interrupt)?<code 336> (__AltIC7Interrupt):DEFINED (__IC7Interrupt)?<code 336> (__IC7Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000b8          0x4 LONG 0xd4c4 DEFINED (__AltIC8Interrupt)?<code 336> (__AltIC8Interrupt):DEFINED (__IC8Interrupt)?<code 336> (__IC8Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000ba          0x4 LONG 0xd4c4 DEFINED (__AltOC3Interrupt)?<code 336> (__AltOC3Interrupt):DEFINED (__OC3Interrupt)?<code 336> (__OC3Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000bc          0x4 LONG 0xd4c4 DEFINED (__AltOC4Interrupt)?<code 336> (__AltOC4Interrupt):DEFINED (__OC4Interrupt)?<code 336> (__OC4Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000be          0x4 LONG 0x2a00 DEFINED (__AltT4Interrupt)?<code 336> (__AltT4Interrupt):DEFINED (__T4Interrupt)?<code 336> (__T4Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000c0          0x4 LONG 0x27f0 DEFINED (__AltT5Interrupt)?<code 336> (__AltT5Interrupt):DEFINED (__T5Interrupt)?<code 336> (__T5Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000c2          0x4 LONG 0xd4c4 DEFINED (__AltINT2Interrupt)?<code 336> (__AltINT2Interrupt):DEFINED (__INT2Interrupt)?<code 336> (__INT2Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000c4          0x4 LONG 0xd4c4 DEFINED (__AltU2RXInterrupt)?<code 336> (__AltU2RXInterrupt):DEFINED (__U2RXInterrupt)?<code 336> (__U2RXInterrupt):<code 336> (__DefaultInterrupt)
+                  0x0000c6          0x4 LONG 0xd4c4 DEFINED (__AltU2TXInterrupt)?<code 336> (__AltU2TXInterrupt):DEFINED (__U2TXInterrupt)?<code 336> (__U2TXInterrupt):<code 336> (__DefaultInterrupt)
+                  0x0000c8          0x4 LONG 0xd4c4 DEFINED (__AltSPI2Interrupt)?<code 336> (__AltSPI2Interrupt):DEFINED (__SPI2Interrupt)?<code 336> (__SPI2Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000ca          0x4 LONG 0xd4c4 DEFINED (__AltC1Interrupt)?<code 336> (__AltC1Interrupt):DEFINED (__C1Interrupt)?<code 336> (__C1Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000cc          0x4 LONG 0xd4c4 DEFINED (__AltIC3Interrupt)?<code 336> (__AltIC3Interrupt):DEFINED (__IC3Interrupt)?<code 336> (__IC3Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000ce          0x4 LONG 0xd4c4 DEFINED (__AltIC4Interrupt)?<code 336> (__AltIC4Interrupt):DEFINED (__IC4Interrupt)?<code 336> (__IC4Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000d0          0x4 LONG 0xd4c4 DEFINED (__AltIC5Interrupt)?<code 336> (__AltIC5Interrupt):DEFINED (__IC5Interrupt)?<code 336> (__IC5Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000d2          0x4 LONG 0xd4c4 DEFINED (__AltIC6Interrupt)?<code 336> (__AltIC6Interrupt):DEFINED (__IC6Interrupt)?<code 336> (__IC6Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000d4          0x4 LONG 0xd4c4 DEFINED (__AltOC5Interrupt)?<code 336> (__AltOC5Interrupt):DEFINED (__OC5Interrupt)?<code 336> (__OC5Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000d6          0x4 LONG 0xd4c4 DEFINED (__AltOC6Interrupt)?<code 336> (__AltOC6Interrupt):DEFINED (__OC6Interrupt)?<code 336> (__OC6Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000d8          0x4 LONG 0xd4c4 DEFINED (__AltOC7Interrupt)?<code 336> (__AltOC7Interrupt):DEFINED (__OC7Interrupt)?<code 336> (__OC7Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000da          0x4 LONG 0xd4c4 DEFINED (__AltOC8Interrupt)?<code 336> (__AltOC8Interrupt):DEFINED (__OC8Interrupt)?<code 336> (__OC8Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000dc          0x4 LONG 0xd4c4 DEFINED (__AltINT3Interrupt)?<code 336> (__AltINT3Interrupt):DEFINED (__INT3Interrupt)?<code 336> (__INT3Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000de          0x4 LONG 0xd4c4 DEFINED (__AltINT4Interrupt)?<code 336> (__AltINT4Interrupt):DEFINED (__INT4Interrupt)?<code 336> (__INT4Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000e0          0x4 LONG 0xd4c4 DEFINED (__AltC2Interrupt)?<code 336> (__AltC2Interrupt):DEFINED (__C2Interrupt)?<code 336> (__C2Interrupt):<code 336> (__DefaultInterrupt)
+                  0x0000e2          0x4 LONG 0xd4c4 DEFINED (__AltPWMInterrupt)?<code 336> (__AltPWMInterrupt):DEFINED (__PWMInterrupt)?<code 336> (__PWMInterrupt):<code 336> (__DefaultInterrupt)
+                  0x0000e4          0x4 LONG 0xd4c4 DEFINED (__AltQEIInterrupt)?<code 336> (__AltQEIInterrupt):DEFINED (__QEIInterrupt)?<code 336> (__QEIInterrupt):<code 336> (__DefaultInterrupt)
+                  0x0000e6          0x4 LONG 0xd4c4 DEFINED (__AltDCIInterrupt)?<code 336> (__AltDCIInterrupt):DEFINED (__DCIInterrupt)?<code 336> (__DCIInterrupt):<code 336> (__DefaultInterrupt)
+                  0x0000e8          0x4 LONG 0xd4c4 DEFINED (__AltLVDInterrupt)?<code 336> (__AltLVDInterrupt):DEFINED (__LVDInterrupt)?<code 336> (__LVDInterrupt):<code 336> (__DefaultInterrupt)
+                  0x0000ea          0x4 LONG 0xd4c4 DEFINED (__AltFLTAInterrupt)?<code 336> (__AltFLTAInterrupt):DEFINED (__FLTAInterrupt)?<code 336> (__FLTAInterrupt):<code 336> (__DefaultInterrupt)
+                  0x0000ec          0x4 LONG 0xd4c4 DEFINED (__AltFLTBInterrupt)?<code 336> (__AltFLTBInterrupt):DEFINED (__FLTBInterrupt)?<code 336> (__FLTBInterrupt):<code 336> (__DefaultInterrupt)
+                  0x0000ee          0x4 LONG 0xd4c4 DEFINED (__AltInterrupt45)?<code 336> (__AltInterrupt45):DEFINED (__Interrupt45)?<code 336> (__Interrupt45):<code 336> (__DefaultInterrupt)
+                  0x0000f0          0x4 LONG 0xd4c4 DEFINED (__AltInterrupt46)?<code 336> (__AltInterrupt46):DEFINED (__Interrupt46)?<code 336> (__Interrupt46):<code 336> (__DefaultInterrupt)
+                  0x0000f2          0x4 LONG 0xd4c4 DEFINED (__AltInterrupt47)?<code 336> (__AltInterrupt47):DEFINED (__Interrupt47)?<code 336> (__Interrupt47):<code 336> (__DefaultInterrupt)
+                  0x0000f4          0x4 LONG 0xd4c4 DEFINED (__AltInterrupt48)?<code 336> (__AltInterrupt48):DEFINED (__Interrupt48)?<code 336> (__Interrupt48):<code 336> (__DefaultInterrupt)
+                  0x0000f6          0x4 LONG 0xd4c4 DEFINED (__AltInterrupt49)?<code 336> (__AltInterrupt49):DEFINED (__Interrupt49)?<code 336> (__Interrupt49):<code 336> (__DefaultInterrupt)
+                  0x0000f8          0x4 LONG 0xd4c4 DEFINED (__AltInterrupt50)?<code 336> (__AltInterrupt50):DEFINED (__Interrupt50)?<code 336> (__Interrupt50):<code 336> (__DefaultInterrupt)
+                  0x0000fa          0x4 LONG 0xd4c4 DEFINED (__AltInterrupt51)?<code 336> (__AltInterrupt51):DEFINED (__Interrupt51)?<code 336> (__Interrupt51):<code 336> (__DefaultInterrupt)
+                  0x0000fc          0x4 LONG 0xd4c4 DEFINED (__AltInterrupt52)?<code 336> (__AltInterrupt52):DEFINED (__Interrupt52)?<code 336> (__Interrupt52):<code 336> (__DefaultInterrupt)
+                  0x0000fe          0x4 LONG 0xd4c4 DEFINED (__AltInterrupt53)?<code 336> (__AltInterrupt53):DEFINED (__Interrupt53)?<code 336> (__Interrupt53):<code 336> (__DefaultInterrupt)
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -2114,72 +2415,97 @@ LOAD default_isr
                     0x0f32                  e_ambient_ir
                     0x0f42                  e_ambient_and_reflected_ir
 
-.nbss               0x0f52         0x44
- .nbss              0x0f52         0x44 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libc-coff.a(exit.o)
+.nbss               0x0f52        0x154
+ .nbss              0x0f52        0x154 e_timers.o
+                    0x0f54                  _poxxxx_buffer
+                    0x0f56                  _poxxxx_img_ready
+                    0x0f58                  _poxxxx_current_row
+                    0x0f5a                  _poxxxx_row
+                    0x0f5c                  _poxxxx_line_conf
 
-.nbss               0x0f96         0x18
- .nbss              0x0f96         0x18 e_acc.o
+.nbss               0x10a6        0x144
+ .nbss              0x10a6        0x144 curious.o
+                    0x10a6                  gbuffer
+                    0x1146                  gnumbuffer
+                    0x11e6                  isGreenVisable
 
-.nbss               0x0fae         0x10
- .nbss              0x0fae         0x10 e_prox.o
+.ndata              0x11ea         0xd8
+ .ndata             0x11ea         0xd8 e_po3030k_registers.o
 
-.nbss               0x0fbe         0x10
- .nbss              0x0fbe         0x10 e_motors.o
+.nbss               0x12c2         0x44
+ .nbss              0x12c2         0x44 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libc-coff.a(exit.o)
 
-.ndata              0x0fce          0x8
- .ndata             0x0fce          0x8 e_sub_dci_kickoff.o
-                    0x0fce                  e_stop_flag
-                    0x0fd0                  e_dci_unavailable
-                    0x0fd2                  e_samples_count
-                    0x0fd4                  e_actual_page
+.nbss               0x1306         0x18
+ .nbss              0x1306         0x18 e_acc.o
 
-.nbss               0x0fd6          0x6
- .nbss              0x0fd6          0x6 e_led.o
+.nbss               0x131e         0x10
+ .nbss              0x131e         0x10 e_prox.o
 
-.ndata              0x0fdc          0x6
- .ndata             0x0fdc          0x6 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libc-coff.a(malloc.o)
-                    0x0fdc                  _Size_block
-                    0x0fde                  _Aldata
+.nbss               0x132e         0x10
+ .nbss              0x132e         0x10 e_motors.o
 
-.ndata              0x0fe2          0x6
- .ndata             0x0fe2          0x6 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libc-coff.a(exit.o)
-                    0x0fe2                  _Atcount
-                    0x0fe4                  _Atfuns
+.ndata              0x133e          0x8
+ .ndata             0x133e          0x8 e_sub_dci_kickoff.o
+                    0x133e                  e_stop_flag
+                    0x1340                  e_dci_unavailable
+                    0x1342                  e_samples_count
+                    0x1344                  e_actual_page
 
-.ndata              0x0fe8          0x4
- .ndata             0x0fe8          0x4 e_ad_conv.o
-                    0x0fe8                  e_last_mic_scan_id
-                    0x0fea                  e_last_acc_scan_id
+.nbss               0x1346          0x8
+ .nbss              0x1346          0x8 e_I2C_master_module.o
+                    0x1346                  e_i2c_mode
+                    0x1348                  e_interrupts
 
-.ndata              0x0fec          0x2
- .ndata             0x0fec          0x2 e_acc.o
+.nbss               0x134e          0x6
+ .nbss              0x134e          0x6 e_led.o
 
-.nbss               0x0fee          0x2
- .nbss              0x0fee          0x2 e_agenda.o
+.ndata              0x1354          0x6
+ .ndata             0x1354          0x6 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libc-coff.a(malloc.o)
+                    0x1354                  _Size_block
+                    0x1356                  _Aldata
 
-.ndata              0x0ff0          0x2
- .ndata             0x0ff0          0x2 e_led.o
+.ndata              0x135a          0x6
+ .ndata             0x135a          0x6 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libc-coff.a(exit.o)
+                    0x135a                  _Atcount
+                    0x135c                  _Atfuns
 
-.nbss               0x0ff2          0x2
- .nbss              0x0ff2          0x2 e_sub_dci_kickoff.o
-                    0x0ff2                  e_tone_ptr
+.ndata              0x1360          0x4
+ .ndata             0x1360          0x4 e_ad_conv.o
+                    0x1360                  e_last_mic_scan_id
+                    0x1362                  e_last_acc_scan_id
 
-.nbss               0x0ff4          0x2
- .nbss              0x0ff4          0x2 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(errno.o)
-                    0x0ff4                  errno
+.ndata              0x1364          0x2
+ .ndata             0x1364          0x2 e_acc.o
 
-.nbss               0x0ff6          0x2
- .nbss              0x0ff6          0x2 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libpic30-coff.a(brk.o)
-                    0x0ff6                  __curbrk
+.nbss               0x1366          0x2
+ .nbss              0x1366          0x2 e_agenda.o
 
-.sound_samples    0x00262a       0x94c8
+.ndata              0x1368          0x2
+ .ndata             0x1368          0x2 e_led.o
+
+.nbss               0x136a          0x2
+ .nbss              0x136a          0x2 e_sub_dci_kickoff.o
+                    0x136a                  e_tone_ptr
+
+.nbss               0x136c          0x2
+ .nbss              0x136c          0x2 e_common.o
+
+.nbss               0x136e          0x2
+ .nbss              0x136e          0x2 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libm-coff.a(errno.o)
+                    0x136e                  errno
+
+.nbss               0x1370          0x2
+ .nbss              0x1370          0x2 q:/microchip/vfs/sft_mnt/program files (x86)/microchip/mplab c30/bin/../lib\libpic30-coff.a(brk.o)
+                    0x1370                  __curbrk
+
+.sound_samples    0x003ed6       0x94c8
  .sound_samples
-                  0x00262a       0x94c8 e_const_sound.o
-                  0x00262a                  e_sound_sample
+                  0x003ed6       0x94c8 e_const_sound.o
+                  0x003ed6                  e_sound_sample
 
-.dinit            0x00baf2         0x78
- .dinit           0x00baf2         0x78 data_init
+.dinit            0x00d39e        0x126
+ .dinit           0x00d39e        0x126 data_init
 
-.isr              0x00bb6a          0x2
- .isr             0x00bb6a          0x2 default_isr
-                  0x00bb6a                  _DefaultInterrupt
+.isr              0x00d4c4          0x2
+ .isr             0x00d4c4          0x2 default_isr
+                  0x00d4c4                  _DefaultInterrupt

@@ -1,5 +1,7 @@
 .include "p30f6014A.inc"
 
+.section .text
+
 ; assembler file for the HSYNC interrupt
 .global	__T4Interrupt
 __T4Interrupt:
@@ -12,8 +14,8 @@ __T4Interrupt:
 		; for fine syncronisation
 		nop
 
-		mov __po3030k_buffer, w1
-		mov #__po3030k_line_conf, w2
+		mov __poxxxx_buffer, w1
+		mov #__poxxxx_line_conf, w2
 		mov #1, w3				; used for comparaisons
 
 restart_loop:
@@ -32,16 +34,19 @@ take_it:
 		bra restart_loop
 
 end_line:
-		mov w1, __po3030k_buffer
-		inc __po3030k_current_row
-		mov __po3030k_current_row,w0
-		cp __po3030k_row
+		mov w1, __poxxxx_buffer
+		inc __poxxxx_current_row
+		mov __poxxxx_current_row,w0
+		cp __poxxxx_row
 		bra NZ, go_out
 		; tell others we are ready
 		mov #1, w0
-		mov w0, __po3030k_img_ready		
+		mov w0, __poxxxx_img_ready		
 		; disable ourself
 		bclr T4CON,#TON
 go_out:
 		pop.s
 		retfie
+
+.end
+
