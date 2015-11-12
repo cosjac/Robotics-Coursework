@@ -93,5 +93,7 @@ void aggressive(void)
 		}
 
 		findColour();
+		//access isColourVisible
+		// run aggressive code
 	}
 }
