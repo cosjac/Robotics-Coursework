@@ -58,6 +58,7 @@ void Image(){
 					isColourVisable = 0;
 				}
 			}
+			break;
 		}
 		case 'g':
 		{
@@ -79,6 +80,7 @@ void Image(){
 					isColourVisable = 0;
 				}
 			}
+			break;
 		}
 		case 'b':
 		{
@@ -100,6 +102,7 @@ void Image(){
 					isColourVisable = 0;
 				}
 			}
+			break;
 		}
 	}		
 }

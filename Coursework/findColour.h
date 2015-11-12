@@ -3,5 +3,6 @@
 
 void findColour();
 void setColour(char colourIn);
+extern long isColourVisable;
 	
 #endif

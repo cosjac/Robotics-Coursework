@@ -94,6 +94,18 @@ void aggressive(void)
 
 		findColour();
 		//access isColourVisible
-		// run aggressive code
+		//if(isColourVisible)
+		//{
+			e_set_speed_left(1500);
+			e_set_speed_right(1500);
+			for(i=0;i<20000;i++) {asm("nop");}
+
+			e_set_speed_left(-500);
+			e_set_speed_right(-500);
+			for(i=0;i<10000;i++) {asm("nop");}
+		//}
+		//run aggressive code
+		//aggressive noise
+
 	}
 }
