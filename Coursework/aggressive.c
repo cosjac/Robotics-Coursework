@@ -11,21 +11,10 @@
 #include "library/codec/e_sound.h"
 #include "library/motor_led/e_epuck_ports.h"
 
-#include "fear.h"
+#include "aggressive.h"
+#include "findColour.h"
 
-
-void LedFearFlash(void)
-{
-	e_led_clear();
-	int i, x = 0;
-	for ( i; i < 10; i++ ) {
-		e_set_led(i,1);
-		for ( x; x < 10000; x++ ) {asm("nop");}
-		e_set_led(i,0);
-	}
-}
-
-void fear(void)
+void aggressive(void)
 {
 	long i;
 	int left, right;
@@ -38,6 +27,8 @@ void fear(void)
 	e_set_speed_left(500);
 	e_set_speed_right(500);
 
+	setColour('r');
+	
 
 	while(1) {
 		e_set_led(1,1);	
@@ -90,18 +81,6 @@ void fear(void)
 
 		//if back sensors, turn to face
 		if (e_get_prox(3) > 800 || e_get_prox(5) > 800) {
-			
-			/*// Run away fast with fear flash
-			e_set_led(0,1);
-			e_set_led(1,1);
-			e_set_led(2,1);
-			e_set_led(3,1);
-			e_set_led(4,1);
-			e_set_led(5,1);
-			e_set_led(6,1);
-			e_set_led(7,1);
-			e_play_sound(11028, 8016);
-           	*/
 
 			e_set_speed_left(1500);
 			e_set_speed_right(-1500);
@@ -113,7 +92,6 @@ void fear(void)
 			e_set_speed_right(500);
 		}
 
-
-		//camera code
+		findColour();
 	}
 }

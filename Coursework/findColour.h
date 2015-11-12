@@ -1,6 +1,7 @@
 #ifndef _FINDRED
 #define _FINDRED
 
-void findColour(void);
+void findColour();
+void setColour(char colourIn);
 	
 #endif

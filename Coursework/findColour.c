@@ -1,11 +1,14 @@
 
-/*
-#include "motor_led/e_init_port.h"
-#include "motor_led/e_epuck_ports.h"
-#include "motor_led/advance_one_timer/e_motors.h"
-#include "motor_led/advance_one_timer/e_agenda.h"
-#include "uart/e_uart_char.h"
-#include "camera/fast_2_timer/e_poxxxx.h"
+
+#include "library/motor_led/e_epuck_ports.h"
+#include "library/motor_led/e_init_port.h"
+#include "library/motor_led/advance_one_timer/e_motors.h"
+#include "library/motor_led/advance_one_timer/e_led.h"
+#include "library/motor_led/advance_one_timer/e_agenda.h"
+#include "library/uart/e_uart_char.h"
+#include "library/a_d/advance_ad_scan/e_ad_conv.h"
+#include "library/a_d/advance_ad_scan/e_prox.h"
+#include "library/camera/fast_2_timer/e_poxxxx.h"
 
 #include "stdio.h"
 #include "string.h"
@@ -15,8 +18,12 @@
 
 char fbwbuffer[160];
 int numbuffer[80];
-long isRedVisable;
+long isColourVisable;
 char colour;
+
+void setColour(char colourIn){
+	colour = colourIn;
+}
 
 //custom cam picture load
 void getImage(){
@@ -30,7 +37,7 @@ void Image(){
 
 	switch(colour)
 	{
-		case r:
+		case 'r':
 		{
 			for(i=0; i<80; i++){
 				//RGB turned into an integer value for comparison
@@ -44,15 +51,15 @@ void Image(){
 				}else{
 					numbuffer[i] = 0;
 				}
-				//If colour is visable then isRedVisable turns to true
+				//If colour is visable then isColourVisable turns to true
 				if(vis>0){
-					isRedVisable = 1;
+					isColourVisable = 1;
 				}else{
-					isRedVisable = 0;
+					isColourVisable = 0;
 				}
 			}
 		}
-		case g:
+		case 'g':
 		{
 			for(i=0; i<80; i++){
 				//RGB turned into an integer value for comparison
@@ -66,15 +73,14 @@ void Image(){
 				}else{
 					numbuffer[i] = 0;
 				}
-				//If colour is visable then isRedVisable turns to true
 				if(vis>0){
-					isRedVisable = 1;
+					isColourVisable = 1;
 				}else{
-					isRedVisable = 0;
+					isColourVisable = 0;
 				}
 			}
 		}
-		case b:
+		case 'b':
 		{
 			for(i=0; i<80; i++){
 				//RGB turned into an integer value for comparison
@@ -88,11 +94,10 @@ void Image(){
 				}else{
 					numbuffer[i] = 0;
 				}
-				//If colour is visable then isRedVisable turns to true
 				if(vis>0){
-					isRedVisable = 1;
+					isColourVisable = 1;
 				}else{
-					isRedVisable = 0;
+					isColourVisable = 0;
 				}
 			}
 		}
@@ -125,9 +130,7 @@ void turn(void) {
 	}
 }
 //Main function of follower
-void findColour(char colourIn){
-
-	colour = colourIn;
+void findColour(){
 	//basic set up for camera
 	e_poxxxx_init_cam();
 	e_poxxxx_config_cam(0,(ARRAY_HEIGHT - 4)/2,640,4,8,4,RGB_565_MODE);
@@ -135,9 +138,9 @@ void findColour(char colourIn){
 	e_poxxxx_write_cam_registers(); 
 
 	e_start_agendas_processing();
-	int centreValue;
+	int centreValue = 0;
 
-	while(1){
+	while(centreValue < 3){
 		getImage();
 		Image();
 		//Take a section of the center, this means if there is an error with one it won't effect it as a whole.
@@ -146,7 +149,7 @@ void findColour(char colourIn){
 			e_destroy_agenda(turn);
 			e_set_speed_left (0);
 			e_set_speed_right(0);
-		}else if(isRedVisable){//If red isn't in the center but is visable then picks a direction to turn to face it
+		}else if(isColourVisable){//If red isn't in the center but is visable then picks a direction to turn to face it
 			e_activate_agenda(turn, 650);
 		}else{// if red isn't visible and no true values it will turn left
 			e_destroy_agenda(turn);
@@ -156,4 +159,3 @@ void findColour(char colourIn){
 	}
 }
 
-*/
