@@ -149,12 +149,13 @@ void findColour(){
 			e_destroy_agenda(turn);
 			e_set_speed_left (0);
 			e_set_speed_right(0);
-		}else if(isColourVisable){//If red isn't in the center but is visable then picks a direction to turn to face it
+		}else if(isColourVisable){//If colour isn't in the center but is visable then picks a direction to turn to face it
 			e_activate_agenda(turn, 650);
-		}else{// if red isn't visible and no true values it will turn left
-			e_destroy_agenda(turn);
-			e_set_speed_left (0);
-			e_set_speed_right(0);
+		}else{
+			//e_destroy_agenda(turn);
+			//e_set_speed_left (500);
+			//e_set_speed_right(0);
+			break;
 		}
 	}
 }
