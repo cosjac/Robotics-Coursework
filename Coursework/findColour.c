@@ -18,22 +18,26 @@
 
 char fbwbuffer[160];
 int numbuffer[80];
-long isColourVisable;
+int isColourVisable;
 char colour;
 
-void setColour(char colourIn){
+void setColour(char colourIn)
+{
 	colour = colourIn;
 }
 
 //custom cam picture load
-void getImage(){
+void getImage()
+{
 	e_poxxxx_launch_capture((char *)fbwbuffer);
     while(!e_poxxxx_is_img_ready()){};
 }
 // Image processing removes useless information
-void Image(){	
+void Image()
+{	
 	long i;
-	int green, red, blue, vis;
+	int green, red, blue;
+	int vis = 0;
 
 	switch(colour)
 	{
@@ -107,8 +111,24 @@ void Image(){
 	}		
 }
 
+int isColourVis()
+{
+	//basic set up for camera
+	e_poxxxx_init_cam();
+	e_poxxxx_config_cam(0,(ARRAY_HEIGHT - 4)/2,640,4,8,4,RGB_565_MODE);
+	e_poxxxx_set_mirror(1,1);
+	e_poxxxx_write_cam_registers(); 
+
+	e_start_agendas_processing();
+	
+	getImage();
+	Image();
+
+	return isColourVisable;		
+}
 //Decide which way to turn.
-int turnDirection(){
+int turnDirection()
+{
 	int sumL = 0;
 	int sumR = 0;
 	int i;
@@ -123,7 +143,8 @@ int turnDirection(){
 	}
 }
 //Function to deal with turning.
-void turn(void) {
+void turn(void)
+{
 	if(turnDirection()){
 		e_set_speed_left (500);
 		e_set_speed_right(-500);
@@ -133,7 +154,8 @@ void turn(void) {
 	}
 }
 //Main function of follower
-void findColour(){
+void findColour()
+{
 	//basic set up for camera
 	e_poxxxx_init_cam();
 	e_poxxxx_config_cam(0,(ARRAY_HEIGHT - 4)/2,640,4,8,4,RGB_565_MODE);
@@ -143,18 +165,26 @@ void findColour(){
 	e_start_agendas_processing();
 	int centreValue = 0;
 
-	while(centreValue < 3){
+	while(centreValue < 3)
+	{
 		getImage();
 		Image();
 		//Take a section of the center, this means if there is an error with one it won't effect it as a whole.
 		centreValue = numbuffer[38] + numbuffer[39] + numbuffer[40] + numbuffer[41] + numbuffer[42] + numbuffer[43]; // removes stray 
-		if(centreValue > 3){ //If red is in the middle then stay still
+		if(centreValue > 3)
+		{
+			//If red is in the middle then stay still
 			e_destroy_agenda(turn);
 			e_set_speed_left (0);
 			e_set_speed_right(0);
-		}else if(isColourVisable){//If colour isn't in the center but is visable then picks a direction to turn to face it
+		}
+		else if(isColourVisable)
+		{
+			//If colour isn't in the center but is visable then picks a direction to turn to face it
 			e_activate_agenda(turn, 650);
-		}else{
+		}
+		else
+		{
 			//e_destroy_agenda(turn);
 			//e_set_speed_left (500);
 			//e_set_speed_right(0);

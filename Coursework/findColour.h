@@ -1,8 +1,9 @@
 #ifndef _FINDRED
 #define _FINDRED
 
+int isColourVis();
 void findColour();
 void setColour(char colourIn);
-extern long isColourVisable;
+extern int isColourVisable;
 	
 #endif

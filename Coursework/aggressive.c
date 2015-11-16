@@ -14,6 +14,7 @@
 #include "aggressive.h"
 #include "findColour.h"
 
+
 void aggressive(void)
 {
 	long i;
@@ -30,7 +31,8 @@ void aggressive(void)
 	setColour('r');
 	
 
-	while(1) {
+	while(1)
+	{
 		e_set_led(1,1);	
 
 		// If robot is stuck, use front 4 sensors to confirm in range, do a degree spin to try get unstuck
@@ -92,10 +94,10 @@ void aggressive(void)
 			e_set_speed_right(500);
 		}
 
-		findColour();
-		//access isColourVisible
-		//if(isColourVisible)
-		//{
+		//run aggressive code
+		while(isColourVis())
+		{	
+			findColour();
 			e_set_speed_left(1500);
 			e_set_speed_right(1500);
 			for(i=0;i<20000;i++) {asm("nop");}
@@ -103,9 +105,8 @@ void aggressive(void)
 			e_set_speed_left(-500);
 			e_set_speed_right(-500);
 			for(i=0;i<10000;i++) {asm("nop");}
-		//}
-		//run aggressive code
+		}
+		
 		//aggressive noise
-
 	}
 }
