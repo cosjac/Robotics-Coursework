@@ -95,7 +95,7 @@ void aggressive(void)
 		}
 
 		//run aggressive code
-		while(isColourVis())
+		while(isColourVis() == 1)
 		{	
 			findColour();
 			e_set_speed_left(1500);
@@ -105,8 +105,9 @@ void aggressive(void)
 			e_set_speed_left(-500);
 			e_set_speed_right(-500);
 			for(i=0;i<10000;i++) {asm("nop");}
-		}
-		
+		}		
+
 		//aggressive noise
+
 	}
 }
