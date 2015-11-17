@@ -11,8 +11,10 @@
 #include "library/a_d/advance_ad_scan/e_ad_conv.h"
 #include "library/a_d/advance_ad_scan/e_prox.h"
 #include "library/camera/fast_2_timer/e_poxxxx.h"
+#include "library/followWall/runwallfollow.h"
 
 #include "curious.h"
+
 
 
 char gbuffer[160];
@@ -93,23 +95,30 @@ int greenIsInMiddle(int centreValue){
 }
  
 //Main function of follower
+//Main function of follower
 void curious(void){
 	setUpCamera();
 
 	e_start_agendas_processing();
+	e_set_led(0,1);
 	int centreValue;
 
-	while(1){
+	while(1){	
 		takeImage();
 		processImage();
 		//Take a section of the center, this means if there is an error with one it won't effect it as a whole.
 		centreValue = gnumbuffer[38] + gnumbuffer[39] + gnumbuffer[40] + gnumbuffer[41] + gnumbuffer[42] + gnumbuffer[43]; // removes stray 
 		if(centreValue > 3){ //If green is in the middle then it will go forward 
-			e_destroy_agenda(gturn);
+			e_set_led(1,1);
 			forward();
+			e_destroy_agenda(gturn);
+			if(e_get_prox(0) < 1000){
+				run_wallfollow();
+			}
 		}else if(isGreenVisable == 1){//If green isn't in the center but is visable then picks a direction to turn to face it
 			e_activate_agenda(gturn, 650);
 		}else{// if green isn't visible and no true values it will turn left
+			e_set_led(2,1);
 			e_destroy_agenda(gturn);
 			e_set_speed_left (0);
 			e_set_speed_right(0);

@@ -98,13 +98,35 @@ void aggressive(void)
 		while(isColourVis() == 1)
 		{	
 			findColour();
-			e_set_speed_left(1500);
-			e_set_speed_right(1500);
-			for(i=0;i<200000;i++) {asm("nop");}
+			//e_set_speed_left(-500);
+			//e_set_speed_right(-500);
+			//for(i=0;i<200000;i++) {asm("nop");}
 
-			e_set_speed_left(-500);
-			e_set_speed_right(-500);
-			for(i=0;i<100000;i++) {asm("nop");}
+			e_set_speed_left(1000);
+			e_set_speed_right(1000);
+
+		/*
+			for(i=0;i<500000;i++)
+			{
+				asm("nop");
+				if(isColourVis() == 0)
+				{
+					break;
+				}
+			}
+		*/
+			while(isColourVis() == 0 && i<1000000)
+			{
+				e_set_speed_left(-500);
+				e_set_speed_right(500);
+				
+				findColour();
+				i++;
+			}
+			
+
+			//e_set_speed_left(0);
+			//e_set_speed_right(0);
 		}		
 
 		//aggressive noise

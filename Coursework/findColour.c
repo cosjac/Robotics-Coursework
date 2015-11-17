@@ -173,7 +173,7 @@ void findColour()
 		centreValue = numbuffer[38] + numbuffer[39] + numbuffer[40] + numbuffer[41] + numbuffer[42] + numbuffer[43]; // removes stray 
 		if(centreValue > 3)
 		{
-			//If red is in the middle then stay still
+			//If colour is in the middle then stay still
 			e_destroy_agenda(turn);
 			e_set_speed_left (0);
 			e_set_speed_right(0);
