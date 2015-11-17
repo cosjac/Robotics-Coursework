@@ -34,7 +34,7 @@ void aggressive(void)
 	while(1)
 	{
 		e_set_led(1,1);	
-
+/*
 		// If robot is stuck, use front 4 sensors to confirm in range, do a degree spin to try get unstuck
 		//if front left sensors, turn right
 		if (e_get_prox(0) > 800 || e_get_prox(1) > 800) {
@@ -93,18 +93,18 @@ void aggressive(void)
 			e_set_speed_left(500);
 			e_set_speed_right(500);
 		}
-
+*/
 		//run aggressive code
 		while(isColourVis() == 1)
 		{	
 			findColour();
 			e_set_speed_left(1500);
 			e_set_speed_right(1500);
-			for(i=0;i<20000;i++) {asm("nop");}
+			for(i=0;i<200000;i++) {asm("nop");}
 
 			e_set_speed_left(-500);
 			e_set_speed_right(-500);
-			for(i=0;i<10000;i++) {asm("nop");}
+			for(i=0;i<100000;i++) {asm("nop");}
 		}		
 
 		//aggressive noise
