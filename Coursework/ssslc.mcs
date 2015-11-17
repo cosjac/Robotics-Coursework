@@ -366,6 +366,383 @@ ToolArgsString=-g -Wall
 TraceCmdString=
 DebugOptions=-D__DEBUG
 [File028]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\aggressive.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File029]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\curious.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File030]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\fear.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File031]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\main.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File032]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\utility.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File033]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\love.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File034]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\roam.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File035]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\e_init_port.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File036]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\e_acc.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File037]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\e_ad_conv.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File038]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\e_prox.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File039]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\e_agenda.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File040]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\e_led.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File041]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\e_motors.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File042]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\e_sound.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File043]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\e_const_sound.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={DE18EB1A-B46B-486B-B96F-A811A635DFAC}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-as.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g
+TraceCmdString=
+DebugOptions=--defsym=__DEBUG=1
+[File044]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\e_init_codec_slave.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={DE18EB1A-B46B-486B-B96F-A811A635DFAC}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-as.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g
+TraceCmdString=
+DebugOptions=--defsym=__DEBUG=1
+[File045]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\e_init_dci_master.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={DE18EB1A-B46B-486B-B96F-A811A635DFAC}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-as.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g
+TraceCmdString=
+DebugOptions=--defsym=__DEBUG=1
+[File046]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\e_sub_dci_kickoff.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={DE18EB1A-B46B-486B-B96F-A811A635DFAC}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-as.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g
+TraceCmdString=
+DebugOptions=--defsym=__DEBUG=1
+[File047]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\e_timers.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File048]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\e_common.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File049]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\e_interrupt.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={DE18EB1A-B46B-486B-B96F-A811A635DFAC}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-as.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g
+TraceCmdString=
+DebugOptions=--defsym=__DEBUG=1
+[File050]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\e_po3030k_registers.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File051]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\e_po6030k_registers.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File052]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\e_calc_po3030k.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File053]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\e_calc_po6030k.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File054]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\e_I2C_master_module.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File055]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\e_I2C_protocol.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File056]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\findColour.o
+Folder=Intermediary
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={069BD372-6CA0-40D4-BF2F-5DC806D05083}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-gcc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=-g -Wall
+TraceCmdString=
+DebugOptions=-D__DEBUG
+[File057]
 Location=U:\robotics\Robotics-Coursework-master\Coursework\ssslc.cof
 Folder=Output
 DeviceName=dsPIC30F6014A
@@ -378,7 +755,7 @@ SuiteArgsString=
 ToolArgsString=--heap=512 -Map="$(BINDIR_)$(TARGETBASE).map" --report-mem -o"$(BINDIR_)$(TARGETBASE).$(TARGETSUFFIX)"
 TraceCmdString=
 DebugOptions=--defsym=__MPLAB_DEBUG=1
-[File029]
+[File058]
 Location=U:\robotics\Robotics-Coursework-master\Coursework\ssslc.hex
 Folder=Output
 DeviceName=dsPIC30F6014A
@@ -387,6 +764,32 @@ LanguageToolID={433C3D55-811D-409D-A6BF-159CF9355B42}
 LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-ld.exe
 PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
 SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=--heap=512 -Map="$(BINDIR_)$(TARGETBASE).map" --report-mem -o"$(BINDIR_)$(TARGETBASE).$(TARGETSUFFIX)"
+TraceCmdString=
+DebugOptions=--defsym=__MPLAB_DEBUG=1
+[File059]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\ssslc.cof
+Folder=Output
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={433C3D55-811D-409D-A6BF-159CF9355B42}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-ld.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
+SuiteArgsString=
+ToolArgsString=--heap=512 -Map="$(BINDIR_)$(TARGETBASE).map" --report-mem -o"$(BINDIR_)$(TARGETBASE).$(TARGETSUFFIX)"
+TraceCmdString=
+DebugOptions=--defsym=__MPLAB_DEBUG=1
+[File060]
+Location=C:\Users\cosjac\Downloads\Robotics-Coursework\Coursework\ssslc.hex
+Folder=Output
+DeviceName=dsPIC30F6014A
+LanguageToolSuiteID={479DDE59-4D56-455E-855E-FFF59A3DB57E}
+LanguageToolID={433C3D55-811D-409D-A6BF-159CF9355B42}
+LanguageToolLocation=Q:\Program Files (x86)\Microchip\MPLAB C30\bin\pic30-ld.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)|other libs||$(LIBDIR)|other libs||$(LKRDIR)||
+SOLK=<src>|aggressive.c|curious.c|fear.c|main.c|Other Libraries\utility.c|love.c|roam.c|Library\motor_led\e_init_port.c|Library\a_d\advance_ad_scan\e_acc.c|Library\a_d\advance_ad_scan\e_ad_conv.c|Library\a_d\advance_ad_scan\e_prox.c|Library\motor_led\advance_one_timer\e_agenda.c|Library\motor_led\advance_one_timer\e_led.c|Library\motor_led\advance_one_timer\e_motors.c|Library\codec\e_sound.c|Library\codec\e_const_sound.s|Library\codec\e_init_codec_slave.s|Library\codec\e_init_dci_master.s|Library\codec\e_sub_dci_kickoff.s|Library\camera\fast_2_timer\e_timers.c|Library\camera\fast_2_timer\e_common.c|Library\camera\fast_2_timer\e_interrupt.s|Library\camera\fast_2_timer\e_po3030k_registers.c|Library\camera\fast_2_timer\e_po6030k_registers.c|Library\camera\fast_2_timer\e_calc_po3030k.c|Library\camera\fast_2_timer\e_calc_po6030k.c|Library\I2C\e_I2C_master_module.c|Library\I2C\e_I2C_protocol.c|findColour.c||<obj>||<lib>|Libraries clean\uart_char.a|Other Libraries\libdsp-coff.a|Other Libraries\libdsp-elf.a||<lkr>|Other Libraries\p30f6014A.gld||
 SuiteArgsString=
 ToolArgsString=--heap=512 -Map="$(BINDIR_)$(TARGETBASE).map" --report-mem -o"$(BINDIR_)$(TARGETBASE).$(TARGETSUFFIX)"
 TraceCmdString=
