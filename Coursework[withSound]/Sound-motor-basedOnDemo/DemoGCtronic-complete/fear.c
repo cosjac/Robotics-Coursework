@@ -52,17 +52,17 @@ int check_prox_sensors(void)
 
 	// Detect if robot upside down
 	int x, y, z;
-	z = e_get_acc(2);
+	z = e_get_acc(0);
 
-	if(z < 2100)	//LED4 on if e-puck is on the back
+	if(z < 200)	//LED4 on if e-puck is on the back
 	{
 		LED0 = 0;
-		LED4 = 1;
+		LED6 = 1;
 	}
 	else		//LED0 on if e-puck is on his wells
 	{
 		LED0 = 1;
-		LED4 = 0;
+		LED6 = 0;
 	} 
 
     // if sensors detect obstacle_present return 1
@@ -114,11 +114,9 @@ void fear(void)
 	e_set_speed_left(TURN_SPEED);
 	e_set_speed_right(TURN_SPEED);
 
-//	setUpCamera();
+	e_led_clear();
 
 	while(1) {
-		//takeImage();
-		//processImage();
 
 		e_set_speed_left(TURN_SPEED);
 		e_set_speed_right(TURN_SPEED);
@@ -155,34 +153,6 @@ void fear(void)
 			}
 
         	switch (position) {
-			/*	case 1:
-					// Do a 90 degree spin, 
-					e_set_speed_right(-TURN_SPEED);
-					e_set_speed_left(TURN_SPEED);
-					wait(300000);
-		
-					// set back to normal speed
-					e_set_speed_left(TURN_SPEED);
-					e_set_speed_right(TURN_SPEED);
-					
-					//clear all LED lights
-					e_led_clear();
-					break;
-
-				case 2:
-					// Do a 90 degree spin, 
-					e_set_speed_right(TURN_SPEED);
-					e_set_speed_left(-TURN_SPEED);
-					wait(300000);
-		
-					// set back to normal speed
-					e_set_speed_left(TURN_SPEED);
-					e_set_speed_right(TURN_SPEED);
-					
-					//clear all LED lights
-					e_led_clear();
-					break;
-			*/
 				case 3:
 					// Run away fast with fear flash
 					LedFearAll();

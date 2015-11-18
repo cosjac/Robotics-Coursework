@@ -88,8 +88,7 @@ void AggLedFearAll(void)
 {
 	e_led_clear();
 	int i = 0;
-	for ( i; i < 10; i++ )
-	{
+	for ( i; i < 10; i++ ) {
 		e_set_led(i,1);
 	}
 }
@@ -98,6 +97,7 @@ void aggressive_c(void)
 {
 	long i;
 	int position;	//0 - not set, 1- front left, 2- front right, 3- back
+	int agg_closest_present;
 
 	e_init_port();    // configure port pins   
 	e_init_ad_scan(ALL_ADC);
@@ -118,6 +118,7 @@ void aggressive_c(void)
 		//takeImage();
 		//processImage();
 
+		e_led_clear();
 		e_set_speed_left(TURN_SPEED);
 		e_set_speed_right(TURN_SPEED);
 
@@ -153,63 +154,35 @@ void aggressive_c(void)
 			}
 
         	switch (position) {
-			/*	case 1:
-					// Do a 90 degree spin, 
-					e_set_speed_right(-TURN_SPEED);
-					e_set_speed_left(TURN_SPEED);
-					wait(300000);
-		
-					// set back to normal speed
-					e_set_speed_left(TURN_SPEED);
-					e_set_speed_right(TURN_SPEED);
-					
-					//clear all LED lights
-					e_led_clear();
-					break;
-
-				case 2:
-					// Do a 90 degree spin, 
-					e_set_speed_right(TURN_SPEED);
-					e_set_speed_left(-TURN_SPEED);
-					wait(300000);
-		
-					// set back to normal speed
-					e_set_speed_left(TURN_SPEED);
-					e_set_speed_right(TURN_SPEED);
-					
-					//clear all LED lights
-					e_led_clear();
-					break;
-			*/
 				case 3:
 					// Run away fast with fear flash
 					AggLedFearAll();
 
-					// spin to face the obstacle
+
+					for (i=0; i<8; i++) {
+						if(agg_current_prox_data[i]>1000) {
+							agg_closest_present = i;
+						}
+					}
+
+					if (agg_closest_present != 0 && agg_closest_present != 7 && agg_closest_present != 6 && agg_closest_present != 1 ) {
+						// spin to face the obstacle
+						e_set_speed_left(-1800);
+						e_set_speed_right(1800);
+						wait(680000);
+					} else {
+						// run into obstacle
+						e_set_speed_left(1800);
+						e_set_speed_right(1800);
+						wait(680000);
+					}
+
+					e_play_sound(0, 2112);
+
+					// run away in reverse
 					e_set_speed_left(-1800);
-					e_set_speed_right(1800);
-					wait(680000);
-
-					e_play_sound(0,2112);
-
-					// run away in reverse
-					e_set_speed_left(1800);
-					e_set_speed_right(1800);
-					wait(100000);
-
-					// run away in reverse
-					e_set_speed_left(-800);
-					e_set_speed_right(-800);
-					wait(100000);
-
-					// spin back round to normal and return to normal speed
-					e_set_speed_left(1800);
 					e_set_speed_right(-1800);
-					wait(725000);
-
-					e_led_clear();
-					e_set_speed_left(TURN_SPEED);
-					e_set_speed_right(TURN_SPEED);
+					wait(100000);
 					break;
 			}
 			
