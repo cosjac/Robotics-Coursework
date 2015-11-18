@@ -20,6 +20,9 @@
 char gbuffer[160];
 int gnumbuffer[80];
 long isGreenVisable;
+int current_prox_data[8];
+int obstacle_present;
+int obstacle_present1;
 
 
 //custom cam picture load
@@ -77,8 +80,19 @@ void gturn(void) {
 	}
 }
 void forward(void){
-	e_set_speed_left (500);
-	e_set_speed_right(500);
+	e_set_speed_left (800);
+	e_set_speed_right(800);
+}
+
+void forwardStutter (void)
+{
+	e_set_speed_left (200);
+	e_set_speed_right(200);
+}
+
+void stop(void){
+	e_set_speed_left (0);
+	e_set_speed_right(0);
 }
 
 void setUpCamera(void){
@@ -93,32 +107,111 @@ int greenIsInMiddle(int centreValue){
 		return 1;
 	return 0;
 }
- 
+
+int check_prox_sensors(void)
+{
+	int i; 
+
+	// get one single sample for all 8 sensors
+	current_prox_data[0]=e_get_prox(0);
+	current_prox_data[1]=e_get_prox(7);
+
+    // Detect obstacle_present on any of the 8 sensors
+	obstacle_present=0;
+
+	for (i=0; i<2; i++) {
+		if(current_prox_data[i]>50) {
+			obstacle_present = 1;
+		}
+	}
+	return obstacle_present;   				
+}
+
+int check_prox_sensors1(void)
+{
+	int i; 
+
+	// get one single sample for all 8 sensors
+	current_prox_data[0]=e_get_prox(0);
+	current_prox_data[1]=e_get_prox(7);
+
+    // Detect obstacle_present on any of the 8 sensors
+	obstacle_present1=0;
+
+	for (i=0; i<2; i++) {
+		if(current_prox_data[i]>90) {
+			obstacle_present1 = 1;
+		}
+	}
+	return obstacle_present1;   				
+}
+
+
 //Main function of follower
 //Main function of follower
 void curious(void){
 	setUpCamera();
 
 	e_start_agendas_processing();
-	e_set_led(0,1);
 	int centreValue;
+	int foundGreen = 0;
 
 	while(1){	
 		takeImage();
 		processImage();
 		//Take a section of the center, this means if there is an error with one it won't effect it as a whole.
 		centreValue = gnumbuffer[38] + gnumbuffer[39] + gnumbuffer[40] + gnumbuffer[41] + gnumbuffer[42] + gnumbuffer[43]; // removes stray 
-		if(centreValue > 3){ //If green is in the middle then it will go forward 
+		//If green is in the middle then it will go forward 
+		if(centreValue > 3)
+		{ 
+			foundGreen = 1;
+			
 			e_set_led(1,1);
+			
 			forward();
 			e_destroy_agenda(gturn);
-			if(e_get_prox(0) < 1000){
-				run_wallfollow();
+			
+			while(obstacle_present ==0)
+			{
+				obstacle_present = check_prox_sensors();
 			}
-		}else if(isGreenVisable == 1){//If green isn't in the center but is visable then picks a direction to turn to face it
+
+
+			if(obstacle_present == 1)
+			{
+				e_set_led(1,0);
+				e_set_led(2,1);
+
+				forwardStutter();
+
+				while(obstacle_present1 ==0)
+				{
+					obstacle_present1 = check_prox_sensors1();
+				}
+				//run_wallfollow();
+				if (obstacle_present1 == 1)
+				{
+					e_set_led(2,0);
+					e_set_led(3,1);
+					e_set_speed_left(0);
+					e_set_speed_right(0);
+					wait(1000000);
+	
+		
+					run_wallfollow();
+				} 
+			}
+		}
+		else if(isGreenVisable == 1 && foundGreen == 0)
+		{//If green isn't in the center but is visable then picks a direction to turn to face it
+			e_set_led(3,0);
+			e_set_led(4,1);
 			e_activate_agenda(gturn, 650);
-		}else{// if green isn't visible and no true values it will turn left
-			e_set_led(2,1);
+		}
+		else if (foundGreen == 0)
+		{// if green isn't visible and no true values it will turn left
+			e_set_led(3,0);
+			e_set_led(1,1);
 			e_destroy_agenda(gturn);
 			e_set_speed_left (0);
 			e_set_speed_right(0);
