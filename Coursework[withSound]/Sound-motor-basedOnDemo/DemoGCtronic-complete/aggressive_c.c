@@ -18,40 +18,40 @@
 #include <bluetooth/e_bluetooth.h>
 #include <motor_led/e_epuck_ports.h>
 
-#include "fear.h"
+#include "aggressive_c.h"
 #include "global_functions.h"
 
 
 #define TURN_SPEED 500
 
-int current_prox_data[8];
-int obstacle_present = 0; 
+int agg_current_prox_data[8];
+int agg_obstacle_present = 0; 
 
-int check_prox_sensors(void)
+int agg_check_prox_sensors(void)
 {
 	int i; 
 
 	// get one single sample for all 8 sensors
-	current_prox_data[0]=e_get_prox(0);
-	current_prox_data[1]=e_get_prox(1);
-	current_prox_data[2]=e_get_prox(2);
-	current_prox_data[3]=e_get_prox(3);
-	current_prox_data[4]=e_get_prox(4);
-	current_prox_data[5]=e_get_prox(5);
-	current_prox_data[6]=e_get_prox(6);
-	current_prox_data[7]=e_get_prox(7);
+	agg_current_prox_data[0]=e_get_prox(0);
+	agg_current_prox_data[1]=e_get_prox(1);
+	agg_current_prox_data[2]=e_get_prox(2);
+	agg_current_prox_data[3]=e_get_prox(3);
+	agg_current_prox_data[4]=e_get_prox(4);
+	agg_current_prox_data[5]=e_get_prox(5);
+	agg_current_prox_data[6]=e_get_prox(6);
+	agg_current_prox_data[7]=e_get_prox(7);
 
     // Detect obstacle_present on any of the 8 sensors
-	obstacle_present=0;
+	agg_obstacle_present=0;
 
 	for (i=0; i<8; i++) {
-		if(current_prox_data[i]>1000) {
-			obstacle_present = 1;
+		if(agg_current_prox_data[i]>1000) {
+			agg_obstacle_present = 1;
 		}
 	}
 
 	// Detect if robot upside down
-	int x, y, z;
+	int z;
 	z = e_get_acc(2);
 
 	if(z < 2100)	//LED4 on if e-puck is on the back
@@ -67,12 +67,12 @@ int check_prox_sensors(void)
 
     // if sensors detect obstacle_present return 1
 	// robot is upside down return 2
-	return obstacle_present;   					
+	return agg_obstacle_present;   					
 }
 
 
 //flash LEDs 
-void LedFearFlash(void)
+void AggLedFearFlash(void)
 {
 	e_led_clear();
 	int i = 0;
@@ -84,21 +84,19 @@ void LedFearFlash(void)
 }
 
 //turn on all LEDs
-void LedFearAll(void)
+void AggLedFearAll(void)
 {
 	e_led_clear();
 	int i = 0;
-	for ( i; i < 10; i++ ) {
+	for ( i; i < 10; i++ )
+	{
 		e_set_led(i,1);
 	}
 }
 
-void fear(void)
+void aggressive_c(void)
 {
 	long i;
-	int centreValue;
-	int gnumbuffer[80];
-	long isGreenVisable;
 	int position;	//0 - not set, 1- front left, 2- front right, 3- back
 
 	e_init_port();    // configure port pins   
@@ -123,17 +121,17 @@ void fear(void)
 		e_set_speed_left(TURN_SPEED);
 		e_set_speed_right(TURN_SPEED);
 
-		while (obstacle_present==0)   	// do this loop until an event has occurred
+		while (agg_obstacle_present==0)   	// do this loop until an event has occurred
 		{
-			obstacle_present = check_prox_sensors(); // check if obstacle present is detected
+			agg_obstacle_present = agg_check_prox_sensors(); // check if obstacle present is detected
         }
 
 		// if there is an obstacle present then:
-		if (obstacle_present==1) {
+		if (agg_obstacle_present==1) {
 			e_led_clear();
 			//turn on closest LED lights to obstacle position	    
 			for (i=0; i<8; i++) {
-				if(current_prox_data[i]>1000) {
+				if(agg_current_prox_data[i]>1000) {
 					e_set_led(i,1);
 					
 					//declaring position
@@ -185,19 +183,24 @@ void fear(void)
 			*/
 				case 3:
 					// Run away fast with fear flash
-					LedFearAll();
+					AggLedFearAll();
 
 					// spin to face the obstacle
 					e_set_speed_left(-1800);
 					e_set_speed_right(1800);
 					wait(680000);
 
-					e_play_sound(11028, 8016);
+					e_play_sound(0,2112);
 
 					// run away in reverse
 					e_set_speed_left(1800);
 					e_set_speed_right(1800);
-					wait(600000);
+					wait(100000);
+
+					// run away in reverse
+					e_set_speed_left(-800);
+					e_set_speed_right(-800);
+					wait(100000);
 
 					// spin back round to normal and return to normal speed
 					e_set_speed_left(1800);
@@ -210,11 +213,11 @@ void fear(void)
 					break;
 			}
 			
-			obstacle_present = 0;
+			agg_obstacle_present = 0;
    		}
 		
 		// if robot upside down then:
-		if (obstacle_present==2) {
+		if (agg_obstacle_present==2) {
 			e_set_led(0,1);
 			e_set_led(1,1);
 			e_set_led(2,1);
@@ -222,7 +225,7 @@ void fear(void)
 			e_set_led(4,1);
 			e_set_led(5,1);
 
-			obstacle_present = 0;
+			agg_obstacle_present = 0;
 			e_led_clear();
 		}
 	};

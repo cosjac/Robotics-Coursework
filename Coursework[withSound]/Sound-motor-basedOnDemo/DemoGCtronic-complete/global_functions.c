@@ -16,7 +16,7 @@
 
 #include "global_functions.h"
 
-extern char gbuffer[160];
+/*extern char gbuffer[160];
 extern int gnumbuffer[80];
 extern long isGreenVisable;
 
@@ -84,15 +84,15 @@ void gturn(void) {
 }
 
 void forward(void){
-	e_set_speed_left (500);
-	e_set_speed_right(500);
+	e_set_speed_left (1000);
+	e_set_speed_right(1000);
 }
 
 void setUpCamera(void){
-/*	e_poxxxx_init_cam();
+	e_poxxxx_init_cam();
 	e_poxxxx_config_cam(0,(ARRAY_HEIGHT - 4)/2,640,4,8,4,RGB_565_MODE);
 	e_poxxxx_set_mirror(1,1);
-	e_poxxxx_write_cam_registers(); */
+	e_poxxxx_write_cam_registers(); 
 }
 
 int greenIsInMiddle(int centreValue){
@@ -100,3 +100,4 @@ int greenIsInMiddle(int centreValue){
 		return 1;
 	return 0;
 }
+*/

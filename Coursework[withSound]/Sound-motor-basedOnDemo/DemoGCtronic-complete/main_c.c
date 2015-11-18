@@ -22,7 +22,7 @@
 
 #include "global_functions.h"
 #include "fear.h"
-#include "aggressive.h"
+#include "aggressive_c.h"
 #include "love.h"
 #include "curious.h"
 
@@ -71,7 +71,7 @@ int main() {
 
 	switch (selector) {
 		case 0:robot_off();break;
-		case 1:aggressive();break;
+		case 1:aggressive_c();break;
 		case 2:fear();break;
 		case 3:curious();break;
 		case 4:love();break;
