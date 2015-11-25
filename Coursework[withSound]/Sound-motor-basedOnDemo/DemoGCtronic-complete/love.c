@@ -1,17 +1,17 @@
-#include "stdlib.h"
+#include <stdlib.h>
 #include "stdio.h"
 #include "string.h"
 
-#include "library/motor_led/e_init_port.h"
-#include "library/motor_led/advance_one_timer/e_motors.h"
-#include "library/motor_led/advance_one_timer/e_led.h"
-#include "library/motor_led/advance_one_timer/e_agenda.h"
-#include "library/uart/e_uart_char.h"
-#include "library/a_d/advance_ad_scan/e_ad_conv.h"
-#include "library/a_d/advance_ad_scan/e_prox.h"
-#include "library/codec/e_sound.h"
-#include "library/motor_led/e_epuck_ports.h"
-#include "library/camera/fast_2_timer/e_poxxxx.h"
+#include <motor_led/e_init_port.h>
+#include <motor_led/advance_one_timer/e_motors.h>
+#include <motor_led/advance_one_timer/e_led.h>
+#include <motor_led/advance_one_timer/e_agenda.h>
+#include <uart/e_uart_char.h>
+#include <a_d/advance_ad_scan/e_ad_conv.h>
+#include <a_d/advance_ad_scan/e_prox.h>
+#include <codec/e_sound.h>
+#include <motor_led/e_epuck_ports.h>
+#include <camera/fast_2_timer/e_poxxxx.h>
 
 #include "love.h"
 #include "curious.h"
@@ -99,13 +99,43 @@ void love(void)
 	e_calibrate_ir();
 	//setUpCamera();
 
-	e_set_speed_left(500);
-	e_set_speed_right(500);
+	
 	//e_set_led(8, 0);
 	e_start_agendas_processing();
 
-	int i = 0;	
+	e_set_speed_left(0);
+	e_set_speed_right(0);
 
+	while(1)
+	{
+		
+		
+		
+		e_set_led(2,1);
+		e_set_led(1,0);
+
+		if(isColourVis() == 0)
+		{
+			e_set_speed_left(400);
+			e_set_speed_right(-400);
+		}
+		while(isColourVis() == 1)
+		{
+			e_set_speed_left(400);
+			e_set_speed_right(400);
+
+			//findColour();
+
+		//	e_set_speed_left(400);
+		//	e_set_speed_right(400);
+			e_set_led(1,1);
+			e_set_led(2,0);
+			int i = 0;
+			for(i=0;i<40000;i++) {asm("nop");}
+			
+		}
+	}
+/*
 	while(1)
 	{
 
@@ -131,7 +161,7 @@ void love(void)
 			}
 				
 		}
-/*
+
 		//run_breitenberg_follower();
 		int centreValue;
 
@@ -151,7 +181,7 @@ void love(void)
 			e_set_speed_right(0);
 		}
 	
-*/	
+	
 
 		//(2) TURN ON LED0 WHEN AN OBSTICAL IS DETECTED
 	 	//BY THE PROXIMITY SENSOR 0
@@ -186,7 +216,7 @@ void love(void)
 		//INTO THE OBJECT WHILST MAKING A KISSING
 
 
-	/*
+
 		while(1)
 		{
 			long i;
@@ -201,8 +231,8 @@ void love(void)
 	 		
 	
 			for(i=0; i<100000; i++) { asm("nop"); }
-		}*/
-	}
+		}
+	}*/
 }
 
 
