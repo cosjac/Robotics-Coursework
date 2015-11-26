@@ -75,7 +75,7 @@ int main() {
 		case 2:fear();break;
 		case 3:curious();break;
 		case 4:love();break;
-		case 5:robot_off();break;
+		case 5:goal_seeking();break;
 		default:/*own high level behaviour*/break;
 	}
 
