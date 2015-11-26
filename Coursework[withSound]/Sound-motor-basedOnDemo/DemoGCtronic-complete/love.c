@@ -19,6 +19,8 @@
 
 char rbuffer[160];
 int rnumbuffer[80];
+
+int isTouching = 0;
 /*
 //custom cam picture load
 void rgetImage(){
@@ -108,32 +110,36 @@ void love(void)
 
 	while(1)
 	{
-		
-		
-		
-		e_set_led(2,1);
-		e_set_led(1,0);
+		if(e_get_prox(0)>1000 || e_get_prox(7)>1000)
+		{
+			isTouching = 1;
+		} else {
+			isTouching = 0;
+		}
 
 		if(isColourVis() == 0)
 		{
 			e_set_speed_left(400);
 			e_set_speed_right(-400);
 		}
-		while(isColourVis() == 1)
+		while(isColourVis() == 1 && isTouching != 1)
 		{
 			e_set_speed_left(400);
 			e_set_speed_right(400);
 
 			findColour();
 
-		//	e_set_speed_left(400);
-		//	e_set_speed_right(400);
-			e_set_led(1,1);
-			e_set_led(2,0);
 			double i = 0;
 			for(i=0;i<4000;i++) {asm("nop");}
 			
 		}
+		if(isTouching == 1)
+		{
+			//kiss sequence
+			double j = 0;
+			for(j=0;j<4000;j++) {asm("nop");}
+		}
+		
 	}
 /*
 	while(1)
