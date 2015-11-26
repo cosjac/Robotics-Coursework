@@ -1,8 +1,6 @@
 #include <stdlib.h>
-#include <time.h>
 #include "stdio.h"
 #include "string.h"
-#include "math.h"
 
 #include <motor_led/e_init_port.h>
 #include <motor_led/advance_one_timer/e_motors.h>
