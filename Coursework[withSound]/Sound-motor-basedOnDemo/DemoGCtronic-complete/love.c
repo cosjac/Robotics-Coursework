@@ -1,6 +1,8 @@
 #include <stdlib.h>
+#include <time.h>
 #include "stdio.h"
 #include "string.h"
+#include "math.h"
 
 #include <motor_led/e_init_port.h>
 #include <motor_led/advance_one_timer/e_motors.h>
@@ -124,14 +126,14 @@ void love(void)
 			e_set_speed_left(400);
 			e_set_speed_right(400);
 
-			//findColour();
+			findColour();
 
 		//	e_set_speed_left(400);
 		//	e_set_speed_right(400);
 			e_set_led(1,1);
 			e_set_led(2,0);
-			int i = 0;
-			for(i=0;i<40000;i++) {asm("nop");}
+			double i = 0;
+			for(i=0;i<4000;i++) {asm("nop");}
 			
 		}
 	}

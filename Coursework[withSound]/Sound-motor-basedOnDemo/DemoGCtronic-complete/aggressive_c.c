@@ -170,14 +170,22 @@ void aggressive_c(void)
 						e_set_speed_left(-1800);
 						e_set_speed_right(1800);
 						wait(680000);
+						
+						e_play_sound(0, 2112);
+
+						// run into obstacle
+						e_set_speed_left(1800);
+						e_set_speed_right(1800);
+						wait(680000);
 					} else {
+
+						e_play_sound(0, 2112);
+
 						// run into obstacle
 						e_set_speed_left(1800);
 						e_set_speed_right(1800);
 						wait(680000);
 					}
-
-					e_play_sound(0, 2112);
 
 					// run away in reverse
 					e_set_speed_left(-1800);
