@@ -175,8 +175,8 @@ void findColour()
 		{
 			//If colour is in the middle then stay still
 			e_destroy_agenda(turn);
-			e_set_speed_left (0);
-			e_set_speed_right(0);
+			//e_set_speed_left (0);
+			//e_set_speed_right(0);
 		}
 		else if(isColourVisable)
 		{
