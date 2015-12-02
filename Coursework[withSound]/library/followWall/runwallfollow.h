@@ -26,6 +26,7 @@
 
 
 void run_wallfollow();
+void SetUpWallFollow();
 void e_send_uart1_char(const char * buff, int length);
 
 #endif

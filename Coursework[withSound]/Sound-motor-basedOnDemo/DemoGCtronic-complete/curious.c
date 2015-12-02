@@ -103,6 +103,7 @@ int greenIsInMiddle(int centreValue){
 //Main function of follower
 void curious(void){
 	setUpCamera();
+	SetUpWallFollow();
 
 	e_start_agendas_processing();
 	e_set_led(0,1);

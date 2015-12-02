@@ -64,6 +64,14 @@ int follow_sensorzero[8];
 int follow_weightleft[8] = {-10,-10,-5,0,0,5,10,10};
 int follow_weightright[8] = {10,10,5,0,0,-5,-10,-10};
 
+int leftwheel, rightwheel;		// motor speed left and right
+int distances[NB_SENSORS];		// array keeping the distance sensor readings
+int i;							// FOR-loop counters
+int gostraight;
+int loopcount;
+unsigned char selector_change;
+
+
 /*! \breif Callibrate the proxymity sensor 
 void follow_sensor_calibrate() {
 	int i, j;
@@ -120,8 +128,28 @@ void followsetSpeed(int LeftSpeed, int RightSpeed) {
 	e_set_speed_right(RightSpeed); 
 }
 
+void SetUpWallFollow(){
+	 
+	e_init_port();
+	e_init_ad_scan(ALL_ADC);
+	e_init_motors();
+	e_start_agendas_processing();
+
+	//follow_sensor_calibrate();	
+	
+	e_activate_agenda(left_led, 2500);
+	e_activate_agenda(right_led, 2500);
+	e_pause_agenda(left_led);
+	e_pause_agenda(right_led);
+	
+	e_calibrate_ir();
+	loopcount=0;
+	selector_change = !(followgetSelectorValue() & 0x0001);
+}
+
 /*! \brief The "main" function of the program */
 void run_wallfollow() {
+/*
 	int leftwheel, rightwheel;		// motor speed left and right
 	int distances[NB_SENSORS];		// array keeping the distance sensor readings
 	int i;							// FOR-loop counters
@@ -144,71 +172,69 @@ void run_wallfollow() {
 	e_calibrate_ir();
 	loopcount=0;
 	selector_change = !(followgetSelectorValue() & 0x0001);
+*/
+	followGetSensorValues(distances); // read sensor values
 
-	while (1) {
-		followGetSensorValues(distances); // read sensor values
-
-		gostraight=0;
-		if ((followgetSelectorValue() & 0x0001) == RIGHT_FOLLOW) {
-			if(selector_change == LEFT_FOLLOW) {
-				selector_change = RIGHT_FOLLOW;
-				e_led_clear();
-				e_pause_agenda(left_led);
-				e_restart_agenda(right_led);
-			}  
-			for (i=0; i<8; i++) {
-				if (distances[i]>50) {break;}
-			}
-			if (i==8) {
-				gostraight=1;
-			} else {
-				follow_weightleft[0]=-10;
-				follow_weightleft[7]=-10;
-				follow_weightright[0]=10;
-				follow_weightright[7]=10;
-				if (distances[2]>300) {
-					distances[1]-=200;
-					distances[2]-=600;
-					distances[3]-=100;
-				}
-			}
+	gostraight=0;
+	if ((followgetSelectorValue() & 0x0001) == RIGHT_FOLLOW) {
+		if(selector_change == LEFT_FOLLOW) {
+			selector_change = RIGHT_FOLLOW;
+			e_led_clear();
+			e_pause_agenda(left_led);
+			e_restart_agenda(right_led);
+		}  
+		for (i=0; i<8; i++) {
+			if (distances[i]>50) {break;}
+		}
+		if (i==8) {
+			gostraight=1;
 		} else {
-			if(selector_change == RIGHT_FOLLOW) {
-				selector_change = LEFT_FOLLOW;
-				e_led_clear();
-				e_pause_agenda(right_led);
-				e_restart_agenda(left_led);
-			}
-			for (i=0; i<8; i++) {
-				if (distances[i]>50) {break;}
-			}
-			if (i==8) {
-				gostraight=1;
-			} else {
-				follow_weightleft[0]=10;
-				follow_weightleft[7]=10;
-				follow_weightright[0]=-10;
-				follow_weightright[7]=-10;
-				if (distances[5]>300) {
-					distances[4]-=100;
-					distances[5]-=600;
-					distances[6]-=200;
-				}
+			follow_weightleft[0]=-10;
+			follow_weightleft[7]=-10;
+			follow_weightright[0]=10;
+			follow_weightright[7]=10;
+			if (distances[2]>300) {
+				distances[1]-=200;
+				distances[2]-=600;
+				distances[3]-=100;
 			}
 		}
-
-		leftwheel=BIAS_SPEED;
-		rightwheel=BIAS_SPEED;
-		if (gostraight==0) {
-			for (i=0; i<8; i++) {
-				leftwheel+=follow_weightleft[i]*(distances[i]>>4);
-				rightwheel+=follow_weightright[i]*(distances[i]>>4);
+	} else {
+		if(selector_change == RIGHT_FOLLOW) {
+			selector_change = LEFT_FOLLOW;
+			e_led_clear();
+			e_pause_agenda(right_led);
+			e_restart_agenda(left_led);
+		}
+		for (i=0; i<8; i++) {
+			if (distances[i]>50) {break;}
+		}
+		if (i==8) {
+			gostraight=1;
+		} else {
+			follow_weightleft[0]=10;
+			follow_weightleft[7]=10;
+			follow_weightright[0]=-10;
+			follow_weightright[7]=-10;
+			if (distances[5]>300) {
+				distances[4]-=100;
+				distances[5]-=600;
+				distances[6]-=200;
 			}
 		}
+	}
 
-		// set robot speed
-		followsetSpeed(leftwheel, rightwheel);
+	leftwheel=BIAS_SPEED;
+	rightwheel=BIAS_SPEED;
+	if (gostraight==0) {
+		for (i=0; i<8; i++) {
+			leftwheel+=follow_weightleft[i]*(distances[i]>>4);
+			rightwheel+=follow_weightright[i]*(distances[i]>>4);
+		}
+	}
 
-		wait(15000);
-	}	
+	// set robot speed
+	followsetSpeed(leftwheel, rightwheel);
+
+	wait(15000);	
 }
