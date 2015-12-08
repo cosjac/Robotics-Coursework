@@ -19,7 +19,8 @@
 
 char rbuffer[160];
 int rnumbuffer[80];
-/*
+
+
 //custom cam picture load
 void rgetImage(){
 	e_poxxxx_launch_capture((char *)rbuffer);
@@ -58,6 +59,7 @@ void rforward(void){
 	e_set_speed_right(500);
 }
 
+//Function to process image
 void processImageRed(){	
 	long i;
 	int isRedVisable = 0;
@@ -81,7 +83,7 @@ void processImageRed(){
 		}
 	}	
 }
-*/
+
 
 //MAIN PROGRAM
 
@@ -93,16 +95,20 @@ void love(void)
 	e_init_motors();
 	e_init_ad_scan(ALL_ADC);
 	
-	//int isRedVisable = 0;
+	int isRedVisable = 0;
 
-	//int gturn = 0;
 	e_calibrate_ir();
-	//setUpCamera();
+	setUpCamera();
 
 	e_set_speed_left(500);
 	e_set_speed_right(500);
-	//e_set_led(8, 0);
 	e_start_agendas_processing();
+
+	int proxy0;
+	int proxy1;
+
+	proxy0 = e_get_prox(0);
+	proxy1 = e_get_prox(1);
 
 	int i = 0;	
 
@@ -111,6 +117,9 @@ void love(void)
 
 	e_stop_led_blinking();
 		//(1) GET PUCK TO FOLLOW RED
+
+		//--- Dodgy Code ---
+/*
 		while(isColourVis() == 1)
 		{	
 			findColour();
@@ -131,11 +140,12 @@ void love(void)
 			}
 				
 		}
-/*
-		//run_breitenberg_follower();
+*/
+		//--------------------
+
 		int centreValue;
 
-		//takeImage();
+		takeImage();
 		processImageRed();
 		
 		//Take a section of the center, this means if there is an error with one it won't effect it as a whole.
@@ -149,59 +159,43 @@ void love(void)
 			e_destroy_agenda(rturn);
 			e_set_speed_left (0);
 			e_set_speed_right(0);
-		}
-	
-*/	
+		}	
+
 
 		//(2) TURN ON LED0 WHEN AN OBSTICAL IS DETECTED
-	 	//BY THE PROXIMITY SENSOR 0
+	 	//Blinks front LED when object is v. near (50 less near) - Did work now doesn't
 	
-		int proxy0;
-		int proxy1;
-		
-		//long i;
-		proxy0 = e_get_prox(0);
-		proxy1 = e_get_prox(1);
-	
-		if(proxy0 < 50)
+		if(proxy0 < 100)
  			LED0 = 0;
  		else
-			e_blink_led();
 			LED0 = 1;
 
 		//for(i=0; i<100000; i++) { asm("nop"); } //WAIT - Delay getting back to the while
 
 	
 		//(3) GIVEN THE OBJECT IS IN CLOSE PROXIMITY, FLASH ALL LED's
-	
+		//Currently does nothing
+/*
 		while(proxy0 > 300)
 		{
 			e_start_led_blinking(200);
 		}
 		e_stop_led_blinking();
-
+*/
 		//for(i=0; i<100000; i++) { asm("nop"); }
 		
+	
 		//4) WHEN THE OBJECT IS IN CLOSE PROXIMITY, AFFECTIONATELY BUMP
-		//INTO THE OBJECT WHILST MAKING A KISSING
-
-
-	/*
-		while(1)
+		//INTO THE OBJECT WHILST MAKING A KISSING SOUND
+		//Means lights are permenantly on	
+/*
+		while(proxy0 < 100)
 		{
-			long i;
-			proxy0 = e_get_prox(0);
-			//proxy1 = e_get_prox(1);
-		
-			while(proxy0 < 100)
-			{
-	 			e_set_led(8, 1);
-			}
-	
-	 		
-	
+ 			e_set_led(8, 1);
+		}
+*/		
 			for(i=0; i<100000; i++) { asm("nop"); }
-		}*/
+		
 	}
 }
 

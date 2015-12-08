@@ -1,14 +1,14 @@
 
 
-#include "library/motor_led/e_epuck_ports.h"
-#include "library/motor_led/e_init_port.h"
-#include "library/motor_led/advance_one_timer/e_motors.h"
-#include "library/motor_led/advance_one_timer/e_led.h"
-#include "library/motor_led/advance_one_timer/e_agenda.h"
-#include "library/uart/e_uart_char.h"
-#include "library/a_d/advance_ad_scan/e_ad_conv.h"
-#include "library/a_d/advance_ad_scan/e_prox.h"
-#include "library/camera/fast_2_timer/e_poxxxx.h"
+#include <motor_led/e_epuck_ports.h>
+#include <motor_led/e_init_port.h>
+#include <motor_led/advance_one_timer/e_motors.h>
+#include <motor_led/advance_one_timer/e_led.h>
+#include <motor_led/advance_one_timer/e_agenda.h>
+#include <uart/e_uart_char.h>
+#include <a_d/advance_ad_scan/e_ad_conv.h>
+#include <a_d/advance_ad_scan/e_prox.h>
+#include <camera/fast_2_timer/e_poxxxx.h>
 
 #include "stdio.h"
 #include "string.h"
@@ -175,8 +175,8 @@ void findColour()
 		{
 			//If colour is in the middle then stay still
 			e_destroy_agenda(turn);
-			e_set_speed_left (0);
-			e_set_speed_right(0);
+			//e_set_speed_left (0);
+			//e_set_speed_right(0);
 		}
 		else if(isColourVisable)
 		{
@@ -185,7 +185,7 @@ void findColour()
 		}
 		else
 		{
-			//e_destroy_agenda(turn);
+			e_destroy_agenda(turn);
 			//e_set_speed_left (500);
 			//e_set_speed_right(0);
 			break;
