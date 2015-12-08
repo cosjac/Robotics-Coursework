@@ -46,9 +46,11 @@ EPFL Ecole polytechnique federale de Lausanne http://www.epfl.ch
 #include "../a_d/advance_ad_scan/e_ad_conv.h"
 #include "../a_d/advance_ad_scan/e_prox.h"
 #include "../camera/fast_2_timer/e_poxxxx.h"
+#include "../../curious.h"
 
 #include "../../Other Libraries/utility.h"
 #include "runwallfollow.h"
+
 
 
 #define LEFT_FOLLOW			0		// behaviors IDs	
@@ -96,7 +98,11 @@ void follow_sensor_calibrate() {
  * \return The selector value from 0 to 15
  */
 int followgetSelectorValue() {
-	return SELECTOR0 + 2*SELECTOR1 + 4*SELECTOR2 + 8*SELECTOR3;
+	if(e_get_prox(0) > e_get_prox(7))
+	{
+		return 1;	
+	}
+	return 0;
 }
 
 
@@ -108,6 +114,30 @@ void followGetSensorValues(int *sensorTable) {
 	for (i=0; i < NB_SENSORS; i++) {
 		sensorTable[i] = e_get_calibrated_prox(i); //e_get_prox(i) - follow_sensorzero[i];
 	}		
+}
+int doesWallExist(int selectionValue)
+{
+	if(selectionValue == 1)
+	{
+		if((e_get_prox(1) < 100) && (e_get_prox(2) < 100))
+		{
+			if(e_get_prox(0) < 100)
+			{
+				return 0;
+			}
+		}
+	}
+	else
+	{
+		if((e_get_prox(5) < 100) && (e_get_prox(6) < 100))
+		{
+			if(e_get_prox(7) < 100)
+			{
+				return 0;
+			}
+		}
+	}
+	return 1;
 }
 
 /*! \brief Set robot speed */
@@ -143,19 +173,21 @@ void run_wallfollow() {
 	
 	e_calibrate_ir();
 	loopcount=0;
-	selector_change = !(followgetSelectorValue() & 0x0001);
-
-	while (1) {
+	int selectionValue;
+//	selector_change = !(followgetSelectorValue() & 0x0001);
+	e_set_steps_right(0);
+	selectionValue = followgetSelectorValue();
+	while (doesWallExist(selectionValue)) {
 		followGetSensorValues(distances); // read sensor values
 
 		gostraight=0;
-		if ((followgetSelectorValue() & 0x0001) == RIGHT_FOLLOW) {
-			if(selector_change == LEFT_FOLLOW) {
-				selector_change = RIGHT_FOLLOW;
+		if (selectionValue == 1) {
+		////	if(selector_change == LEFT_FOLLOW) {
+		//		selector_change = RIGHT_FOLLOW;
 				e_led_clear();
 				e_pause_agenda(left_led);
 				e_restart_agenda(right_led);
-			}  
+	//		}  
 			for (i=0; i<8; i++) {
 				if (distances[i]>50) {break;}
 			}
@@ -173,12 +205,12 @@ void run_wallfollow() {
 				}
 			}
 		} else {
-			if(selector_change == RIGHT_FOLLOW) {
-				selector_change = LEFT_FOLLOW;
+		//	if(selector_change == RIGHT_FOLLOW) {
+			//	selector_change = LEFT_FOLLOW;
 				e_led_clear();
 				e_pause_agenda(right_led);
 				e_restart_agenda(left_led);
-			}
+		//	}
 			for (i=0; i<8; i++) {
 				if (distances[i]>50) {break;}
 			}
@@ -210,5 +242,7 @@ void run_wallfollow() {
 		followsetSpeed(leftwheel, rightwheel);
 
 		wait(15000);
+		
+		//doesWallExist(selectionValue);
 	}	
 }
