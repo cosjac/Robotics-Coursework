@@ -25,7 +25,7 @@ int isTouching = 0;
 
 void get_prox(void)
 {
-	// get one single sample for all 8 sensors
+	//get one single sample for all 8 sensors
 	love_prox_data[0]=e_get_prox(0);
 	love_prox_data[1]=e_get_prox(1);
 	love_prox_data[2]=e_get_prox(2);
@@ -43,12 +43,12 @@ void Kiss(void)
 	int i;
 	for (i=0; i<8; i++)
 	{
-		if(love_prox_data[i]>100)
+		if(love_prox_data[i]>500)
 		{
 			e_set_led(i,1);
-
-			e_set_led(0,1);
-			e_set_led(7,1);
+			
+			//e_set_led(0,1);
+			//e_set_led(7,1);
 		}
 	}
 	
@@ -71,31 +71,44 @@ void love(void)
 	e_calibrate_ir();   
 	e_start_agendas_processing();
 
-	/*e_set_speed_left(0);
-	e_set_speed_right(0);*/
+	/*
+		e_set_speed_left(0);
+		e_set_speed_right(0);
+	*/
 
 
 	while(1)
 	{
 		get_prox();
 
-		if(love_prox_data[0]>100 || love_prox_data[7]>100)
+		if(love_prox_data[0]>500 || love_prox_data[7]>500)
 		{
 			isTouching = 1;
 			Kiss();
 		} else {
 			isTouching = 0;
+
+			e_set_led(0,0);
+			e_set_led(1,0);
+			e_set_led(2,0);
+			e_set_led(3,0);
+			e_set_led(4,0);
+			e_set_led(5,0);
+			e_set_led(6,0);
+			e_set_led(7,0);
 		}
 
-		if(isColourVis() == 0 && isTouching == 0)
+		if(isTouching == 0)
 		{
 			e_set_speed_left(400);
 			e_set_speed_right(-400);
 		}
 
-		while(isColourVis() == 1)
-		{
+
+	//	while(isColourVis() == 1)
+	//	{
 			get_prox();
+			findColour();
 			if(love_prox_data[0]>100 || love_prox_data[7]>100)
 			{
 				isTouching = 1;
@@ -109,11 +122,11 @@ void love(void)
 				e_set_speed_right(300);
 			}
 
-			findColour();
+			//findColour();
 
 			//double i = 0;
 			//for(i=0;i<4000;i++) {asm("nop");}
-		}
+	//	}
 
 /*
 		if(isTouching == 1)

@@ -146,11 +146,11 @@ int turnDirection()
 void turn(void)
 {
 	if(turnDirection()){
-		e_set_speed_left (500);
-		e_set_speed_right(-500);
+		e_set_speed_left (300);
+		e_set_speed_right(-300);
 	}else{
-		e_set_speed_left (-500);
-		e_set_speed_right(500);
+		e_set_speed_left (-300);
+		e_set_speed_right(300);
 	}
 }
 //Main function of follower
@@ -186,7 +186,7 @@ void findColour()
 		else
 		{
 			e_destroy_agenda(turn);
-			//e_set_speed_left (500);
+			//e_set_speed_left (300);
 			//e_set_speed_right(0);
 			break;
 		}
