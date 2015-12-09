@@ -115,7 +115,6 @@ void aggressive_c(void)
 
 	while(1)
 	{
-
 		e_led_clear();
 		e_set_speed_left(TURN_SPEED);
 		e_set_speed_right(TURN_SPEED);
@@ -126,7 +125,7 @@ void aggressive_c(void)
         }
 
 		// if there is an obstacle present then:
-		if (agg_obstacle_present==1)
+		if(agg_obstacle_present==1)
 		{
 			e_led_clear();
 			//turn on closest LED lights to obstacle position

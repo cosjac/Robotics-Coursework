@@ -44,8 +44,10 @@ int check_prox_sensors(void)
     // Detect obstacle_present on any of the 8 sensors
 	obstacle_present=0;
 
-	for (i=0; i<8; i++) {
-		if(current_prox_data[i]>1000) {
+	for (i=0; i<8; i++)
+	{
+		if(current_prox_data[i]>1000)
+		{
 			obstacle_present = 1;
 		}
 	}
@@ -75,8 +77,9 @@ int check_prox_sensors(void)
 void LedFearFlash(void)
 {
 	e_led_clear();
-	int i = 0;
-	for ( i; i < 10; i++ ) {
+	int i;
+	for ( i = 0; i < 10; i++ )
+	{
 		e_set_led(i,1);
 	//	wait(100000);
 		e_set_led(i,0);
@@ -88,7 +91,8 @@ void LedFearAll(void)
 {
 	e_led_clear();
 	int i = 0;
-	for ( i; i < 10; i++ ) {
+	for(i; i < 10; i++)
+	{
 		e_set_led(i,1);
 	}
 }
@@ -96,10 +100,7 @@ void LedFearAll(void)
 void fear(void)
 {
 	long i;
-	int centreValue;
-	int gnumbuffer[80];
-	long isGreenVisable;
-	int position;	//0 - not set, 1- front left, 2- front right, 3- back
+	int closest_present;	//0 - not set, 1- front left, 2- front right, 3- back
 
 	e_init_port();    // configure port pins   
 	e_init_ad_scan(ALL_ADC);
@@ -116,8 +117,8 @@ void fear(void)
 
 	e_led_clear();
 
-	while(1) {
-
+	while(1)
+	{
 		e_set_speed_left(TURN_SPEED);
 		e_set_speed_right(TURN_SPEED);
 
@@ -127,64 +128,66 @@ void fear(void)
         }
 
 		// if there is an obstacle present then:
-		if (obstacle_present==1) {
+		if(obstacle_present==1)
+		{
 			e_led_clear();
 			//turn on closest LED lights to obstacle position	    
-			for (i=0; i<8; i++) {
-				if(current_prox_data[i]>1000) {
+			for (i=0; i<8; i++)
+			{
+				if(current_prox_data[i]>1000)
+				{
 					e_set_led(i,1);
-					
-					//declaring position
-					switch (i) {
-						case 0:
-						case 1:
-						case 2:
-						case 3:
-						case 4:
-						case 5:
-						case 6:
-						case 7:
-							position = 3;
-							break;
-						default:
-							position = 0;
-					}
+					closest_present = i;
 				}
 			}
 
-        	switch (position) {
-				case 3:
-					// Run away fast with fear flash
-					LedFearAll();
+        	if(closest_present == 0 || closest_present == 7)
+			{
+				// Run away fast with fear flash
+				LedFearAll();
 
-					// spin to face the obstacle
-					e_set_speed_left(-1800);
-					e_set_speed_right(1800);
-					wait(680000);
+				// spin to face away from obstacle
+				e_set_speed_left(-1800);
+				e_set_speed_right(1800);
+				wait(680000);
 
-					e_play_sound(11028, 8016);
+				e_play_sound(11028, 8016);
 
-					// run away in reverse
-					e_set_speed_left(1800);
-					e_set_speed_right(1800);
-					wait(600000);
+				// run away
+				e_set_speed_left(1800);
+				e_set_speed_right(1800);
+				wait(600000);
 
-					// spin back round to normal and return to normal speed
-					e_set_speed_left(1800);
-					e_set_speed_right(-1800);
-					wait(725000);
+				// spin back round to normal and return to normal speed
+				e_set_speed_left(1800);
+				e_set_speed_right(-1800);
+				wait(725000);
 
-					e_led_clear();
-					e_set_speed_left(TURN_SPEED);
-					e_set_speed_right(TURN_SPEED);
-					break;
+				e_led_clear();
+				e_set_speed_left(TURN_SPEED);
+				e_set_speed_right(TURN_SPEED);
+			}
+			else if(closest_present == 3 || closest_present == 4)
+			{
+				LedFearAll();
+				e_play_sound(11028, 8016);
+
+				// run away
+				e_set_speed_left(1800);
+				e_set_speed_right(1800);
+				wait(600000);
+
+				e_led_clear();
+				e_set_speed_left(TURN_SPEED);
+				e_set_speed_right(TURN_SPEED);
 			}
 			
 			obstacle_present = 0;
    		}
 		
 		// if robot upside down then:
-		if (obstacle_present==2) {
+		if (obstacle_present==2)
+		{
 			e_set_led(0,1);
 			e_set_led(1,1);
 			e_set_led(2,1);
