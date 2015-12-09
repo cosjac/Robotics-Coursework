@@ -20,11 +20,12 @@
 #include <bluetooth/e_bluetooth.h>
 #include <motor_led/e_epuck_ports.h>
 
-#include "global_functions.h"
 #include "fear.h"
 #include "aggressive_c.h"
 #include "love.h"
 #include "curious.h"
+#include "goal_seeking.h"
+#include "high_level.h"
 
 #include <utility/utility.h>
 
@@ -76,7 +77,9 @@ int main() {
 		case 3:curious();break;
 		case 4:love();break;
 		case 5:goal_seeking();break;
-		default:/*own high level behaviour*/break;
+		case 6:high_level(0);break;	//searcher
+		case 7:high_level(1);break;	//hider
+		default:robot_off();break;
 	}
 
 	return 0;
