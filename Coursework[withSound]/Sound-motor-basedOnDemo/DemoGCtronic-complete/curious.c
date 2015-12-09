@@ -16,6 +16,7 @@
 #include <a_d/advance_ad_scan/e_micro.h>
 #include <bluetooth/e_bluetooth.h>
 #include <motor_led/e_epuck_ports.h>
+#include <followWall/runwallfollow.h>
 
 
 #include "curious.h"
@@ -25,6 +26,9 @@
 char gbuffer[160];
 int gnumbuffer[80];
 long isGreenVisable;
+int currentProxData[8];
+int obstaclePresentFar;
+int obstaclePresentClose;
 
 
 //custom cam picture load
@@ -74,16 +78,27 @@ int gturnDirection(){
 //Function to deal with turning.
 void gturn(void) {
 	if(gturnDirection()){
-		e_set_speed_left (500);
-		e_set_speed_right(-500);
+		e_set_speed_left (300);
+		e_set_speed_right(-300);
 	}else{
-		e_set_speed_left (-500);
-		e_set_speed_right(500);
+		e_set_speed_left (-300);
+		e_set_speed_right(300);
 	}
 }
 void forward(void){
-	e_set_speed_left (500);
-	e_set_speed_right(500);
+	e_set_speed_left (800);
+	e_set_speed_right(800);
+}
+
+void forwardSlow (void)
+{
+	e_set_speed_left (200);
+	e_set_speed_right(200);
+}
+
+void stop(void){
+	e_set_speed_left (0);
+	e_set_speed_right(0);
 }
 
 void setUpCamera(void){
@@ -98,36 +113,108 @@ int greenIsInMiddle(int centreValue){
 		return 1;
 	return 0;
 }
- 
-//Main function of follower
+
+int checkProxSensorsFar(void)
+{
+	int i; 
+
+	// get one single sample for all 8 sensors
+	currentProxData[0]=e_get_prox(0);
+	currentProxData[1]=e_get_prox(7);
+
+    // Detect obstacle_present on any of the 8 sensors
+	obstaclePresentFar = 0;
+
+	for (i=0; i<2; i++) {
+		if(currentProxData[i]>150) {
+			obstaclePresentFar = 1;
+		}
+	}
+	return obstaclePresentFar;   				
+}
+
+int checkProxSensorsClose(void)
+{
+	int i; 
+
+	// get one single sample for all 8 sensors
+	currentProxData[0]=e_get_prox(0);
+	currentProxData[1]=e_get_prox(7);
+
+    // Detect obstacle_present on any of the 8 sensors
+	obstaclePresentClose = 0;
+
+	for (i=0; i<2; i++) {
+		if(currentProxData[i]>300) {
+			obstaclePresentClose = 1;
+		}
+	}
+	return obstaclePresentClose;   				
+}
+
 //Main function of follower
 void curious(void){
 	setUpCamera();
-
 	e_start_agendas_processing();
-	e_set_led(0,1);
 	int centreValue;
+	int foundGreen = 0;
 
-	while(1){	
+	while(!foundGreen)
+	{	
 		takeImage();
 		processImage();
 		//Take a section of the center, this means if there is an error with one it won't effect it as a whole.
 		centreValue = gnumbuffer[38] + gnumbuffer[39] + gnumbuffer[40] + gnumbuffer[41] + gnumbuffer[42] + gnumbuffer[43]; // removes stray 
-		if(centreValue > 3){ //If green is in the middle then it will go forward 
+		//If green is in the middle then it will go forward 
+		if(centreValue > 3)
+		{ 
+			foundGreen = 1;
+			e_set_led(0,1);
+			e_set_led(7,1);
 			e_set_led(1,1);
-			forward();
 			e_destroy_agenda(gturn);
-			if(e_get_prox(0) < 1000){
-				run_wallfollow();
-			}
-		}else if(isGreenVisable == 1){//If green isn't in the center but is visable then picks a direction to turn to face it
+			
+		}
+		else if(isGreenVisable == 1)
+		{//If green isn't in the center but is visable then picks a direction to turn to face it
 			e_activate_agenda(gturn, 650);
-		}else{// if green isn't visible and no true values it will turn left
-			e_set_led(2,1);
+		}
+		else
+		{
 			e_destroy_agenda(gturn);
 			e_set_speed_left (0);
 			e_set_speed_right(0);
 		}
+	}
+	while(foundGreen)
+	{
+		forward();
+
+		while(obstaclePresentFar ==0)
+		{
+			obstaclePresentFar = checkProxSensorsFar();
+		}
+
+		if(obstaclePresentFar == 1)
+		{
+			forwardSlow();
+			e_set_led(2,1);
+			e_set_led(6,1);
+
+			while(obstaclePresentClose ==0)
+			{
+				obstaclePresentClose = checkProxSensorsClose();
+			}
+
+			if (obstaclePresentClose == 1)
+			{
+				run_wallfollow();
+				foundGreen = 0;
+				e_led_clear();
+				
+			} 
+		}
+			
 	}
 }
 
