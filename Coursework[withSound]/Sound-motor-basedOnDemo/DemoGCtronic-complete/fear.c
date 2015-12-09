@@ -100,7 +100,7 @@ void LedFearAll(void)
 void fear(void)
 {
 	long i;
-	int closest_present;	//0 - not set, 1- front left, 2- front right, 3- back
+	int closest_present;
 
 	e_init_port();    // configure port pins   
 	e_init_ad_scan(ALL_ADC);
