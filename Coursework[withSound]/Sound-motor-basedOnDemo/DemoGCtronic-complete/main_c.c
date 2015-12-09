@@ -74,7 +74,7 @@ int main() {
 		case 1:aggressive_c();break;
 		case 2:fear();break;
 		case 3:curious();break;
-		case 4:Love_b();break;
+		case 4:love();break;
 		case 5:goal_seeking();break;
 		default:/*own high level behaviour*/break;
 	}

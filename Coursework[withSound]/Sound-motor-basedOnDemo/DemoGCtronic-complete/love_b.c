@@ -26,9 +26,10 @@ int currentProxData[8];
 int obstaclePresentFar;
 int obstaclePresentClose;
 
-
+/*
 //custom cam picture load
-void takeImage_Love(){
+void takeImage_Love()
+{
 	e_poxxxx_launch_capture((char *)gbuffer_Love);
 	while (!e_poxxxx_is_img_ready()){};
 }
@@ -178,7 +179,7 @@ void Kiss_Love(void)
 		e_play_sound(0, 2112);
 	}
 }
-
+*/
 //Main function of follower
 void Love_b(void)
 {
