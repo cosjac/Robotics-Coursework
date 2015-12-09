@@ -31,7 +31,7 @@ int agg_check_prox_sensors(void)
 {
 	int i; 
 
-	// get one single sample for all 8 sensors
+	//get one single sample for all 8 sensors
 	agg_current_prox_data[0]=e_get_prox(0);
 	agg_current_prox_data[1]=e_get_prox(1);
 	agg_current_prox_data[2]=e_get_prox(2);
@@ -72,13 +72,14 @@ int agg_check_prox_sensors(void)
 
 
 //flash LEDs 
-void AggLedFearFlash(void)
+void LedAggFlash(void)
 {
 	e_led_clear();
-	int i = 0;
-	for ( i; i < 10; i++ ) {
+	int i;
+	for (i = 0; i < 10; i++)
+	{
 		e_set_led(i,1);
-	//	wait(100000);
+		//wait(10000);
 		e_set_led(i,0);
 	}
 }
@@ -87,8 +88,9 @@ void AggLedFearFlash(void)
 void AggLedFearAll(void)
 {
 	e_led_clear();
-	int i = 0;
-	for ( i; i < 10; i++ ) {
+	int i;
+	for(i = 0; i < 10; i++)
+	{
 		e_set_led(i,1);
 	}
 }
@@ -96,7 +98,6 @@ void AggLedFearAll(void)
 void aggressive_c(void)
 {
 	long i;
-	int position;	//0 - not set, 1- front left, 2- front right, 3- back
 	int agg_closest_present;
 
 	e_init_port();    // configure port pins   
@@ -112,11 +113,8 @@ void aggressive_c(void)
 	e_set_speed_left(TURN_SPEED);
 	e_set_speed_right(TURN_SPEED);
 
-//	setUpCamera();
-
-	while(1) {
-		//takeImage();
-		//processImage();
+	while(1)
+	{
 
 		e_led_clear();
 		e_set_speed_left(TURN_SPEED);
@@ -128,71 +126,50 @@ void aggressive_c(void)
         }
 
 		// if there is an obstacle present then:
-		if (agg_obstacle_present==1) {
+		if (agg_obstacle_present==1)
+		{
 			e_led_clear();
-			//turn on closest LED lights to obstacle position	    
-			for (i=0; i<8; i++) {
-				if(agg_current_prox_data[i]>1000) {
+			//turn on closest LED lights to obstacle position
+
+			for (i=0; i<8; i++)
+			{
+				if(agg_current_prox_data[i]>1000)
+				{
 					e_set_led(i,1);
-					
-					//declaring position
-					switch (i) {
-						case 0:
-						case 1:
-						case 2:
-						case 3:
-						case 4:
-						case 5:
-						case 6:
-						case 7:
-							position = 3;
-							break;
-						default:
-							position = 0;
-					}
+					agg_closest_present = i;
 				}
 			}
 
-        	switch (position) {
-				case 3:
-					// Run away fast with fear flash
-					AggLedFearAll();
-
-
-					for (i=0; i<8; i++) {
-						if(agg_current_prox_data[i]>1000) {
-							agg_closest_present = i;
-						}
-					}
-
-					if (agg_closest_present != 0 && agg_closest_present != 7 && agg_closest_present != 6 && agg_closest_present != 1 ) {
-						// spin to face the obstacle
-						e_set_speed_left(-1800);
-						e_set_speed_right(1800);
-						wait(680000);
+			if (agg_closest_present == 4 || agg_closest_present == 3)
+			{
+				// spin to face the obstacle
+				e_set_speed_left(-1800);
+				e_set_speed_right(1800);
+				wait(680000);
 						
-						e_play_sound(0, 2112);
+				//oi
+				e_play_sound(0, 2112);
+				LedAggFlash();
 
-						// run into obstacle
-						e_set_speed_left(1800);
-						e_set_speed_right(1800);
-						wait(680000);
-					} else {
-
-						e_play_sound(0, 2112);
-
-						// run into obstacle
-						e_set_speed_left(1800);
-						e_set_speed_right(1800);
-						wait(680000);
-					}
-
-					// run away in reverse
-					e_set_speed_left(-1800);
-					e_set_speed_right(-1800);
-					wait(100000);
-					break;
+				// run into obstacle
+				e_set_speed_left(1800);
+				e_set_speed_right(1800);
+				wait(500000);
 			}
+			else if(agg_closest_present == 0 || agg_closest_present == 7)
+			{
+				e_play_sound(0, 2112);
+
+				// run into obstacle
+				e_set_speed_left(1800);
+				e_set_speed_right(1800);
+				wait(500000);
+			}
+
+			//reverse
+			e_set_speed_left(-1800);
+			e_set_speed_right(-1800);
+			wait(200000);
 			
 			agg_obstacle_present = 0;
    		}

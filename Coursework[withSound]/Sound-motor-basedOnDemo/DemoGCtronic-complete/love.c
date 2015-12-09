@@ -21,7 +21,7 @@ int rnumbuffer[80];
 int isTouching = 0;
 
 void checkProx(void)
-{
+{	//set isTouching to 1 if front prox sensors are close to object
 	e_init_uart1();
 	e_send_uart1_char("\f\a", 2);
 
@@ -39,11 +39,8 @@ void checkProx(void)
 void love(void)
 {
 
-	setColour('r');
+	setColour('r');	//set colour to look for
 	e_init_port();
-
-//	e_init_uart1();
-//	e_send_uart1_char("\f\a", 2);
 
 	e_init_motors();
 	e_init_ad_scan(ALL_ADC);
@@ -55,13 +52,15 @@ void love(void)
 	while(1)
 	{
 		checkProx();
-
+		
+		//spin e-puck if it has not already found colour
 		if(isColourVis() == 0 && isTouching == 0)
 		{
 			e_set_speed_left(400);
 			e_set_speed_right(-400);
 		}
-
+		
+		//move toward colour until close
 		while(isColourVis() == 1 && isTouching == 0)
 		{
 			checkProx();
@@ -79,7 +78,6 @@ void love(void)
 			e_set_speed_right(0);
 			e_set_led(0,1);
 			e_set_led(1,1);
-			e_set_led(6,1);
 			e_set_led(7,1);
 		}
 		
