@@ -89,22 +89,16 @@ int doesWallExist(int selectionValue, int *distances)
 {
 	if(selectionValue == 1)
 	{
-		if((e_get_prox(1) < 100) && (e_get_prox(2) < 125) && (e_get_prox(3) < 100))
+		if(((e_get_prox(1) < 100) && (e_get_prox(2) < 150) && (e_get_prox(3) < 100)) && e_get_prox(0) < 100)
 		{
-			if(e_get_prox(0) < 50)
-			{
-				return 0;
-			}
+			return 0;
 		}
 	}
 	else
 	{
-		if((e_get_prox(5) < 125) && (e_get_prox(6) < 100) && (e_get_prox(4) < 100))
+		if(((e_get_prox(5) < 150) && (e_get_prox(6) < 100) && (e_get_prox(4) < 100) ) && e_get_prox(0) < 100)
 		{
-			if(e_get_prox(7) < 50)
-			{
-				return 0;
-			}
+			return 0;
 		}
 	}
 	return 1;
@@ -131,6 +125,8 @@ void run_wallfollow() {
 	unsigned char selector_change;
 	 
 	e_init_port();
+	e_init_uart1();
+  	e_send_uart1_char("\f\a", 2);
 
 	e_init_ad_scan(ALL_ADC);
 	e_init_motors();
