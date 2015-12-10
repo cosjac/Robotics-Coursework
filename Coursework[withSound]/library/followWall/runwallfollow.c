@@ -115,7 +115,8 @@ void followsetSpeed(int LeftSpeed, int RightSpeed) {
 }
 
 /*! \brief The "main" function of the program */
-void run_wallfollow() {
+void run_wallfollow()
+{
 	int leftwheel, rightwheel;		// motor speed left and right
 	int distances[NB_SENSORS];		// array keeping the distance sensor readings
 	int i;							// FOR-loop counters
