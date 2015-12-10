@@ -31,7 +31,7 @@ int hlnumbuffer[80];
 
 #define NORMAL_SPEED 700	
 #define FAST_SPEED 1200
-#define SLOW_SPEED 300
+#define SLOW_SPEED 350
 
 
 
@@ -48,7 +48,7 @@ void hlprocessImage(char colourIn)
 	long i;
 	int green, red;
 	int vis = 0;
-
+		
 	switch(colourIn)
 	{
 		//find colour red
@@ -209,13 +209,15 @@ void random_roam( )
 //rotate left until no obstacle present
 void avoid_obstacle( ) 
 {
-	e_set_speed_left(-SLOW_SPEED);
-	e_set_speed_right(SLOW_SPEED);
+	e_set_speed_left(-NORMAL_SPEED);
+	e_set_speed_right(NORMAL_SPEED);
 }
 
 //function to face e-puck bum in corner
 void turn_to_corner( )
 {
+	printf("corner present %d", corner_present);
+	check_in_corner( );
 	check_highprox_sensors(); // check if obstacle present is detected	
 	while( obstacle_highpresent == 1 ) 
 	{
@@ -244,7 +246,7 @@ void check_in_corner( )
 	//check if in left corner
 	for (i=2; i<6; i++) 
 	{
-		if(corner_prox_data[i]>500) 
+		if(corner_prox_data[i]>300) 
 		{
 			++corner_present;
 		}
@@ -253,11 +255,17 @@ void check_in_corner( )
 	//check if in left corner
 	for (i=0; i<4; i++) 
 	{
-		if(corner_prox_data[i]>500) 
+		if(corner_prox_data[i]>300) 
 		{
 			++corner_present;
 		}
 	}
+}
+
+void forwardhl( )
+{
+	e_set_speed_left(NORMAL_SPEED);
+	e_set_speed_right(NORMAL_SPEED);
 }
 
 
@@ -273,6 +281,7 @@ void high_level(int hiding)
 	int colourVisible = 0;
 	int not_found = 1;
 	int turn_left = 1;
+	int pause = 0;
 	
 	//configure robot
 	e_init_port();    // configure port pins   
@@ -296,215 +305,125 @@ void high_level(int hiding)
 
 	while(1) 
 	{
-/*		e_set_speed_left(0);
-		e_set_speed_right(0);
-				hltakeImage();
-				hlprocessImage('r');
-				//Take a section of the center, this means if there is an error with one it won't effect it as a whole.
-				centreValue = hlnumbuffer[38] + hlnumbuffer[39] + hlnumbuffer[40] + hlnumbuffer[41] + hlnumbuffer[42] + hlnumbuffer[43]; // removes stray 
-		
-
-			printf("centre val %d \n", centreValue );
-
-				if(centreValue > 0)
-				{
-					if((e_get_prox(0) >80) && (e_get_prox(7) > 150))
-					{
-						printf("Prox1 %d \n, prox7 %d \n", e_get_prox(0), e_get_prox(7) );
-					 //If red is in the middle then it will go forward 
-						e_set_led(1,1);
-						e_set_led(2,1);
-						e_set_led(3,1);
-						e_set_led(4,1);
-						e_set_led(5,1);
-						e_set_led(6,1);
-						e_set_led(7,1);
-					}
-						
-				}
-*/
-		hidden = 1;
-		while(hidden == 1)
-		{
-			e_led_clear();
-			e_set_speed_left(-SLOW_SPEED);
-			e_set_speed_right(SLOW_SPEED);
-
-			//turn left
-			while(turn_left == 0 && (e_get_prox(5)<300 || e_get_prox(6)<300) && colourVisible == 0 )
-			{
-				//turn left 90 degrees
-				e_set_speed_left(-SLOW_SPEED);
-				e_set_speed_right(SLOW_SPEED);
-
-				hltakeImage();
-				hlprocessImage('r');
-				//Take a section of the center, this means if there is an error with one it won't effect it as a whole.
-				centreValue = hlnumbuffer[38] + hlnumbuffer[39] + hlnumbuffer[40] + hlnumbuffer[41] + hlnumbuffer[42] + hlnumbuffer[43]; // removes stray 
-		
-				if(centreValue > 3)
-				{ //If red is in the middle then it will go forward 
-				
-					e_set_speed_left(0);
-					e_set_speed_right(0);
-
-					if((e_get_prox(0) >80) && (e_get_prox(7) > 150))
-					{
-						//update to found and follow wall until hidden
-						colourVisible = 1;
-					}
-				}
-			}
-			turn_left = 1;
-			e_led_clear();
-
-			//turn left
-			while(turn_left == 1 && (e_get_prox(1)<300 || e_get_prox(2)<300) && colourVisible == 0)
-			{
-				//turn left 90 degrees
-				e_set_speed_left(SLOW_SPEED);
-				e_set_speed_right(-SLOW_SPEED);
-
-				hltakeImage();
-				hlprocessImage('r');
-				//Take a section of the center, this means if there is an error with one it won't effect it as a whole.
-				centreValue = hlnumbuffer[38] + hlnumbuffer[39] + hlnumbuffer[40] + hlnumbuffer[41] + hlnumbuffer[42] + hlnumbuffer[43]; // removes stray 
-		
-				if(centreValue > 3)
-				{ //If red is in the middle then it will go forward 
-					
-					e_set_speed_left(0);
-					e_set_speed_right(0);
-
-					if((e_get_prox(0) >80) && (e_get_prox(7) > 150))
-					{
-						//update to found and follow wall until hidden
-						colourVisible = 1;
-					}
-				}
-			}
-			turn_left = 0;
-
-			while( colourVisible == 1 )
-			{
-				e_set_speed_left(0);
-				e_set_speed_right(0);
-				e_set_led(1,1);
-				e_set_led(2,1);
-				e_set_led(3,1);
-				e_set_led(4,1);
-				e_set_led(5,1);
-				e_set_led(6,1);
-				e_set_led(7,1);
-			}
-		}
-/*
-		//find hidden location of a corner
-		while(hidden == 0)
-		{
-			if(in_corner == 0)
-			{
-				run_wallfollow_hl( );
-			}
-			//found corner and update value
-			in_corner = 1;
-	
-			LED0=1;
-			LED1=1;
-			LED2=1;
-			LED3=1;
-			LED4=1;
-			LED5=1;
-			LED6=1;
-			LED7=1;
-	
-			turn_to_corner( );
-			
-			//while not in corner, move closer to corner
-			while( e_get_prox(0)<300 || e_get_prox(7)<300 )
-			{
-				e_set_speed_left(SLOW_SPEED);
-				e_set_speed_right(SLOW_SPEED);
-			}
-
-			//then stop motors
-			e_set_speed_left(0);
-			e_set_speed_right(0);
-	
-			turn_to_corner( );
-			e_led_clear();
-
-			e_set_speed_left(0);
-			e_set_speed_right(0);
-			hidden = 1;
-		}
-
-		//spin until see red (seeking robot), then run away
-		while(hidden == 1)
-		{
-			e_led_clear();
-			e_set_speed_left(-SLOW_SPEED);
-			e_set_speed_right(SLOW_SPEED);
-
-		//	hltakeImage();
-
-			//turn left
-			while(turn_left == 0 && (e_get_prox(5)<300 || e_get_prox(6)<300))
-			{
-				//turn left 90 degrees
-				e_set_speed_left(-SLOW_SPEED);
-				e_set_speed_right(SLOW_SPEED);
-
-		
-				printf("turnl");
-			}
-			turn_left = 1;
-			e_led_clear();
-			printf("exit");
-
-		//	hltakeImage();
-
-			//turn left
-			while(turn_left == 1 && (e_get_prox(1)<300 || e_get_prox(2)<300))
-			{
-				//turn left 90 degrees
-				e_set_speed_left(SLOW_SPEED);
-				e_set_speed_right(-SLOW_SPEED);
-
-				printf("turnr");
-			}
-			turn_left = 0;
-		}
-		
-
-
-
-	
-		
 
 		//if hiding, find hidden location, stay still until see red robot
-		while(hiding == 1) 
+		while(hiding) 
 		{
-			//find hidden location of a corner
-			while(hidden == 0)
-			{
-				//while not in corner, do run_wallfollow
-				
-				run_wallfollow();
 
+			//find hidden location of a corner
+			while(!hidden || colourVisible)
+			{
+				check_in_corner( );
+				while (corner_present < 4)
+ 				{	
+					forwardhl( );
+					turn_to_corner( );
+				}
+
+				hidden = 1;
+				colourVisible = 0;
 				//when in order, set hidden to 1
 			}
 
-			//spin until see red (seeking robot), then run away
-			while(not_found == 1)
+			e_set_speed_left(0);
+			e_set_speed_right(0);
+
+			e_led_clear();
+			
+			//while not in corner, move closer to corner
+			while( (e_get_prox(0)<1000 || e_get_prox(7)<1000) && !in_corner)
 			{
-				hltakeImage();
-				hlprocessImage('r');
-				//Take a section of the center, this means if there is an error with one it won't effect it as a whole.
-				centreValue = hlnumbuffer[38] + hlnumbuffer[39] + hlnumbuffer[40] + hlnumbuffer[41] + hlnumbuffer[42] + hlnumbuffer[43]; // removes stray 
+				e_set_speed_left(NORMAL_SPEED);
+				e_set_speed_right(NORMAL_SPEED);
+			} 
+
+			turn_to_corner( );
+	
+			//then stop motors
+			e_set_speed_left(0);
+			e_set_speed_right(0); 
+
+			//found corner and update value
+			in_corner = 1;
+
+			hidden = 1;
+			turn_left = 0;
+			colourVisible = 0;
+
+			while(hidden)
+			{
+				e_led_clear();
+				e_set_speed_left(-SLOW_SPEED);
+				e_set_speed_right(SLOW_SPEED);
+
+
+				//turn left
+				while(!turn_left && (e_get_prox(5)<300 || e_get_prox(6)<300) && !colourVisible )
+				{
 		
-				if(centreValue > 3)
-				{ //If red is in the middle then it will go forward 
+					//turn left 90 degrees
+					e_set_speed_left(-SLOW_SPEED);
+					e_set_speed_right(SLOW_SPEED);
+	
+					hltakeImage();
+					hlprocessImage('r');
+					//Take a section of the center, this means if there is an error with one it won't effect it as a whole.
+					centreValue = hlnumbuffer[38] + hlnumbuffer[39] + hlnumbuffer[40] + hlnumbuffer[41] + hlnumbuffer[42] + hlnumbuffer[43]; // removes stray 
+			
+					if(centreValue > 3)
+					{ //If red is in the middle then it will go forward 
+					
+						e_set_speed_left(0);
+						e_set_speed_right(0);
+	
+						if((e_get_prox(0) >75) && (e_get_prox(7) > 150))
+						{
+							//update to found and follow wall until hidden
+							e_set_speed_left(NORMAL_SPEED);
+							e_set_speed_right(-NORMAL_SPEED);
+							wait(300000);
+							colourVisible = 1;
+						}
+					}
+				}
+				turn_left = 1;
+				e_led_clear();
+	
+				//turn left
+				while(turn_left && (e_get_prox(1)<300 || e_get_prox(2)<300) && !colourVisible)
+				{
+	
+					//turn left 90 degrees
+					e_set_speed_left(SLOW_SPEED);
+					e_set_speed_right(-SLOW_SPEED);
+	
+					hltakeImage();
+					hlprocessImage('r');
+					//Take a section of the center, this means if there is an error with one it won't effect it as a whole.
+					centreValue = hlnumbuffer[38] + hlnumbuffer[39] + hlnumbuffer[40] + hlnumbuffer[41] + hlnumbuffer[42] + hlnumbuffer[43]; // removes stray 
+			
+					if(centreValue > 3)
+					{ //If red is in the middle then it will go forward 
+						
+						e_set_speed_left(0);
+						e_set_speed_right(0);
+	
+						if((e_get_prox(0) >75) && (e_get_prox(7) > 150))
+						{
+							//update to found and follow wall until hidden
+							e_set_speed_left(-NORMAL_SPEED);
+							e_set_speed_right(NORMAL_SPEED);
+							wait(300000);
+							colourVisible = 1;
+						}
+					}
+				}
+				turn_left = 0;
+	
+				while( colourVisible )
+				{
+					e_set_speed_left(0);
+					e_set_speed_right(0);
 					e_set_led(1,1);
 					e_set_led(2,1);
 					e_set_led(3,1);
@@ -512,22 +431,15 @@ void high_level(int hiding)
 					e_set_led(5,1);
 					e_set_led(6,1);
 					e_set_led(7,1);
-					e_destroy_agenda(hlturn);
-					if(e_get_prox(0) < 1000){
-						//update to found and follow wall until hidden
-						not_found = 0;
-					}
+					colourVisible = 0;
+					hidden = 0;
 				}
-				else if(isSelectedColourVisable == 1)
-				{//If red isn't in the center but is visable then picks a direction to turn to face it
-					e_activate_agenda(hlturn, 650);
-				}else
-				{// if red isn't visible and no true values it will turn left
-					e_set_led(2,1);
-					e_activate_agenda(hlturn, 650);
-				}
-			}	
+			}
+
+
 		}
+
+
 
 		//if NOT hiding, find hidden robot (green)
 		while(hiding == 0) 
@@ -539,18 +451,11 @@ void high_level(int hiding)
 			//while not see green, roam and avoid obstacles
 			while(centreValue <= 3 || isSelectedColourVisable == 0)
 			{
-	
+				pause = 0;	
 				//check if see green/red
 				hltakeImage();
 			
-				if( hiding == 1 ) //if hiding, look for red robot
-				{
-					hlprocessImage('r');
-				} 
-				else //else NOT hiding, look for green robot
-				{
 				hlprocessImage('g');
-			//	}
 			
 				centreValue = hlnumbuffer[38] + hlnumbuffer[39] + hlnumbuffer[40] + hlnumbuffer[41] + hlnumbuffer[42] + hlnumbuffer[43]; // removes stray 
 		
@@ -567,12 +472,13 @@ void high_level(int hiding)
 			}
 	
 			e_led_clear();
-	
+		
+
 			//while see green, move forwards towards green
 			while(centreValue > 3 || isSelectedColourVisable == 1)
 			{
 				e_led_clear();
-	
+				printf("pause flag: %d //n", pause);
 				//turn on all LEDs when found hiding robot
 				e_set_led(2,1);
 				e_set_led(3,1);
@@ -584,30 +490,44 @@ void high_level(int hiding)
 				//check if see green/red
 				hltakeImage();
 			
-				if( hiding == 1 ) //if hiding, look for red robot
-				{
-					hlprocessImage('r');
-				} 
-				else //else NOT hiding, look for green robot
-				{
 				hlprocessImage('g');
-				//}
 			
 				centreValue = hlnumbuffer[38] + hlnumbuffer[39] + hlnumbuffer[40] + hlnumbuffer[41] + hlnumbuffer[42] + hlnumbuffer[43]; // removes stray 
 			
 				if(centreValue > 3)
 				{ //If green is in the middle then it will go forward 
 					e_set_led(1,1);
-					e_set_speed_left(FAST_SPEED);
-					e_set_speed_right(FAST_SPEED);
+					
 					e_destroy_agenda(hlturn);
+
+					printf("prox0 %d", e_get_prox(0));
+
+					if(e_get_prox(0) > 70 && e_get_prox(7) > 70)
+					{	
+						pause = 1;
+						printf("Found object pause flag: %d //n", pause);
+					} 
+					else 
+					{
+						e_set_speed_left(SLOW_SPEED);
+						e_set_speed_right(SLOW_SPEED);
+					}
+
 				}
-				else if(isSelectedColourVisable == 1)
+				else if(isSelectedColourVisable == 1 && pause==0)
 				{//If green isn't in the center but is visable then picks a direction to turn to face it
 					e_activate_agenda(hlturn, 650);
+				} else if (pause == 1) 
+				{
+					e_set_speed_left(0);
+					e_set_speed_right(0);
+						
+					while(e_get_prox(0) > 70 && e_get_prox(7) > 70){
+						wait(15000);
+					}
+					printf("Set speed to 0 \n\n");	
 				}
 			}
 		}
-*/
 	};
 }
