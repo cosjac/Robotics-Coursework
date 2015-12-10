@@ -21,7 +21,7 @@
 #define RIGHT_FOLLOW		1 
 
 #define NB_SENSORS          8		// number of sensors
-#define BIAS_SPEED      	350		// robot bias speed
+#define BIAS_SPEED      	500		// robot bias speed
 #define SENSOR_THRESHOLD	300		// discount sensor noise below threshold
 #define MAXSPEED 			800		// maximum robot speed
 #define PI 					3.1415	// PI
