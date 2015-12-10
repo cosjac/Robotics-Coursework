@@ -199,7 +199,7 @@ void goal_seeking() {
 
 			if (distances[0] > thres || distances[1] > thres || distances[6] > thres || distances[7] > thres){
 				//// Go to the next state
-				printf("Detected object -> state 1 \n ");
+				//printf("Detected object -> state 1 \n ");
 				state = 1;
 			}
 			else{
@@ -221,8 +221,6 @@ void goal_seeking() {
 			}
 			break;
 		case 1:
-			//printf("Distance to mLine : %f \n\n", dist_mline);
-			//printf("Distance to goal : %f \n\n", eudist);
 			e_set_led(1, 1);
 			if ((dist_mline * 1000 < 2 && dist_mline * 1000 > -2) && stepsToWaitBeforeCheck > 100)
 			{
