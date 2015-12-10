@@ -1,5 +1,8 @@
-#ifndef _goal_seeking_h
-#define _goal_seeking_h
+
+
+#ifndef _GOALSEEKING
+#define _GOALSEEKING
+
 
 void goal_seeking(void);
 
